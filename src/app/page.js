@@ -411,8 +411,8 @@ export default function Home() {
 <section className="adventure-destinations py-5">
   <div className="container">
     <div className="section-header text-center mb-5">
-      <h2 className="display-5 fw-bold mb-3">Thrill Seeker's Paradise</h2>
-      <p className="lead text-muted">Discover heart-pounding experiences in the world's most exciting destinations</p>
+      <h2 className="display-5 fw-bold mb-3">Thrill Seekers Paradise</h2>
+      <p className="lead text-muted">Discover heart-pounding experiences in the worlds most exciting destinations</p>
     </div>
 
     <div className="row g-4">
