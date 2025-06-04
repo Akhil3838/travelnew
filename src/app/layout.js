@@ -1,15 +1,5 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -19,8 +9,29 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        {/* ✅ Bootstrap CSS (No integrity for dev use) */}
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          crossOrigin="anonymous"
+        />
+
+        {/* Optional: Font Awesome */}
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+      </head>
+      <body>
         {children}
+
+        {/* ✅ Bootstrap JS Bundle (No integrity for dev use) */}
+        <Script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          crossOrigin="anonymous"
+          defer
+        />
       </body>
     </html>
   );
