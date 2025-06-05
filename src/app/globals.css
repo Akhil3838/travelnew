@@ -206,7 +206,7 @@
 
 .location-price {
   font-weight: 600;
-  color: #b71c1c;
+  color: #ccc9c9;
 }
 
 .location-rating {
@@ -312,7 +312,8 @@
 /* adveture destination */
 /* Adventure Destinations Styles */
 .adventure-destinations {
-  background-color: #424242;
+  /* background-color: #424242; */
+  background-color: black;
 }
 
 .adventure-card {
@@ -417,9 +418,17 @@
     margin-top: 10px;
   }
 }
+/* ........................................................................................................................................ */
 p{
   color: #616161;
 }
+span{
+  color: white;
+}
+svg{
+  color: white;
+}
+/* .........................................................adujst............................................................................. */
 /* trending  carosel*/
 
 /* Carousel Styles */
@@ -427,13 +436,13 @@ p{
   padding: 0 40px; /* Add padding for controls */
 }
 
-.carousel-control-prev, 
+/* .carousel-control-prev, 
 .carousel-control-next {
   width: 40px;
   background-color: rgba(0,0,0,0.3);
   border-radius: 50%;
   height: 40px;
-  top: 50%;
+  top: 150%;
   transform: translateY(-50%);
 }
 
@@ -443,24 +452,26 @@ p{
 
 .carousel-control-next {
   right: 0;
-}
-
-/* .carousel-indicators {
-  position: relative;
-  margin-top: 20px;
-}
-
-.carousel-indicators button {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #616161;
-  border: none;
-}
-
-.carousel-indicators button.active {
-  background-color: #0d47a1;
 } */
+.carousel-control-next {
+  /* width: 10%; */
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 50%;
+  /* height: 40px; */
+  top: 150px;
+  right: 50px;
+  transform: translateX(40%);
+}
+.carousel-control-prev {
+    background-color: rgba(0,0,0,0.3);
+  border-radius: 50%;
+  /* height: 40px; */
+  top: 150px;
+  right: 50px;
+  transform: translateX(-40%);
+
+} 
+
 .carousel-indicators {
   display: none !important;
 }
@@ -473,3 +484,25 @@ p{
 .carousel-inner {
   padding: 20px 0;
 }
+
+
+
+
+/* Mobile-specific adjustments */
+@media (max-width: 767.98px) {
+  .carousel-control-prev, 
+  .carousel-control-next {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0,0,0,0.7); /* More contrast on mobile */
+  }
+  
+  .carousel-control-prev {
+    left: 5px;
+  }
+  
+  .carousel-control-next {
+    right: 5px;
+  }
+}
+

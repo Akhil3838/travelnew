@@ -128,7 +128,6 @@ export default function Home() {
 </section>
 
 {/* Trending Locations Section */}
-{/* Trending Locations Section */}
 <section className="trending-locations py-5">
   <div className="container">
     <h2 className="section-title mb-4 text-center">Trending Destinations</h2>
@@ -232,7 +231,7 @@ export default function Home() {
               <div className="location-card">
                 <div className="location-image-container">
                   <img 
-                    src="https://images.unsplash.com/photo-1538970272646-f61fabb3bfdf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                    src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
                     alt="New York" 
                     className="location-image"
                   />
@@ -331,13 +330,14 @@ export default function Home() {
     </div>
     
     <div className="text-center mt-4">
-      <button className="btn view-all-btn px-4 py-2 d-flex align-items-center justify-content-center">
-        <span>View All Destinations</span>
+      <button className="btn  view-all-btn px-4 py-2 d-flex align-items-center justify-content-center">
+        <span >View All Destinations</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
           fill="currentColor"
+
           className="bi bi-arrow-right ms-2"
           viewBox="0 0 16 16"
         >
@@ -346,7 +346,8 @@ export default function Home() {
       </button>
     </div>
   </div>
-</section><div className='pt-1 bg-secondary'></div>
+</section>
+<div className='pt-1 bg-secondary'></div>
 {/* hot selling packages */}
 
 {/* Standard Hot Selling Packages */}
@@ -394,7 +395,7 @@ export default function Home() {
             
             <div className="d-flex justify-content-between align-items-center">
               <div>
-                <span className="text-decoration-line-through text-muted me-2">$1,499</span>
+                <span className="text-decoration-line-through text-light me-2">$1,499</span>
                 <span className="h5 text-primary">₹1,099</span>
                 <span className="badge bg-danger ms-2">Save 27%</span>
               </div>
@@ -440,7 +441,7 @@ export default function Home() {
             
             <div className="d-flex justify-content-between align-items-center">
               <div>
-                <span className="text-decoration-line-through text-muted me-2">$2,299</span>
+                <span className="text-decoration-line-through text-light me-2">$2,299</span>
                 <span className="h5 text-primary">₹1,799</span>
                 <span className="badge bg-danger ms-2">Save 22%</span>
               </div>
@@ -522,7 +523,7 @@ export default function Home() {
   <div className="container">
     <div className="section-header text-center mb-5">
       <h2 className="display-5 text-white fw-bold mb-3">Thrill Seekers Paradise</h2>
-      <p className="lead  text-black ">Discover heart-pounding experiences in the worlds most exciting destinations</p>
+      <p className="lead  text-light ">Discover heart-pounding experiences in the worlds most exciting destinations</p>
     </div>
 
     <div className="row g-4">
