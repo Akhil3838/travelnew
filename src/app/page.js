@@ -116,7 +116,7 @@ export default function Home() {
      <section className="main-content" style={{backgroundColor:'black'}}>
   <video
     src="https://travelcultz.com/public/images/travelcultz.mp4"
-    height="360"
+    height="500"
     
     autoPlay
     muted
@@ -347,14 +347,13 @@ export default function Home() {
     </div>
   </div>
 </section>
-<div className='pt-1 bg-secondary'></div>
 {/* hot selling packages */}
 
 {/* Standard Hot Selling Packages */}
 <section className="standard-packages py-5">
   <div className="container">
     <div className="section-header text-center mb-5">
-      <h2 className="mb-3 text-primary">Hot Selling Packages</h2>
+      <h2 className="mb-3 text-light">Hot Selling Packages</h2>
       <p>Most popular deals booked by travelers</p>
     </div>
 
