@@ -9,7 +9,7 @@ export default function Home() {
   <div className="container d-flex justify-content-between align-items-center py-3">
     <div className="logo-container">
       <span className="logo-icon">✈️</span>
-      <span className="logo-text">TravelEase</span>
+      <span className="logo-text">GoWonder</span>
     </div>
 
     <nav className="main-nav d-none d-md-flex gap-4">
@@ -30,7 +30,6 @@ export default function Home() {
     </button>
   </div>
 </header>
-
 {/* Offcanvas Menu */}
 <div
   className="offcanvas offcanvas-end"
@@ -38,8 +37,8 @@ export default function Home() {
   id="mobileMenu"
   aria-labelledby="mobileMenuLabel"
 >
-  <div className="offcanvas-header">
-    <h5 id="mobileMenuLabel">Menu</h5>
+  <div className="offcanvas-header border-bottom">
+    <h5 id="mobileMenuLabel" className="fw-bold">GoWonder</h5>
     <button
       type="button"
       className="btn-close"
@@ -47,91 +46,186 @@ export default function Home() {
       aria-label="Close"
     ></button>
   </div>
-  <div className="offcanvas-body d-flex flex-column gap-3">
-    <a href="#" className="nav-link">About Us</a>
-    <a href="#" className="nav-link">Contact Us</a>
-    <a href="#" className="nav-link">Blog</a>
+  <div className="offcanvas-body d-flex flex-column">
+    <a href="#" className="nav-link py-3 border-bottom">Destinations</a>
+    <a href="#" className="nav-link py-3 border-bottom">Experiences</a>
+    <a href="#" className="nav-link py-3 border-bottom">Deals</a>
+    <a href="#" className="nav-link py-3 border-bottom">About</a>
+    <button className="btn btn-primary mt-4">Sign In</button>
   </div>
 </div>
 
-      {/* Category Header with Search */}
-      <section className="category-header">
-        <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
-          {/* Category Navigation */}
-          <nav className="category-nav d-flex flex-wrap justify-content-center gap-2 mb-3 mb-md-0">
-           <div className="dropdown">
-  <button className="btn  text-light category-pill dropdown-toggle international-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    International
-  </button>
-  <ul className="dropdown-menu">
-    <li><a className="dropdown-item" href="#">Europe</a></li>
-    <li><a className="dropdown-item" href="#">Asia</a></li>
-    <li><a className="dropdown-item" href="#">Africa</a></li>
-  </ul>
-</div>
+{/* Hero Search Section with Video Background */}
+<section className="search-hero position-relative py-5 min-vh-100 d-flex align-items-center">
+  {/* Video Background */}
+  <div className="video-background position-absolute w-100 h-100 top-0 start-0 ">
+    <video
+      autoPlay
+      muted
+      loop
+      className="w-100 h-100 object-fit-cover"
+    >
+      <source src="https://cdn.jumeirah.com/-/mediadh/dh/hospitality/jumeirah/home/banner/dreams-desktop-2560x1440" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div className="position-absolute w-100 h-100 top-0 start-0 bg-dark" style={{ opacity: 0.5 }}></div>
+  </div>
 
-<div className="dropdown">
-  <button className="btn text-light category-pill dropdown-toggle domestic-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Domestic
-  </button>
-  <ul className="dropdown-menu">
-    <li><a className="dropdown-item" href="#">Family</a></li>
-    <li><a className="dropdown-item" href="#">Adveture</a></li>
-    <li><a className="dropdown-item" href="#">Couple</a></li>
-  </ul>
-</div>
+  {/* Search Content */}
+  <div className="container position-relative z-index-1">
+    <div className="row justify-content-center">
+      <div className="col-lg-10">
+        <h1 className="text-white text-center mb-4 display-4 fw-bold">Where will you wander next?</h1>
 
-<div className="dropdown text-light">
-  <button className="btn text-light category-pill dropdown-toggle weekend-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Weekend Getaway
-  </button>
-  <ul className="dropdown-menu">
-    <li><a className="dropdown-item" href="#">Hill Stations</a></li>
-    <li><a className="dropdown-item" href="#">Beach Trips</a></li>
-  </ul>
-</div>
+        <div className="search-card bg-white rounded-4 shadow-lg p-4">
 
-<div className="dropdown">
-  <button className="btn text-light category-pill dropdown-toggle honeymoon-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Honeymoon
-  </button>
-  <ul className="dropdown-menu">
-    <li><a className="dropdown-item" href="#">Maldives</a></li>
-    <li><a className="dropdown-item" href="#">Bali</a></li>
-  </ul>
-</div>
+          <div className="tab-content" id="search-tabContent">
+            {/* Flights Search */}
+            <div className="tab-pane fade show active" id="flights" role="tabpanel">
+              <form className="row g-3">
+                <div className="col-md-6">
+                  <label className="form-label">From</label>
+                  <div className="input-group">
+                    <span className="input-group-text"><i className="fas fa-map-marker-alt"></i></span>
+                    <input type="text" className="form-control" placeholder="City or Airport" />
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <label className="form-label">To</label>
+                  <div className="input-group">
+                    <span className="input-group-text"><i className="fas fa-map-marker-alt"></i></span>
+                    <input type="text" className="form-control" placeholder="City or Airport" />
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <label className="form-label">Departure</label>
+                  <input type="date" className="form-control" />
+                </div>
+                <div className="col-md-3">
+                  <label className="form-label">Return</label>
+                  <input type="date" className="form-control" />
+                </div>
+                <div className="col-md-3">
+                  <label className="form-label">Travelers</label>
+                  <select className="form-select">
+                    <option>1 Adult</option>
+                    <option>2 Adults</option>
+                    <option>Family (2+2)</option>
+                  </select>
+                </div>
+                <div className="col-md-3 d-flex align-items-end">
+                  <button className="btn btn-primar w-100 py-2" style={{backgroundColor:'#0f418eff', color:'white'}}>
+                    <i className="fas fa-search me-2"></i> Search Flights
+                  </button>
+                </div>
+              </form>
+            </div>
 
-          </nav>
+            {/* Hotels Search */}
+            <div className="tab-pane fade" id="hotels" role="tabpanel">
+              <form className="row g-3">
+                <div className="col-md-6">
+                  <label className="form-label">Destination</label>
+                  <div className="input-group">
+                    <span className="input-group-text"><i className="fas fa-map-marker-alt"></i></span>
+                    <input type="text" className="form-control" placeholder="City, Hotel or Area" />
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <label className="form-label">Check-in</label>
+                  <input type="date" className="form-control" />
+                </div>
+                <div className="col-md-3">
+                  <label className="form-label">Check-out</label>
+                  <input type="date" className="form-control" />
+                </div>
+                <div className="col-md-4">
+                  <label className="form-label">Rooms & Guests</label>
+                  <select className="form-select">
+                    <option>1 Room, 2 Adults</option>
+                    <option>1 Room, 1 Adult</option>
+                    <option>2 Rooms, 4 Adults</option>
+                  </select>
+                </div>
+                <div className="col-md-8 d-flex align-items-end">
+                  <button className="btn btn-primary w-100 py-2">
+                    <i className="fas fa-search me-2"></i> Search Hotels
+                  </button>
+                </div>
+              </form>
+            </div>
 
-          {/* Search Bar */}
-          <div className="search-container position-relative">
-            <input type="text" className="search-input" placeholder="Search destinations, hotels..." />
-            <button className="search-btn">Search</button>
-            <i className="search-icon fas fa-search"></i>
+            {/* Packages Search */}
+            <div className="tab-pane fade" id="packages" role="tabpanel">
+              <form className="row g-3">
+                <div className="col-md-4">
+                  <label className="form-label">From</label>
+                  <div className="input-group">
+                    <span className="input-group-text"><i className="fas fa-map-marker-alt"></i></span>
+                    <input type="text" className="form-control" placeholder="Departure City" />
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <label className="form-label">To</label>
+                  <div className="input-group">
+                    <span className="input-group-text"><i className="fas fa-map-marker-alt"></i></span>
+                    <input type="text" className="form-control" placeholder="Destination" />
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <label className="form-label">Travel Dates</label>
+                  <input type="text" className="form-control" placeholder="Select Dates" id="packageDates" />
+                </div>
+                <div className="col-md-3">
+                  <label className="form-label">Travelers</label>
+                  <select className="form-select">
+                    <option>2 Adults</option>
+                    <option>1 Adult</option>
+                    <option>Family (2+2)</option>
+                  </select>
+                </div>
+                <div className="col-md-3">
+                  <label className="form-label">Budget</label>
+                  <select className="form-select">
+                    <option>Any Budget</option>
+                    <option>Economy</option>
+                    <option>Luxury</option>
+                  </select>
+                </div>
+                <div className="col-md-6 d-flex align-items-end">
+                  <button className="btn btn-primary w-100 py-2">
+                    <i className="fas fa-search me-2"></i> Find Packages
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* Main Content */}
-     <section className="main-content" style={{backgroundColor:'black'}}>
-  <video
-    src="https://travelcultz.com/public/images/travelcultz.mp4"
-    height="500"
-    
-    autoPlay
-    muted
-    loop
-    style={{ width: "100%", objectFit: "cover"  }}
-  >
-    Your browser does not support the video tag.
-  </video>
+        <div className="d-flex flex-wrap justify-content-center gap-3 mt-4">
+          <a href="#" className="btn btn-outline-light rounded-pill px-4">
+            <i className="fas fa-umbrella-beach me-2"></i> Beach Getaways
+          </a>
+          <a href="#" className="btn btn-outline-light rounded-pill px-4">
+            <i className="fas fa-mountain me-2"></i> Mountain Retreats
+          </a>
+          <a href="#" className="btn btn-outline-light rounded-pill px-4">
+            <i className="fas fa-heart me-2"></i> Romantic Escapes
+          </a>
+          <a href="#" className="btn btn-outline-light rounded-pill px-4">
+            <i className="fas fa-hiking me-2"></i> Adventure Trips
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 {/* Trending Locations Section */}
 <section className="trending-locations py-5">
   <div className="container">
-    <h2 className="section-title mb-4 text-center">Trending Destinations</h2>
-    <p className="section-subtitle text-center mb-5">Explore the most popular travel spots this season</p>
+    <h2 className="display-5 text-white fw-bold mb-3 text-center">Trending Destinations</h2>
+    <p className="lead  text-light text-center">Explore the most popular travel spots this season</p>
     
     <div id="locationsCarousel" className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-inner">
@@ -353,8 +447,8 @@ export default function Home() {
 <section className="standard-packages py-5">
   <div className="container">
     <div className="section-header text-center mb-5">
-      <h2 className="mb-3 text-light">Hot Selling Packages</h2>
-      <p>Most popular deals booked by travelers</p>
+      <h2 className="display-5 text-white fw-bold mb-3">Hot Selling Packages</h2>
+      <p className='lead  text-light'>Most popular deals booked by travelers</p>
     </div>
 
     <div className="row g-4">
@@ -653,11 +747,140 @@ export default function Home() {
   </div>
 </section> 
 
-{/* family destination */}
-<section>
+{/* Social Stories Section - Dark Theme with Videos */}
+<section className="social-stories py-5 bg-dark">
+  <div className="container">
+    <div className="section-header text-center mb-5">
+      <h2 className="display-5 fw-bold mb-3 text-white">#AdventureUnfiltered</h2>
+      <p className="lead text-light opacity-75">Raw moments from our global adventures</p>
+    </div>
 
+    <div className="row g-4">
+      {/* Instagram Story 1 - Video */}
+      <div className="col-12 col-md-4 col-lg-3">
+        <div className="story-card instagram-story bg-black rounded-4 overflow-hidden position-relative">
+          <div className="story-video-container position-relative">
+            <iframe 
+              src="https://www.youtube.com/embed/F3h7RXhhM9Q?autoplay=1&mute=1&loop=1&playlist=F3h7RXhhM9Q" 
+              title="YouTube Shorts"
+              className="w-100 h-100 object-fit-cover"
+              allow="autoplay; encrypted-media" 
+              allowFullScreen
+            ></iframe>
+            {/* <div className="story-platform position-absolute top-0 start-0 m-3">
+              <i className="bi bi-instagram fs-5 text-white"></i>
+            </div> */}
+            <div className="story-overlay position-absolute bottom-0 start-0 end-0 p-3 d-flex justify-content-between align-items-center">
+              <span className="text-white fs-7">24.5k views</span>
+              <span className="text-white-50 fs-8">2:15</span>
+            </div>
+          </div>
+          <div className="story-caption p-3 border-top border-secondary">
+            <small className="text-light opacity-75">Sunrise summit push 🏔️</small>
+          </div>
+        </div>
+      </div>
 
+      {/* YouTube Story 1 - Video */}
+      <div className="col-12 col-md-4 col-lg-3">
+        <div className="story-card youtube-story bg-black rounded-4 overflow-hidden position-relative">
+          <div className="story-video-container position-relative">
+            <iframe
+              src="https://www.youtube.com/embed/uNq0tDQIZwU?autoplay=1&mute=1&loop=1&playlist=uNq0tDQIZwU"
+              title="YouTube Shorts"
+              className="w-100 h-100 object-fit-cover"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            ></iframe>
+            {/* <div className="story-platform position-absolute top-0 start-0 m-3">
+              <i className="bi bi-youtube fs-5 text-white"></i>
+            </div> */}
+            <div className="story-play-btn position-absolute top-50 start-50 translate-middle">
+              <i className="bi bi-play-fill fs-3"></i>
+            </div>
+            <div className="story-overlay position-absolute bottom-0 start-0 end-0 p-3 d-flex justify-content-between align-items-center">
+              <span className="text-white fs-7">1.2M views</span>
+              <span className="text-white-50 fs-8">0:45</span>
+            </div>
+          </div>
+          <div className="story-caption p-3 border-top border-secondary">
+            <small className="text-light opacity-75">El Capitan free climb</small>
+          </div>
+        </div>
+      </div>
+
+      {/* Instagram Story 2 - Video */}
+      <div className="col-12 col-md-4 col-lg-3">
+        <div className="story-card instagram-story bg-black rounded-4 overflow-hidden position-relative">
+          <div className="story-video-container position-relative">
+            <iframe 
+              src="https://www.youtube.com/embed/Xnym6AvEWwY?autoplay=1&mute=1&loop=1&playlist=Xnym6AvEWwY"
+              title="YouTube video"
+              className="w-100 h-100 object-fit-cover"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            ></iframe>
+            {/* <div className="story-platform position-absolute top-0 start-0 m-3">
+              <i className="bi bi-instagram fs-5 text-white"></i>
+            </div> */}
+            <div className="story-overlay position-absolute bottom-0 start-0 end-0 p-3 d-flex justify-content-between align-items-center">
+              <span className="text-white fs-7">42.3k views</span>
+              <span className="text-white-50 fs-8">1:30</span>
+            </div>
+          </div>
+          <div className="story-caption p-3 border-top border-secondary">
+            <small className="text-light opacity-75">Northern lights magic ✨</small>
+          </div>
+        </div>
+      </div>
+
+      {/* YouTube Story 2 - Video */}
+      <div className="col-12 col-md-4 col-lg-3">
+        <div className="story-card youtube-story bg-black rounded-4 overflow-hidden position-relative">
+          <div className="story-video-container position-relative">
+            <iframe 
+              src="https://www.youtube.com/embed/RdVdfpe_sFE?autoplay=1&mute=1&loop=1&playlist=RdVdfpe_sFE" 
+              title="YouTube Shorts"
+              className="w-100 h-100 object-fit-cover"
+              allow="autoplay; encrypted-media" 
+              allowFullScreen
+            ></iframe>
+            {/* <div className="story-platform position-absolute top-0 start-0 m-3">
+              <i className="bi bi-youtube fs-5 text-white"></i>
+            </div> */}
+            <div className="story-play-btn position-absolute top-50 start-50 translate-middle">
+              <i className="bi bi-play-fill fs-3"></i>
+            </div>
+            <div className="story-overlay position-absolute bottom-0 start-0 end-0 p-3 d-flex justify-content-between align-items-center">
+              <span className="text-white fs-7">856k views</span>
+              <span className="text-white-50 fs-8">0:58</span>
+            </div>
+          </div>
+          <div className="story-caption p-3 border-top border-secondary">
+            <small className="text-light opacity-75">Coral reef diving 🤿</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="text-center mt-5">
+      <button className="btn btn-outline-light px-4 py-2 d-flex align-items-center justify-content-center mx-auto rounded-pill border-2 fw-medium">
+        <span>Follow Our Journey</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          className="bi bi-arrow-right ms-2"
+          viewBox="0 0 16 16"
+        >
+          <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-4.147-4.146a.5.5 0 1 1 .708-.708l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+        </svg>
+      </button>
+    </div>
+  </div>
 </section>
+
 
   </main>
 
