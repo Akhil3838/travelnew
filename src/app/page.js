@@ -87,24 +87,24 @@ export default function Home() {
                   <label className="form-label">From</label>
                   <div className="input-group">
                     <span className="input-group-text"><i className="fas fa-map-marker-alt"></i></span>
-                    <input type="text" className="form-control" placeholder="City or Airport" />
+                    <input type="text" className="form-control" placeholder="From City " />
                   </div>
                 </div>
                 <div className="col-md-6">
                   <label className="form-label">To</label>
                   <div className="input-group">
                     <span className="input-group-text"><i className="fas fa-map-marker-alt"></i></span>
-                    <input type="text" className="form-control" placeholder="City or Airport" />
+                    <input type="text" className="form-control" placeholder="City/Country/Category"/>
                   </div>
                 </div>
                 <div className="col-md-3">
                   <label className="form-label">Departure</label>
                   <input type="date" className="form-control" />
                 </div>
-                <div className="col-md-3">
+                {/* <div className="col-md-3">
                   <label className="form-label">Return</label>
                   <input type="date" className="form-control" />
-                </div>
+                </div> */}
                 <div className="col-md-3">
                   <label className="form-label">Travelers</label>
                   <select className="form-select">
@@ -115,7 +115,7 @@ export default function Home() {
                 </div>
                 <div className="col-md-3 d-flex align-items-end">
                   <button className="btn btn-primar w-100 py-2" style={{backgroundColor:'#0f418eff', color:'white'}}>
-                    <i className="fas fa-search me-2"></i> Search Flights
+                    <i className="fas fa-search me-2"></i> Search package
                   </button>
                 </div>
               </form>
