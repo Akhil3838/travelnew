@@ -16,7 +16,7 @@ export default function Home() {
         {/* Fallback Image */}
         {!videoLoaded && (
           <img
-            src="/loading.jpg"
+            src="/load-min.jpg"
             alt="Fallback"
             className="w-100 h-100 object-fit-cover"
             style={{ objectFit: "cover" }}
@@ -890,7 +890,7 @@ export default function Home() {
           <div className="story-card instagram-story bg-black rounded-4 overflow-hidden position-relative">
             <div className="story-video-container position-relative">
               <iframe 
-                src="https://www.youtube.com/embed/F3h7RXhhM9Q?autoplay=1&mute=1&loop=1&playlist=F3h7RXhhM9Q" 
+                src="https://www.youtube.com/embed/F3h7RXhhM9Q?&mute=1&loop=1&playlist=F3h7RXhhM9Q" 
                 title="YouTube Shorts"
                 className="w-100 h-100 object-fit-cover"
                 allow="autoplay; encrypted-media" 
@@ -912,7 +912,7 @@ export default function Home() {
           <div className="story-card youtube-story bg-black rounded-4 overflow-hidden position-relative">
             <div className="story-video-container position-relative">
               <iframe
-                src="https://www.youtube.com/embed/uNq0tDQIZwU?autoplay=1&mute=1&loop=1&playlist=uNq0tDQIZwU"
+                src="https://www.youtube.com/embed/uNq0tDQIZwU?&mute=1&loop=1&playlist=uNq0tDQIZwU"
                 title="YouTube Shorts"
                 className="w-100 h-100 object-fit-cover"
                 allow="autoplay; encrypted-media"
@@ -937,7 +937,7 @@ export default function Home() {
           <div className="story-card instagram-story bg-black rounded-4 overflow-hidden position-relative">
             <div className="story-video-container position-relative">
               <iframe 
-                src="https://www.youtube.com/embed/Xnym6AvEWwY?autoplay=1&mute=1&loop=1&playlist=Xnym6AvEWwY"
+                src="https://www.youtube.com/embed/Xnym6AvEWwY?&mute=1&loop=1&playlist=Xnym6AvEWwY"
                 title="YouTube video"
                 className="w-100 h-100 object-fit-cover"
                 allow="autoplay; encrypted-media"
@@ -959,7 +959,7 @@ export default function Home() {
           <div className="story-card youtube-story bg-black rounded-4 overflow-hidden position-relative">
             <div className="story-video-container position-relative">
               <iframe 
-                src="https://www.youtube.com/embed/RdVdfpe_sFE?autoplay=1&mute=1&loop=1&playlist=RdVdfpe_sFE" 
+                src="https://www.youtube.com/embed/RdVdfpe_sFE?&mute=1&loop=1&playlist=RdVdfpe_sFE" 
                 title="YouTube Shorts"
                 className="w-100 h-100 object-fit-cover"
                 allow="autoplay; encrypted-media" 
