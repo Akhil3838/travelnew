@@ -1,80 +1,82 @@
 'use client';
-import React from 'react';
+import React, { useState } from "react";
 
 export default function Home() {
-  
+  const [videoLoaded, setVideoLoaded] = useState(false);
   return (
     <main>
       {/* Top Navigation Bar */}
-<header className="main-header">
-  <div className="container d-flex justify-content-between align-items-center py-3">
-    <div className="logo-container">
-      <span className="logo-icon">✈️</span>
-      <span className="logo-text">GoWonder</span>
-    </div>
 
-    <nav className="main-nav d-none d-md-flex gap-4">
-      <a href="#" className="nav-link">About Us</a>
-      <a href="#" className="nav-link">Contact Us</a>
-      <a href="#" className="nav-link">Blog</a>
-    </nav>
 
-    {/* Button to toggle offcanvas */}
-    <button
-      className="mobile-menu-btn btn d-md-none"
-      type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#mobileMenu"
-      aria-controls="mobileMenu"
-    >
-      ☰
-    </button>
-  </div>
-</header>
-{/* Offcanvas Menu */}
-<div
-  className="offcanvas offcanvas-end"
-  tabIndex="-1"
-  id="mobileMenu"
-  aria-labelledby="mobileMenuLabel"
->
-  <div className="offcanvas-header border-bottom">
-    <h5 id="mobileMenuLabel" className="fw-bold">GoWonder</h5>
-    <button
-      type="button"
-      className="btn-close"
-      data-bs-dismiss="offcanvas"
-      aria-label="Close"
-    ></button>
-  </div>
-  <div className="offcanvas-body d-flex flex-column">
-    <a href="#" className="nav-link py-3 border-bottom">Destinations</a>
-    <a href="#" className="nav-link py-3 border-bottom">Experiences</a>
-    <a href="#" className="nav-link py-3 border-bottom">Deals</a>
-    <a href="#" className="nav-link py-3 border-bottom">About</a>
-    <button className="btn btn-primary mt-4">Sign In</button>
-  </div>
-</div>
 
 {/* Hero Search Section with Video Background */}
 <section className="search-hero position-relative py-5 min-vh-100 d-flex align-items-center">
   {/* Video Background */}
-  <div className="video-background position-absolute w-100 h-100 top-0 start-0 ">
-    <video
-      autoPlay
-      muted
-      loop
-      className="w-100 h-100 object-fit-cover"
-    >
-      <source src="https://cdn.jumeirah.com/-/mediadh/dh/hospitality/jumeirah/home/banner/dreams-desktop-2560x1440" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <div className="position-absolute w-100 h-100 top-0 start-0 bg-dark" style={{ opacity: 0.5 }}></div>
-  </div>
+  <div className="video-background position-absolute w-100 h-100 top-0 start-0">
+        {/* Fallback Image */}
+        {!videoLoaded && (
+          <img
+            src="/loading.jpg"
+            alt="Fallback"
+            className="w-100 h-100 object-fit-cover"
+            style={{ objectFit: "cover" }}
+          />
+        )}
+
+        {/* Video Element */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-100 h-100 object-fit-cover"
+          style={{ display: videoLoaded ? "block" : "none" }}
+          onLoadedData={() => setVideoLoaded(true)}
+        >
+          <source
+            src="https://cdn.jumeirah.com/-/mediadh/dh/hospitality/jumeirah/home/banner/dreams-desktop-2560x1440"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Overlay */}
+        <div
+          className="position-absolute w-100 h-100 top-0 start-0 bg-dark"
+          style={{ opacity: 0.5 }}
+        ></div>
+      </div>  {/* Transparent Header */}
+  <header className="main-header position-absolute w-100 top-0 start-0" style={{ background: 'transparent' }}>
+    <div className="container d-flex justify-content-between align-items-center py-3">
+      <div className="logo-container">
+        <span className="logo-icon">✈️</span>
+        <span className="logo-text text-white">GoWonder</span>
+      </div>
+
+      <nav className="main-nav d-none d-md-flex gap-4">
+        <a href="#" className="nav-link text-white">About Us</a>
+        <a href="#" className="nav-link text-white">Contact Us</a>
+        <a href="#" className="nav-link text-white">Blog</a>
+      </nav>
+
+      {/* Button to toggle offcanvas */}
+      <button
+        className="mobile-menu-btn btn d-md-none text-white"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#mobileMenu"
+        aria-controls="mobileMenu"
+      >
+        ☰
+      </button>
+    </div>
+     <div className="header-bottom-line" style={{ height: '2px', background: 'white', opacity: 0.1 }}></div>
+  </header>
 
   {/* Search Content */}
   <div className="container position-relative z-index-1">
-    <div className="row justify-content-center">
+    {/* ... rest of your search content remains the same ... */}
+        <div className="row justify-content-center">
       <div className="col-lg-10">
         <h1 className="text-white text-center mb-4 display-4 fw-bold">Where will you wander next?</h1>
 
@@ -219,8 +221,36 @@ export default function Home() {
         </div>
       </div>
     </div>
+
   </div>
 </section>
+
+{/* Offcanvas Menu (keep this outside the video section) */}
+<div
+  className="offcanvas offcanvas-end"
+  tabIndex="-1"
+  id="mobileMenu"
+  aria-labelledby="mobileMenuLabel"
+>
+  {/* ... offcanvas content remains the same ... */}
+    <div className="offcanvas-header border-bottom">
+    <h5 id="mobileMenuLabel" className="fw-bold">GoWonder</h5>
+    <button
+      type="button"
+      className="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div className="offcanvas-body d-flex flex-column">
+    <a href="#" className="nav-link py-3 border-bottom">Destinations</a>
+    <a href="#" className="nav-link py-3 border-bottom">Experiences</a>
+    <a href="#" className="nav-link py-3 border-bottom">Deals</a>
+    <a href="#" className="nav-link py-3 border-bottom">About</a>
+    <button className="btn btn-primary mt-4">Sign In</button>
+  </div>
+
+</div>
 
 {/* Trending Locations Section */}
 <section className="trending-locations py-5">
@@ -852,7 +882,7 @@ export default function Home() {
               <i className="bi bi-play-fill fs-3"></i>
             </div>
             <div className="story-overlay position-absolute bottom-0 start-0 end-0 p-3 d-flex justify-content-between align-items-center">
-              <span className="text-white fs-7">856k views</span>
+              <span className="text-light fs-7">856k views</span>
               <span className="text-white-50 fs-8">0:58</span>
             </div>
           </div>
@@ -881,6 +911,105 @@ export default function Home() {
   </div>
 </section>
 
+{/* footer */}
+<footer className="bg-dark text-white pt-5 pb-4">
+  <div className="container">
+    <div className="row g-4">
+      {/* Company Info */}
+      <div className="col-lg-4 col-md-6">
+        <div className="d-flex align-items-center mb-3">
+          <span className="logo-icon fs-3 me-2">✈️</span>
+          <span className="logo-text fs-4 fw-bold">GoWonder</span>
+        </div>
+        <p className=" mb-4">
+          Discover the world with GoWonder. We create unforgettable travel experiences tailored just for you.
+        </p>
+        <div className="social-icons d-flex gap-3">
+          <a href="#" className="text-white fs-5"><i className="fab fa-facebook-f"></i></a>
+          <a href="#" className="text-white fs-5"><i className="fab fa-twitter"></i></a>
+          <a href="#" className="text-white fs-5"><i className="fab fa-instagram"></i></a>
+          <a href="#" className="text-white fs-5"><i className="fab fa-linkedin-in"></i></a>
+          <a href="#" className="text-white fs-5"><i className="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+
+      {/* Quick Links */}
+      <div className="col-lg-2 col-md-6">
+        <h5 className="fw-bold mb-4">Explore</h5>
+        <ul className="list-unstyled">
+          <li className="mb-2"><a href="#" className=" text-decoration-none text-light">Destinations</a></li>
+          <li className="mb-2"><a href="#" className=" text-decoration-none text-light">Tour Packages</a></li>
+          <li className="mb-2"><a href="#" className=" text-decoration-none text-light">Flight Deals</a></li>
+          <li className="mb-2"><a href="#" className=" text-decoration-none text-light">Hotel Stays</a></li>
+          <li className="mb-2"><a href="#" className=" text-decoration-none text-light">Travel Guides</a></li>
+        </ul>
+      </div>
+
+      {/* Support */}
+      <div className="col-lg-2 col-md-6">
+        <h5 className="fw-bold mb-4">Support</h5>
+        <ul className="list-unstyled">
+          <li className="mb-2"><a href="#" className=" text-decoration-none text-white">Help Center</a></li>
+          <li className="mb-2"><a href="#" className=" text-decoration-none text-white">FAQs</a></li>
+          <li className="mb-2"><a href="#" className=" text-decoration-none text-white">Privacy Policy</a></li>
+          <li className="mb-2"><a href="#" className=" text-decoration-none text-white">Terms of Service</a></li>
+          <li className="mb-2"><a href="#" className=" text-decoration-none text-white">Contact Us</a></li>
+        </ul>
+      </div>
+
+      {/* Contact Info */}
+      <div className="col-lg-4 col-md-6">
+        <h5 className="fw-bold mb-4">Contact Us</h5>
+        <ul className="list-unstyled text-muted">
+          <li className="mb-3 d-flex align-items-start">
+            <i className="fas fa-map-marker-alt me-3 mt-1"></i>
+            <span>123 Travel Street, Wanderlust City, WC 12345</span>
+          </li>
+          <li className="mb-3 d-flex align-items-center">
+            <i className="fas fa-phone-alt me-3"></i>
+            <span>+1 (555) 123-4567</span>
+          </li>
+          <li className="mb-3 d-flex align-items-center">
+            <i className="fas fa-envelope me-3"></i>
+            <span>hello@gowonder.com</span>
+          </li>
+        </ul>
+        
+        {/* Newsletter */}
+        <div className="newsletter mt-4">
+          <h6 className="fw-bold mb-3">Subscribe to our newsletter</h6>
+          <div className="input-group">
+            <input 
+              type="email" 
+              className="form-control bg-black border-dark text-white" 
+              placeholder="Your email" 
+              aria-label="Your email"
+            />
+            <button className="btn btn-primary" type="button">
+              <i className="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Copyright */}
+    <div className="row mt-5">
+      <div className="col-12">
+        <hr className="border-secondary"/>
+        <div className="d-md-flex justify-content-between text-center text-md-start">
+          <p className=" mb-0">© {new Date().getFullYear()} GoWonder. All rights reserved.</p>
+          <div className="payment-methods mt-3 mt-md-0">
+            <i className="fab fa-cc-visa fs-4 me-2"></i>
+            <i className="fab fa-cc-mastercard fs-4 me-2"></i>
+            <i className="fab fa-cc-paypal fs-4 me-2"></i>
+            <i className="fab fa-cc-amex fs-4"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
   </main>
 
