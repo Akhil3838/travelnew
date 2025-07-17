@@ -663,10 +663,14 @@ svg{
 @media (max-width: 767.98px) {
   .carousel {
     padding: 0 15px;
+    overflow: hidden; /* Hide overflow to prevent horizontal scrolling */
   }
   
   .carousel-inner {
     padding: 10px 0;
+    /* Enable smooth scrolling for auto-scroll effect */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
   
   .carousel-item .row {
@@ -674,6 +678,13 @@ svg{
     overflow-x: auto;
     margin: 0 -5px;
     padding-bottom: 10px;
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .carousel-item .row::-webkit-scrollbar {
+    display: none;
   }
   
   .carousel-item .col-md-6,
@@ -681,21 +692,13 @@ svg{
     flex: 0 0 75%;
     max-width: 75%;
     padding: 0 5px;
+    scroll-snap-align: start; /* For better snapping */
   }
   
+  /* Hide the controls */
   .carousel-control-prev, 
   .carousel-control-next {
-    width: 30px;
-    height: 30px;
-    background-color: rgba(0,0,0,0.7);
-  }
-  
-  .carousel-control-prev {
-    left: 0;
-  }
-  
-  .carousel-control-next {
-    right: 0;
+    display: none !important;
   }
   
   .location-image-container {

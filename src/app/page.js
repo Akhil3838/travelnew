@@ -2,6 +2,7 @@
 import React from 'react';
 
 export default function Home() {
+  
   return (
     <main>
       {/* Top Navigation Bar */}
@@ -227,9 +228,8 @@ export default function Home() {
     <h2 className="display-5 text-white fw-bold mb-3 text-center">Trending Destinations</h2>
     <p className="lead  text-light text-center">Explore the most popular travel spots this season</p>
     
-    <div id="locationsCarousel" className="carousel slide" data-bs-ride="carousel">
-      <div className="carousel-inner">
-        {/* Slide 1 - Active (contains 4 cards) */}
+<div id="locationsCarousel" className="carousel slide"> {/* Removed data-bs-ride="carousel" */}
+  <div className="carousel-inner">        {/* Slide 1 - Active (contains 4 cards) */}
         <div className="carousel-item active">
           <div className="row g-4">
             {/* Card 1 */}
