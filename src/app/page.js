@@ -46,7 +46,7 @@ export default function Home() {
           style={{ opacity: 0.5 }}
         ></div>
       </div>  {/* Transparent Header */}
-  <header className="main-header position-absolute w-100 top-0 start-0" style={{ background: 'transparent' }}>
+  <header className="main-header position-absolute w-100 top-0 start-0 " style={{ background: 'transparent' }}>
     <div className="container d-flex justify-content-between align-items-center py-3">
       <div className="logo-container">
         <span className="logo-icon">✈️</span>
@@ -78,7 +78,7 @@ export default function Home() {
     {/* ... rest of your search content remains the same ... */}
         <div className="row justify-content-center">
       <div className="col-lg-10">
-        <h1 className="text-white text-center mb-4 display-4 fw-bold">Where will you wander next?</h1>
+        <h1 className="text-white text-center my-4 display-4 fw-bold">Where will you wander next?</h1>
 
         <div className="search-card bg-white rounded-4 shadow-lg p-4">
 
