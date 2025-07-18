@@ -481,8 +481,7 @@ export default function Home() {
       <p className='lead  text-light'>Most popular deals booked by travelers</p>
     </div>
 
-    <div className="row g-3 flex-nowrap flex-sm-wrap overflow-x-auto pb-2 px-2 mx-0" style={{scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch'}}>
-      {/* Package 1 */}
+<div className="row g-3 flex-nowrap flex-sm-wrap overflow-x-auto pb-2 px-2 mx-0 scroll-hide" style={{scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch'}}>      {/* Package 1 */}
       <div className="col-10 col-sm-6 col-lg-4 flex-shrink-0" style={{scrollSnapAlign: 'start'}}>
         <div className="package-card-standard h-100 mx-2">
           <div className="package-img-container">
@@ -649,7 +648,7 @@ export default function Home() {
  <h2 className="display-5 text-white fw-bold mb-3">Thrill Seekers Paradise</h2>
       <p className="lead  text-light ">Discover heart-pounding experiences in the worlds most exciting destinations</p>    </div>
 
-    <div className="row g-3 flex-nowrap flex-sm-wrap overflow-x-auto pb-2 px-2 mx-0" style={{scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch'}}>
+    <div className="row g-3 flex-nowrap flex-sm-wrap overflow-x-auto pb-2 px-2 mx-0 scroll-hide" style={{scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch'}}>
       {/* Destination 1 */}
       <div className="col-10 col-sm-6 col-lg-3 flex-shrink-0" style={{scrollSnapAlign: 'start'}}>
         <div className="adventure-card h-100 mx-2">
@@ -789,7 +788,7 @@ export default function Home() {
 
     {/* Mobile scrollable container */}
     <div className="d-block d-md-none">
-      <div className="scrolling-wrapper pb-3" style={{overflowX: 'auto', whiteSpace: 'nowrap'}}>
+      <div className="scrolling-wrapper pb-3 scroll-hide" style={{overflowX: 'auto', whiteSpace: 'nowrap'}}>
         <div className="d-inline-block mx-2" style={{width: '75vw'}}>
           <div className="story-card instagram-story bg-black rounded-4 overflow-hidden position-relative h-100">
             <div className="story-video-container position-relative" style={{paddingTop: '133%'}}>
