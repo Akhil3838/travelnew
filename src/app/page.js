@@ -46,39 +46,126 @@ export default function Home() {
           style={{ opacity: 0.5 }}
         ></div>
       </div>  {/* Transparent Header */}
-  <header className="main-header position-absolute w-100 top-0 start-0 " style={{ background: 'transparent' }}>
+<header className="main-header position-absolute w-100 top-0 start-0" style={{ background: 'transparent' }}>
     <div className="container d-flex justify-content-between align-items-center py-3">
-      <div className="logo-container">
-        <span className="logo-icon">✈️</span>
-        <span className="logo-text text-white">GoWonder</span>
-      </div>
+        {/* Logo with elevation and smooth transition */}
+        <div 
+            className="logo-container d-flex align-items-center" 
+            style={{
+                padding: '8px 16px',
+                borderRadius: '16px',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                cursor: 'pointer',
 
-      <nav className="main-nav d-none d-md-flex gap-4">
-        <a href="#" className="nav-link text-white">About Us</a>
-        <a href="#" className="nav-link text-white">Contact Us</a>
-        <a href="#" className="nav-link text-white">Blog</a>
-      </nav>
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 2px 10px rgba(255, 255, 255, 0.2)'}
+            onMouseLeave={(e) => e.currentTarget.style.boxShadow = 'none'}
+        >
+            <span 
+                className="logo-icon me-2" 
+                style={{
+                    fontSize: '24px',
+                    filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))'
+                }}
+            >
+                ✈️
+            </span>
+            <span 
+                className="logo-text text-white" 
+                style={{
+                    fontWeight: '700',
+                    fontSize: '1.5rem',
+                    letterSpacing: '0.5px'
+                }}
+            >
+                GoWonder
+            </span>
+        </div>
 
-      {/* Button to toggle offcanvas */}
-      <button
-        className="mobile-menu-btn btn d-md-none text-white"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#mobileMenu"
-        aria-controls="mobileMenu"
-      >
-        ☰
-      </button>
+        {/* Navigation with material ripple effect */}
+        <nav className="main-nav d-none d-md-flex gap-1">
+            <a 
+                href="#" 
+                className="nav-link text-white position-relative overflow-hidden"
+                style={{
+                    padding: '12px 16px',
+                    borderRadius: '8px',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    backgroundColor:'rgba(255, 255, 255, 0.1)'
+                }}
+                // onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'}
+                // onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+            >
+                About Us
+            </a>
+            <a 
+                href="#" 
+                className="nav-link text-white position-relative overflow-hidden"
+                style={{
+                    padding: '12px 16px',
+                    borderRadius: '8px',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                     backgroundColor:'rgba(255, 255, 255, 0.1)'
+
+                }}
+                // onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'}
+                // onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+            >
+                Contact Us
+            </a>
+            <a 
+                href="#" 
+                className="nav-link text-white position-relative overflow-hidden"
+                style={{
+                    padding: '12px 16px',
+                    borderRadius: '8px',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                        backgroundColor:'rgba(255, 255, 255, 0.1)'
+
+                }}
+                // onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'}
+                // onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+            >
+                Blog
+            </a>
+        </nav>
+
+        {/* Mobile menu button with material design */}
+        <button
+            className="mobile-menu-btn btn d-md-none text-white p-2"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu"
+            aria-controls="mobileMenu"
+            style={{
+                borderRadius: '50%',
+                width: '40px',
+                height: '40px',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+        >
+            <span style={{ fontSize: '1.5rem' }}>☰</span>
+        </button>
     </div>
-     <div className="header-bottom-line" style={{ height: '2px', background: 'white', opacity: 0.1 }}></div>
-  </header>
-
+    
+    {/* Divider with subtle gradient */}
+    <div 
+        className="header-bottom-line" 
+        style={{ 
+            height: '1px', 
+            background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%)',
+            margin: '0 16px'
+        }}
+    ></div>
+</header>
   {/* Search Content */}
   <div className="container position-relative z-index-1">
     {/* ... rest of your search content remains the same ... */}
         <div className="row justify-content-center">
       <div className="col-lg-10">
-        <h1 className="text-white text-center my-4 display-4 fw-bold">Where will you wander next?</h1>
+        <h1 className="text-white text-center mt-5 display-4 fw-bold">Where will you wander next?</h1>
 
         <div className="search-card  glass-bg rounded-4 shadow-lg p-4">
 
@@ -255,7 +342,7 @@ export default function Home() {
 {/* Trending Locations Section */}
 <section className="trending-locations py-5">
   <div className="container">
-    <h2 className="display-5 text-white fw-bold mb-3 text-center">Trending Destinations</h2>
+    <h2 className="display-5 text-white fw-bold mb-3  text-center">Trending Destinations</h2>
     <p className="lead  text-light text-center">Explore the most popular travel spots this season</p>
     
 <div id="locationsCarousel" className="carousel slide"> {/* Removed data-bs-ride="carousel" */}

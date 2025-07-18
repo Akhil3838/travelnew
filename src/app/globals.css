@@ -748,3 +748,37 @@ svg{
     max-width: 50%;
   }
 }
+
+/* ..................search*/
+/* Modern input style */
+input.form-control,
+select.form-select {
+  border: 2px solid #dbe4f1;
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f9fbfe;
+}
+
+input.form-control:focus,
+select.form-select:focus {
+  border-color: #0f418eff;
+  box-shadow: 0 0 0 0.15rem rgba(15, 65, 142, 0.25);
+  background-color: #fff;
+}
+
+/* Input group icon style */
+.input-group-text {
+  background-color: #f0f4fa;
+  border: 2px solid #dbe4f1;
+  border-right: none;
+  border-radius: 12px 0 0 12px;
+  color: #0f418e;
+}
+
+/* Round the right edge of the input */
+.input-group .form-control {
+  border-radius: 0 12px 12px 0;
+  border-left: none;
+}
