@@ -204,9 +204,28 @@ export default function Home() {
                   </select>
                 </div>
                 <div className="col-md-3 d-flex align-items-end">
-                  <button className="btn btn-primar w-100 py-2" style={{backgroundColor:'#0f418eff', color:'white'}}>
-                    <i className="fas fa-search me-2"></i> Search package
-                  </button>
+<button
+  className="btn w-100 py-2 border-0"
+  style={{
+    background: 'linear-gradient(135deg, #0f418e, #1d65c1)',
+    color: 'white',
+    borderRadius: '12px',
+    boxShadow: '0 4px 12px rgba(15, 65, 142, 0.3)',
+    fontWeight: '600',
+    letterSpacing: '0.5px',
+    transition: 'all 0.3s ease',
+  }}
+  onMouseOver={(e) => {
+    e.currentTarget.style.background = 'linear-gradient(135deg, #1d65c1, #0f418e)';
+    e.currentTarget.style.boxShadow = '0 6px 16px rgba(15, 65, 142, 0.4)';
+  }}
+  onMouseOut={(e) => {
+    e.currentTarget.style.background = 'linear-gradient(135deg, #0f418e, #1d65c1)';
+    e.currentTarget.style.boxShadow = '0 4px 12px rgba(15, 65, 142, 0.3)';
+  }}
+>
+  <i className="fas fa-search me-2"></i> Search Package
+</button>
                 </div>
               </form>
             </div>
@@ -314,29 +333,83 @@ export default function Home() {
 
 {/* Offcanvas Menu (keep this outside the video section) */}
 <div
-  className="offcanvas offcanvas-end"
+  className="offcanvas offcanvas-end bg-dark text-white"
   tabIndex="-1"
   id="mobileMenu"
   aria-labelledby="mobileMenuLabel"
 >
-  {/* ... offcanvas content remains the same ... */}
-    <div className="offcanvas-header border-bottom">
-    <h5 id="mobileMenuLabel" className="fw-bold">GoWonder</h5>
+  {/* <!-- Header --> */}
+  <div className="offcanvas-header border-bottom border-secondary">
+    <h5 id="mobileMenuLabel" className="fw-bold fs-4 mb-0">
+      <span style={{ color: "#4facfe" }}>Go</span>Wonder
+    </h5>
     <button
       type="button"
-      className="btn-close"
+      className="btn-close btn-close-white"
       data-bs-dismiss="offcanvas"
       aria-label="Close"
     ></button>
   </div>
-  <div className="offcanvas-body d-flex flex-column">
-    <a href="#" className="nav-link py-3 border-bottom">Destinations</a>
-    <a href="#" className="nav-link py-3 border-bottom">Experiences</a>
-    <a href="#" className="nav-link py-3 border-bottom">Deals</a>
-    <a href="#" className="nav-link py-3 border-bottom">About</a>
-    <button className="btn btn-primary mt-4">Sign In</button>
-  </div>
 
+  {/* <!-- Menu Items --> */}
+  <div className="offcanvas-body d-flex flex-column pt-3">
+    <div className="d-flex flex-column gap-2">
+      <a href="#" className="nav-link p-3 rounded hover-item">
+        <div className="d-flex align-items-center gap-3">
+          <i className="bi bi-geo-alt fs-5" style={{ color: "#4facfe" }}></i>
+          <span className="fw-medium">Destinations</span>
+        </div>
+      </a>
+
+      <a href="#" className="nav-link p-3 rounded hover-item">
+        <div className="d-flex align-items-center gap-3">
+          <i className="bi bi-star fs-5" style={{ color: "#f8c291" }}></i>
+          <span className="fw-medium">Experiences</span>
+        </div>
+      </a>
+
+      <a href="#" className="nav-link p-3 rounded hover-item">
+        <div className="d-flex align-items-center gap-3">
+          <i className="bi bi-percent fs-5" style={{ color: "#78e08f" }}></i>
+          <span className="fw-medium">Deals</span>
+        </div>
+      </a>
+
+      <a href="#" className="nav-link p-3 rounded hover-item">
+        <div className="d-flex align-items-center gap-3">
+          <i className="bi bi-info-circle fs-5" style={{ color: "#fd79a8" }}></i>
+          <span className="fw-medium">About</span>
+        </div>
+      </a>
+    </div>
+
+    {/* <!-- Auth Section --> */}
+    <div className="mt-2">
+<button 
+  className="btn w-100 py-3 fw-bold rounded-pill"
+  style={{
+    background: "rgba(79, 172, 254, 0.15)",
+    backdropFilter: "blur(10px)",
+    border: "1px solid rgba(79, 172, 254, 0.3)",
+    color: "#4facfe",
+    transition: "all 0.3s ease"
+  }}
+  onMouseOver={(e) => {
+    e.currentTarget.style.background = "rgba(79, 172, 254, 0.25)";
+    e.currentTarget.style.boxShadow = "0 0 15px rgba(79, 172, 254, 0.2)";
+  }}
+  onMouseOut={(e) => {
+    e.currentTarget.style.background = "rgba(79, 172, 254, 0.15)";
+    e.currentTarget.style.boxShadow = "none";
+  }}
+>
+  Sign In
+</button>      <p className="text-center mt-3 mb-0  text-light">
+        Don't have an account? 
+        <a href="#" className="text-decoration-none ms-1" style={{ color: "#4facfefb" }}>Sign up</a>
+      </p>
+    </div>
+  </div>
 </div>
 
 {/* Trending Locations Section */}

@@ -750,15 +750,25 @@ svg{
 }
 
 /* ..................search*/
-/* Modern input style */
+/* Modern input style with rounded-pill */
 input.form-control,
 select.form-select {
   border: 2px solid #dbe4f1;
-  border-radius: 12px;
   padding: 0.6rem 1rem;
   font-size: 1rem;
   transition: all 0.3s ease;
   background-color: #f9fbfe;
+}
+
+/* Rounded-pill specific styles */
+.rounded-pill-end {
+  border-radius: 0 50px 50px 0 !important;
+  border-left: none !important;
+}
+
+.rounded-pill-start {
+  border-radius: 50px 0 0 50px !important;
+  border-right: none !important;
 }
 
 input.form-control:focus,
@@ -772,13 +782,34 @@ select.form-select:focus {
 .input-group-text {
   background-color: #f0f4fa;
   border: 2px solid #dbe4f1;
-  border-right: none;
-  border-radius: 12px 0 0 12px;
   color: #0f418e;
 }
 
-/* Round the right edge of the input */
-.input-group .form-control {
-  border-radius: 0 12px 12px 0;
-  border-left: none;
+/* Button styles */
+.btn {
+  border-radius: 50px !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Special button style for the first tab */
+.btn-primar {
+  border-radius: 50px !important;
+}
+/* .......offcanvas......... */
+ .hover-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .bg-dark {
+    background-color: #1a1a1a !important;
+  }
+  
+  .border-secondary {
+    border-color: #333 !important;
+  }
