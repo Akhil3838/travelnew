@@ -405,7 +405,7 @@ export default function Home() {
 >
   Sign In
 </button>      <p className="text-center mt-3 mb-0  text-light">
-        Don't have an account? 
+        Dont have an account? 
         <a href="#" className="text-decoration-none ms-1" style={{ color: "#4facfefb" }}>Sign up</a>
       </p>
     </div>
