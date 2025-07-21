@@ -791,7 +791,15 @@ select.form-select:focus {
   font-weight: 500;
   transition: all 0.3s ease;
 }
-
+ .search-card {
+    border-radius: 20px;
+  }
+/* Tablet/Desktop: Pill shape */
+@media (min-width:768px) {
+  .search-card {
+    border-radius: 50px;
+  }
+}
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

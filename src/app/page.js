@@ -167,149 +167,93 @@ export default function Home() {
       <div className="col-lg-10">
         <h1 className="text-white text-center mt-5 display-4 fw-bold">Where will you wander next?</h1>
 
-        <div className="search-card  glass-bg rounded-4 shadow-lg p-4">
+<div className="search-card glass-bg shadow-lg px-4 py-3">  
+   <form className="d-flex flex-wrap align-items-center justify-content-between gap-3">
+    
+    {/* Type Selector */}
+    <div className="d-flex flex-column me-3">
+      <small className="text-muted ms-2">Type</small>
+      <div className="dropdown">
+        <button
+          className="btn btn-sm dropdown-toggle border-0 bg-transparent fw-semibold"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          All
+        </button>
+        <ul className="dropdown-menu">
+          <li><a className="dropdown-item" href="#">Trending
+</a></li>
+          <li><a className="dropdown-item" href="#">Top ten Tour 
+</a></li>
+          <li><a className="dropdown-item" href="#">Top ten Trek
+</a></li>
+          <li><a className="dropdown-item" href="#">Pilgrims 
 
-          <div className="tab-content" id="search-tabContent">
-            {/* Flights Search */}
-            <div className="tab-pane fade show active" id="flights" role="tabpanel">
-              <form className="row g-3">
-                <div className="col-md-6">
-                  <label className="form-label">From</label>
-                  <div className="input-group">
-                    <span className="input-group-text"><i className="fas fa-map-marker-alt"></i></span>
-                    <input type="text" className="form-control" placeholder="From City " />
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <label className="form-label">To</label>
-                  <div className="input-group">
-                    <span className="input-group-text"><i className="fas fa-map-marker-alt"></i></span>
-                    <input type="text" className="form-control" placeholder="City/Country/Category"/>
-                  </div>
-                </div>
-                <div className="col-md-3">
-                  <label className="form-label">Departure</label>
-                  <input type="date" className="form-control" />
-                </div>
-                {/* <div className="col-md-3">
-                  <label className="form-label">Return</label>
-                  <input type="date" className="form-control" />
-                </div> */}
-                <div className="col-md-3">
-                  <label className="form-label">Travelers</label>
-                  <select className="form-select">
-                    <option>1 Adult</option>
-                    <option>2 Adults</option>
-                    <option>Family (2+2)</option>
-                  </select>
-                </div>
-                <div className="col-md-3 d-flex align-items-end">
-<button
-  className="btn w-100 py-2 border-0"
-  style={{
-    background: 'linear-gradient(135deg, #0f418e, #1d65c1)',
-    color: 'white',
-    borderRadius: '12px',
-    boxShadow: '0 4px 12px rgba(15, 65, 142, 0.3)',
-    fontWeight: '600',
-    letterSpacing: '0.5px',
-    transition: 'all 0.3s ease',
-  }}
-  onMouseOver={(e) => {
-    e.currentTarget.style.background = 'linear-gradient(135deg, #1d65c1, #0f418e)';
-    e.currentTarget.style.boxShadow = '0 6px 16px rgba(15, 65, 142, 0.4)';
-  }}
-  onMouseOut={(e) => {
-    e.currentTarget.style.background = 'linear-gradient(135deg, #0f418e, #1d65c1)';
-    e.currentTarget.style.boxShadow = '0 4px 12px rgba(15, 65, 142, 0.3)';
-  }}
->
-  <i className="fas fa-search me-2"></i> Search Package
-</button>
-                </div>
-              </form>
-            </div>
+</a></li>
+          <li><a className="dropdown-item" href="#">Honeymoon Package
+</a></li>
 
-            {/* Hotels Search */}
-            <div className="tab-pane fade" id="hotels" role="tabpanel">
-              <form className="row g-3">
-                <div className="col-md-6">
-                  <label className="form-label">Destination</label>
-                  <div className="input-group">
-                    <span className="input-group-text"><i className="fas fa-map-marker-alt"></i></span>
-                    <input type="text" className="form-control" placeholder="City, Hotel or Area" />
-                  </div>
-                </div>
-                <div className="col-md-3">
-                  <label className="form-label">Check-in</label>
-                  <input type="date" className="form-control" />
-                </div>
-                <div className="col-md-3">
-                  <label className="form-label">Check-out</label>
-                  <input type="date" className="form-control" />
-                </div>
-                <div className="col-md-4">
-                  <label className="form-label">Rooms & Guests</label>
-                  <select className="form-select">
-                    <option>1 Room, 2 Adults</option>
-                    <option>1 Room, 1 Adult</option>
-                    <option>2 Rooms, 4 Adults</option>
-                  </select>
-                </div>
-                <div className="col-md-8 d-flex align-items-end">
-                  <button className="btn btn-primary w-100 py-2">
-                    <i className="fas fa-search me-2"></i> Search Hotels
-                  </button>
-                </div>
-              </form>
-            </div>
+        </ul>
+      </div>
+    </div>
 
-            {/* Packages Search */}
-            <div className="tab-pane fade" id="packages" role="tabpanel">
-              <form className="row g-3">
-                <div className="col-md-4">
-                  <label className="form-label">From</label>
-                  <div className="input-group">
-                    <span className="input-group-text"><i className="fas fa-map-marker-alt"></i></span>
-                    <input type="text" className="form-control" placeholder="Departure City" />
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <label className="form-label">To</label>
-                  <div className="input-group">
-                    <span className="input-group-text"><i className="fas fa-map-marker-alt"></i></span>
-                    <input type="text" className="form-control" placeholder="Destination" />
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <label className="form-label">Travel Dates</label>
-                  <input type="text" className="form-control" placeholder="Select Dates" id="packageDates" />
-                </div>
-                <div className="col-md-3">
-                  <label className="form-label">Travelers</label>
-                  <select className="form-select">
-                    <option>2 Adults</option>
-                    <option>1 Adult</option>
-                    <option>Family (2+2)</option>
-                  </select>
-                </div>
-                <div className="col-md-3">
-                  <label className="form-label">Budget</label>
-                  <select className="form-select">
-                    <option>Any Budget</option>
-                    <option>Economy</option>
-                    <option>Luxury</option>
-                  </select>
-                </div>
-                <div className="col-md-6 d-flex align-items-end">
-                  <button className="btn btn-primary w-100 py-2">
-                    <i className="fas fa-search me-2"></i> Find Packages
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+    {/* Location */}
+    <div className="d-flex flex-column flex-grow-1 me-3">
+      <small className="text-muted ms-5">From</small>
+      <div className="input-group">
+        <span className="input-group-text bg-transparent border-0">
+          <i className="fas fa-map-marker-alt text-secondary"></i>
+        </span>
+        <input
+          type="text"
+          className="form-control border-0 bg-transparent"
+          placeholder="Search Location"
+        />
+      </div>
+    </div>
+
+    {/* Keyword */}
+    <div className="d-flex flex-column flex-grow-1 me-3">
+      <small className="text-muted ms-5">To</small>
+      <div className="input-group">
+        <span className="input-group-text bg-transparent border-0">
+          <i className="fas fa-map-marker-alt text-secondary"></i>
+        </span>
+        <input
+          type="text"
+          className="form-control border-0 bg-transparent"
+          placeholder="Search Location"
+        />
+      </div>
+    </div>
+
+    {/* Search Advanced */}
+    <div className="d-flex flex-column flex-grow-1 me-3">
+      <small className="text-muted ms-5">Date</small>
+      <div className="input-group">
+        <span className="input-group-text bg-transparent border-0">
+          <i className="fas fa-map-date-alt text-secondary"></i>
+        </span>
+        <input
+          type="date"
+          className="form-control border-0 bg-transparent"
+        />
+      </div>
+    </div>
+
+    {/* Search Button */}
+    <div>
+      <button
+        type="submit"
+        className="btn btn-success rounded-pill px-4 d-flex align-items-center"
+      >
+        Search <i className="fas fa-search ms-2"></i>
+      </button>
+    </div>
+  </form>
+</div>
 
         <div className="d-flex flex-wrap justify-content-center gap-3 mt-4">
           <a href="#" className="btn btn-outline-light rounded-pill px-4">
