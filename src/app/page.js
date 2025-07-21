@@ -171,7 +171,7 @@ export default function Home() {
    <form className="d-flex flex-wrap align-items-center justify-content-between gap-3">
     
     {/* Type Selector */}
-    <div className="d-flex flex-column me-3">
+    {/* <div className="d-flex flex-column me-3">
       <small className="text-muted ms-2">Type</small>
       <div className="dropdown">
         <button
@@ -197,11 +197,11 @@ export default function Home() {
 
         </ul>
       </div>
-    </div>
+    </div> */}
 
     {/* Location */}
     <div className="d-flex flex-column flex-grow-1 me-3">
-      <small className="text-muted ms-5">From</small>
+      {/* <small className="text-muted ms-5">From</small> */}
       <div className="input-group">
         <span className="input-group-text bg-transparent border-0">
           <i className="fas fa-map-marker-alt text-secondary"></i>
@@ -209,14 +209,14 @@ export default function Home() {
         <input
           type="text"
           className="form-control border-0 bg-transparent"
-          placeholder="Search Location"
+          placeholder="From Location"
         />
       </div>
     </div>
 
     {/* Keyword */}
     <div className="d-flex flex-column flex-grow-1 me-3">
-      <small className="text-muted ms-5">To</small>
+      {/* <small className="text-muted ms-5">To</small> */}
       <div className="input-group">
         <span className="input-group-text bg-transparent border-0">
           <i className="fas fa-map-marker-alt text-secondary"></i>
@@ -224,14 +224,14 @@ export default function Home() {
         <input
           type="text"
           className="form-control border-0 bg-transparent"
-          placeholder="Search Location"
+          placeholder="To Location"
         />
       </div>
     </div>
 
     {/* Search Advanced */}
     <div className="d-flex flex-column flex-grow-1 me-3">
-      <small className="text-muted ms-5">Date</small>
+      {/* <small className="text-muted ms-5">Date</small> */}
       <div className="input-group">
         <span className="input-group-text bg-transparent border-0">
           <i className="fas fa-map-date-alt text-secondary"></i>
