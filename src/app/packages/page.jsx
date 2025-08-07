@@ -102,18 +102,18 @@ const PriceRangeSlider = () => {
   return (
     <div className="mb-4">
       <h6 className="fw-semibold mb-3 d-flex align-items-center">
-        <i className="fas fa-indian-rupee-sign me-2 text-primary"></i>
+        <i className="fas fa-indian-rupee-sign me-2 text-dark"></i>
         Price Range
       </h6>
       
       <div className="mb-3">
         <div className="d-flex justify-content-between align-items-center mb-2">
           <div className="d-flex align-items-center">
-            <span className="h5 fw-bold text-primary mb-0">
+            <span className="h5 fw-bold text-dark mb-0">
               {formatPrice(minPrice)}
             </span>
             <span className="mx-2 text-muted">—</span>
-            <span className="h5 fw-bold text-success mb-0">
+            <span className="h5 fw-bold text-dark mb-0">
               {formatPrice(maxPrice)}
             </span>
           </div>
@@ -130,7 +130,7 @@ const PriceRangeSlider = () => {
             style={{
               left: getSliderFillLeft(),
               width: getSliderFillWidth(),
-              background: 'linear-gradient(45deg, #007bff, #28a745)',
+              background: '#000000',
               transition: 'all 0.2s ease'
             }}
           />
@@ -181,7 +181,7 @@ const PriceRangeSlider = () => {
         {isDragging && (
           <>
             <div 
-              className="position-absolute translate-middle-x bg-primary text-white px-2 py-1 rounded shadow-sm"
+              className="position-absolute translate-middle-x bg-dark text-white px-2 py-1 rounded shadow-sm"
               style={{ 
                 left: getSliderFillLeft(),
                 top: '-35px',
@@ -193,7 +193,7 @@ const PriceRangeSlider = () => {
               {formatPrice(minPrice)}
             </div>
             <div 
-              className="position-absolute translate-middle-x bg-success text-white px-2 py-1 rounded shadow-sm"
+              className="position-absolute translate-middle-x bg-dark text-white px-2 py-1 rounded shadow-sm"
               style={{ 
                 left: `calc(${getSliderFillLeft()} + ${getSliderFillWidth()})`,
                 top: '-35px',
@@ -269,127 +269,131 @@ const Packages = () => {
 
       <div className="container py-5">
         <div className="text-center mb-5">
-          <h2 className="fw-bold display-5 mb-3 text-light">Discover the Grand Canyon</h2>
-          <p className="lead text-light">Explore our curated selection of unforgettable adventures</p>
+          <h2 className="fw-bold display-5 text-white mb-3">Discover the Grand Canyon</h2>
+          <p className="text-white">Explore our curated selection of unforgettable adventures</p>
         </div>
         
         <div className="row">
           <div className="col-lg-3 mb-4">
-            <div className="border p-4 rounded-3 mb-4 bg-light">
-              <h5 className="fw-bold mb-3 text-dark">Refine Your Search</h5>
-              <hr className="my-3" />
-              
-              <div className="mb-4">
-                <h6 className="fw-semibold mb-3">Product Type</h6>
-                <div className="form-check mb-2">
-                  <input className="form-check-input" type="checkbox" id="vacation" />
-                  <label className="form-check-label d-flex align-items-center" htmlFor="vacation">
-                    <span className="ms-2 text-dark">Vacation Packages</span>
-                  </label>
+            <div className="card border-light shadow-sm mb-4">
+              <div className="card-body">
+                <h5 className="card-title fw-bold mb-3">Refine Your Search</h5>
+                <hr className="my-3" />
+                
+                <div className="mb-4">
+                  <h6 className="fw-semibold mb-3">Product Type</h6>
+                  <div className="form-check mb-2">
+                    <input className="form-check-input" type="checkbox" id="vacation" />
+                    <label className="form-check-label" htmlFor="vacation">
+                      Vacation Packages
+                    </label>
+                  </div>
+                  <div className="form-check mb-2">
+                    <input className="form-check-input" type="checkbox" id="dayTrips" />
+                    <label className="form-check-label" htmlFor="dayTrips">
+                      Day Trips
+                    </label>
+                  </div>
+                  <div className="form-check mb-2">
+                    <input className="form-check-input" type="checkbox" id="thingsToDo" />
+                    <label className="form-check-label" htmlFor="thingsToDo">
+                      Things to Do
+                    </label>
+                  </div>
+                  <div className="form-check">
+                    <input className="form-check-input" type="checkbox" id="cruises" />
+                    <label className="form-check-label" htmlFor="cruises">
+                      Cruises
+                    </label>
+                  </div>
                 </div>
-                <div className="form-check mb-2">
-                  <input className="form-check-input" type="checkbox" id="dayTrips" />
-                  <label className="form-check-label d-flex align-items-center" htmlFor="dayTrips">
-                    <span className="ms-2 text-dark">Day Trips</span>
-                  </label>
-                </div>
-                <div className="form-check mb-2">
-                  <input className="form-check-input" type="checkbox" id="thingsToDo" />
-                  <label className="form-check-label d-flex align-items-center" htmlFor="thingsToDo">
-                    <span className="ms-2 text-dark">Things to Do</span>
-                  </label>
-                </div>
-                <div className="form-check">
-                  <input className="form-check-input" type="checkbox" id="cruises" />
-                  <label className="form-check-label d-flex align-items-center" htmlFor="cruises">
-                    <span className="ms-2 text-dark">Cruises</span>
-                  </label>
-                </div>
-              </div>
 
-              <PriceRangeSlider />
+                <PriceRangeSlider />
 
-              <div className="mb-4">
-                <h6 className="fw-semibold mb-3">Duration</h6>
-                <div className="d-flex flex-wrap gap-2">
-                  {["1D", "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "10D+"].map((label, index) => (
-                    <div key={index}>
-                      <input type="checkbox" id={`duration-${index}`} className="btn-check" />
-                      <label className="btn btn-outline-dark btn-sm" htmlFor={`duration-${index}`}>
-                        {label}
-                      </label>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mb-4">
-                <h6 className="fw-semibold mb-3">Destinations</h6>
-                <div className="search-box mb-3">
-                  <input type="text" className="form-control" placeholder="Search destinations..." />
-                </div>
-                <div className="list-group list-group-flush" style={{maxHeight: "200px", overflowY: "auto"}}>
-                  {["Hawaii", "Europe", "Caribbean", "Asia", "Australia", "Mexico", "Canada", "Alaska"].map((dest, idx) => (
-                    <div className="list-group-item border-0 px-0 py-1" key={idx}>
-                      <div className="form-check">
-                        <input className="form-check-input" type="checkbox" id={`dest-${idx}`} />
-                        <label className="form-check-label" htmlFor={`dest-${idx}`}>
-                          <i className="fas fa-globe-americas me-2" style={{color: 'var(--primary-accent)'}}></i>
-                          {dest}
+                <div className="mb-4">
+                  <h6 className="fw-semibold mb-3">Duration</h6>
+                  <div className="d-flex flex-wrap gap-2">
+                    {["1D", "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "10D+"].map((label, index) => (
+                      <div key={index}>
+                        <input type="checkbox" id={`duration-${index}`} className="btn-check" />
+                        <label className="btn btn-outline-dark btn-sm" htmlFor={`duration-${index}`}>
+                          {label}
                         </label>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              <div className="mb-4">
-                <h6 className="fw-semibold mb-3">Travel Style</h6>
-                <div className="form-check mb-2">
-                  <input className="form-check-input" type="checkbox" id="family" />
-                  <label className="form-check-label" htmlFor="family">
-                    Family Friendly
-                  </label>
+                <div className="mb-4">
+                  <h6 className="fw-semibold mb-3">Destinations</h6>
+                  <div className="mb-3">
+                    <input type="text" className="form-control" placeholder="Search destinations..." />
+                  </div>
+                  <div className="list-group list-group-flush" style={{maxHeight: "200px", overflowY: "auto"}}>
+                    {["Hawaii", "Europe", "Caribbean", "Asia", "Australia", "Mexico", "Canada", "Alaska"].map((dest, idx) => (
+                      <div className="list-group-item border-0 px-0 py-1" key={idx}>
+                        <div className="form-check">
+                          <input className="form-check-input" type="checkbox" id={`dest-${idx}`} />
+                          <label className="form-check-label" htmlFor={`dest-${idx}`}>
+                            <i className="fas fa-globe-americas me-2 text-dark"></i>
+                            {dest}
+                          </label>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="form-check mb-2">
-                  <input className="form-check-input" type="checkbox" id="luxury" />
-                  <label className="form-check-label" htmlFor="luxury">
-                    Luxury
-                  </label>
-                </div>
-                <div className="form-check mb-2">
-                  <input className="form-check-input" type="checkbox" id="adventure" />
-                  <label className="form-check-label" htmlFor="adventure">
-                    Adventure
-                  </label>
-                </div>
-                <div className="form-check">
-                  <input className="form-check-input" type="checkbox" id="romantic" />
-                  <label className="form-check-label" htmlFor="romantic">
-                    Romantic
-                  </label>
-                </div>
-              </div>
 
-              <button className="btn btn-primary btngray w-100 mt-3">Apply Filters</button>
-              <button className="btn btn-link w-100 mt-2 text-decoration-none" style={{color: 'var(--secondary-accent)'}}>Reset All Filters</button>
+                <div className="mb-4">
+                  <h6 className="fw-semibold mb-3">Travel Style</h6>
+                  <div className="form-check mb-2">
+                    <input className="form-check-input" type="checkbox" id="family" />
+                    <label className="form-check-label" htmlFor="family">
+                      Family Friendly
+                    </label>
+                  </div>
+                  <div className="form-check mb-2">
+                    <input className="form-check-input" type="checkbox" id="luxury" />
+                    <label className="form-check-label" htmlFor="luxury">
+                      Luxury
+                    </label>
+                  </div>
+                  <div className="form-check mb-2">
+                    <input className="form-check-input" type="checkbox" id="adventure" />
+                    <label className="form-check-label" htmlFor="adventure">
+                      Adventure
+                    </label>
+                  </div>
+                  <div className="form-check">
+                    <input className="form-check-input" type="checkbox" id="romantic" />
+                    <label className="form-check-label" htmlFor="romantic">
+                      Romantic
+                    </label>
+                  </div>
+                </div>
+
+                <button className="btn btn-dark w-100 mt-3">Apply Filters</button>
+                <button className="btn btn-link w-100 mt-2 text-decoration-none">Reset All Filters</button>
+              </div>
             </div>
             
-            <div className="border p-4 rounded-3" style={{backgroundColor: 'var(--dark-card)'}}>
-              <h5 className="fw-bold mb-3 text-light">Need Help?</h5>
-              <p className="small">Our travel experts are available 24/7 to help you plan your perfect trip.</p>
-              <button className="btn btn-outline-light w-100 btngray">Contact Us</button>
+            <div className="card bg-dark text-white">
+              <div className="card-body">
+                <h5 className="card-title fw-bold mb-3">Need Help?</h5>
+                <p className="card-text small">Our travel experts are available 24/7 to help you plan your perfect trip.</p>
+                <button className="btn btn-outline-light w-100">Contact Us</button>
+              </div>
             </div>
           </div>
           
           <div className="col-lg-9">
             <div className="d-flex justify-content-between align-items-center mb-4">
-              <div className="text-light">
+              <div className="text-white">
                 <span className="me-2">Showing</span>
-                <strong className="text-light">1-{travelPackages.length}</strong> of {travelPackages.length} tours
+                <strong>1-{travelPackages.length}</strong> of {travelPackages.length} tours
               </div>
               <div>
-                <select className="form-select form-select-sm bg-black text-light border border-0">
+                <select className="form-select form-select-lg rounded-pill">
                   <option>Sort by: Recommended</option>
                   <option>Price: Low to High</option>
                   <option>Price: High to Low</option>
@@ -400,71 +404,78 @@ const Packages = () => {
             </div>
             
             {travelPackages.map((pkg) => (
-              <div key={pkg.id} className="card mb-4 border-0 shadow-hover overflow-hidden">
+              <div key={pkg.id} className="card mb-4">
                 <div className="row g-0">
                   <div className="col-md-4 position-relative">
-                    <div className="position-absolute top-0 start-0 m-3 d-flex flex-column">
+                    <div className="position-absolute top-0 start-0 m-3 d-flex flex-column gap-2">
                       {pkg.tag && (
-                        <span className="badge bg-danger mb-2 px-3 py-2 shadow-sm">
+                        <span className="badge bg-danger text-white">
                           <i className="fas fa-tag me-1"></i> {pkg.tag}
                         </span>
                       )}
-                      <span className="badge bg-success px-3 py-2 shadow-sm">
+                      <span className="badge bg-dark text-white">
                         {pkg.discount}
                       </span>
                     </div>
                     <img
                       src={pkg.image}
                       alt={pkg.title}
-                      className="img-fluid w-100 h-100"
-                      style={{ objectFit: "cover", minHeight: "250px" }}
+                      className="img-fluid rounded-start h-100 object-fit-cover"
+                      style={{ minHeight: "250px" }}
                     />
                   </div>
                   <div className="col-md-8">
                     <div className="card-body h-100 d-flex flex-column">
-                      <div className="d-flex justify-content-between">
-                        <h5 className="card-title fw-bold mb-2">{pkg.title}</h5>
-                      </div>
-                      
-                      <div className="d-flex align-items-center mb-3">
-                        <div className="bg-warning text-dark px-2 py-1 rounded d-flex align-items-center me-2">
+                      <div className="d-flex justify-content-between align-items-start mb-2">
+                        <h5 className="card-title fw-bold mb-0">{pkg.title}</h5>
+                        <div className="d-flex align-items-center bg-warning text-dark px-2 py-1 rounded">
                           <i className="fas fa-star me-1"></i>
                           <span>{pkg.rating}</span>
+                          <span className="ms-1 small">({pkg.reviews})</span>
                         </div>
-                        <span className="small text-dark">({pkg.reviews} reviews)</span>
                       </div>
                       
-                      <ul className="small ps-3 mb-3">
-                        {pkg.highlights.map((highlight, index) => (
-                          <li key={index} className="mb-1">{highlight}</li>
-                        ))}
-                      </ul>
+                      <div className="mb-3">
+                        <ul className="list-unstyled mb-0">
+                          {pkg.highlights.map((highlight, index) => (
+                            <li key={index} className="mb-1">
+                              <i className="fas fa-check-circle text-dark me-2"></i>
+                              {highlight}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                       
                       <div className="mt-auto">
                         <div className="d-flex justify-content-between align-items-center mb-3">
-                          <div>
-                            <span className="me-2 text-dark"><i className="fas fa-map-marker-alt me-1" style={{color: 'black'}}></i>From:</span>
+                          <div className="text-muted">
+                            <i className="fas fa-map-marker-alt me-1"></i>
+                            <span>From: </span>
                             <strong>{pkg.from}</strong>
                           </div>
-                          <div>
-                            <i className="fas fa-calendar-alt me-1" style={{color: 'black'}}></i>
-                            <span className="text-dark">{pkg.duration}</span>
+                          <div className="text-muted">
+                            <i className="fas fa-clock me-1"></i>
+                            <span>{pkg.duration}</span>
                           </div>
                         </div>
                         
                         <div className="d-flex justify-content-between align-items-center">
                           <div>
-                            <span className="text-decoration-line-through me-2 text-dark">
+                            <span className="text-decoration-line-through text-muted me-2">
                               ₹{pkg.originalPrice.toFixed(2)}
                             </span>
-                            <span className="fw-bold text-danger fs-4">
+                            <span className="fw-bold text-dark fs-4">
                               ₹{pkg.price.toFixed(2)}
                             </span>
-                            <span className="small ms-2 text-dark">per person</span>
+                            <span className="text-muted ms-2 small">per person</span>
                           </div>
                           <div className="d-flex gap-2">
-                            <button className="btn btn-primary btngray">Quick View</button>
-                            <button className="btn btn-primary btngray">Book Now</button>
+                            <button className="btn btn-outline-dark">
+                              <i className="fas fa-eye me-1"></i> View
+                            </button>
+                            <button className="btn btn-dark">
+                              <i className="fas fa-shopping-cart me-1"></i> Book Now
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -477,24 +488,24 @@ const Packages = () => {
             <nav aria-label="Pagination">
               <ul className="pagination justify-content-center">
                 <li className="page-item">
-                  <a className="page-link bg-dark border-dark text-white" href="#" aria-label="Previous">
+                  <a className="page-link" href="#" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                   </a>
                 </li>
                 <li className="page-item">
-                  <a className="page-link bg-dark border-dark text-white" href="#">1</a>
+                  <a className="page-link" href="#">1</a>
                 </li>
                 <li className="page-item active">
-                  <a className="page-link bg-light border-primary text-dark" href="#">2</a>
+                  <a className="page-link bg-dark text-white" href="#">2</a>
                 </li>
                 <li className="page-item">
-                  <a className="page-link bg-dark border-dark text-white" href="#">3</a>
+                  <a className="page-link" href="#">3</a>
                 </li>
                 <li className="page-item">
-                  <a className="page-link bg-dark border-dark text-white" href="#">4</a>
+                  <a className="page-link" href="#">4</a>
                 </li>
                 <li className="page-item">
-                  <a className="page-link bg-dark border-dark text-white" href="#" aria-label="Next">
+                  <a className="page-link" href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                   </a>
                 </li>
