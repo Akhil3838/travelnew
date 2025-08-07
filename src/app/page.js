@@ -581,7 +581,7 @@ export default function Home() {
 <section className="standard-packages py-4 overflow-hidden">
   <div className="container px-0 px-sm-3">
     <div className="section-header text-center mb-4 px-3">
-      <h2 className="display-5 text-white fw-bold mb-3">Hot Selling Packages</h2>
+      <h2 className="display-5 text-white fw-bold mb-3">Top Ten Tour</h2>
       <p className='lead  text-light'>Most popular deals booked by travelers</p>
     </div>
 
@@ -749,7 +749,7 @@ export default function Home() {
 <section className="adventure-destinations py-4 overflow-hidden">
   <div className="container px-0 px-sm-3">
     <div className="section-header text-center mb-4 px-3">
- <h2 className="display-5 text-white fw-bold mb-3">Thrill Seekers Paradise</h2>
+ <h2 className="display-5 text-white fw-bold mb-3">Top Ten Trek</h2>
       <p className="lead  text-light ">Discover heart-pounding experiences in the worlds most exciting destinations</p>    </div>
 
     <div className="row g-3 flex-nowrap flex-sm-wrap overflow-x-auto pb-2 px-2 mx-0 scroll-hide" style={{scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch'}}>
@@ -886,7 +886,7 @@ export default function Home() {
 <section className="social-stories py-5 bg-dark">
   <div className="container">
     <div className="section-header text-center mb-5">
-      <h2 className="display-5 fw-bold mb-3 text-white">#AdventureUnfiltered</h2>
+      <h2 className="display-5 fw-bold mb-3 text-white">Honeymoon Package</h2>
       <p className="lead text-light opacity-75">Raw moments from our global adventures</p>
     </div>
 
