@@ -239,6 +239,7 @@ export default function Home() {
         <input
           type="date"
           className="form-control text-dark border-0 bg-transparent"
+          style={{ backgroundColor: '#fff', color: '#000' }} 
         />
       </div>
     </div>
