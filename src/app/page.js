@@ -233,12 +233,12 @@ export default function Home() {
     <div className="d-flex flex-column flex-grow-1 me-3">
       {/* <small className="text-muted ms-5">Date</small> */}
       <div className="input-group">
-        <span className="input-group-text bg-transparent border-0">
+        <span className="input-group-text  border-0">
           <i className="fas fa-map-date-alt text-secondary"></i>
         </span>
         <input
           type="date"
-          className="form-control border-0 bg-transparent"
+          className="form-control text-dark border-0 bg-transparent"
         />
       </div>
     </div>
