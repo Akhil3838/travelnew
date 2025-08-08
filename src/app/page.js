@@ -230,20 +230,19 @@ export default function Home() {
     </div>
 
     {/* Search Advanced */}
-    <div className="d-flex flex-column flex-grow-1 me-3">
-      {/* <small className="text-muted ms-5">Date</small> */}
-      <div className="input-group">
-        <span className="input-group-text  border-0">
-          <i className="fas fa-map-date-alt text-secondary"></i>
-        </span>
-        <input
-          type="date"
-          className="form-control border-0"
-          style={{  color: 'black' }} 
-        />
-      </div>
-    </div>
-
+<div className="d-flex flex-column flex-grow-1 me-3">
+  {/* <small className="text-muted ms-2 mb-1">To Date</small> */}
+  <div className="input-group">
+    <span className="input-group-text border-0 bg-white">
+      <i className="fas fa-calendar-alt text-secondary"></i> {/* Correct icon class */}
+    </span>
+    <input
+      type="date"
+      className="form-control border-0"
+      style={{ backgroundColor: '#fff', color: '#000' }}
+    />
+  </div>
+</div>
     {/* Search Button */}
     <div>
       <button
