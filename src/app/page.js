@@ -236,11 +236,14 @@ export default function Home() {
     <span className="input-group-text border-0 bg-white">
       <i className="fas fa-calendar-alt text-secondary"></i> {/* Correct icon class */}
     </span>
-    <input
-      type="date"
-      className="form-control border-0"
-      style={{ backgroundColor: '#fff', color: '#000' }}
-    />
+   <input
+  type="text"
+  className="form-control border-0"
+  placeholder="dd-mm-yyyy"
+  onFocus={(e) => (e.target.type = 'date')}
+  onBlur={(e) => e.target.value === '' && (e.target.type = 'text')}
+/>
+
   </div>
 </div>
     {/* Search Button */}
