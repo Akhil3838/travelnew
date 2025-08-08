@@ -882,11 +882,178 @@ export default function Home() {
 
     </div>  </div>
 </section>
+
+{/* Standard Hot Selling Packages - Mobile Optimized */}
+<section className="standard-packages py-4 overflow-hidden">
+  <div className="container px-0 px-sm-3">
+    <div className="section-header text-center mb-4 px-3">
+      <h2 className="display-5 text-white fw-bold mb-3">Pilgrims </h2>
+      <p className='lead  text-light'>Most popular deals booked by travelers</p>
+    </div>
+
+<div className="row g-3 flex-nowrap flex-sm-wrap overflow-x-auto pb-2 px-2 mx-0 scroll-hide" style={{scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch'}}>      {/* Package 1 */}
+      <div className="col-10 col-sm-6 col-lg-4 flex-shrink-0" style={{scrollSnapAlign: 'start'}}>
+        <div className="package-card-standard h-100 mx-2">
+          <div className="package-img-container">
+            <img 
+              src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+              alt="Bali Package" 
+              className="img-fluid w-100"
+              style={{height: '180px', objectFit: 'cover'}}
+            />
+            <div className="package-tag">BESTSELLER</div>
+          </div>
+          <div className="package-body p-3">
+            <div className="d-flex justify-content-between mb-2">
+              <span className="badge bg-info">7 Days</span>
+              <span className="text-warning">★ 4.8 (243)</span>
+            </div>
+            <h3 className="h6">Bali Premium Vacation</h3>
+            <p className="small mb-2">Private villa with pool & daily spa treatments</p>
+            
+            <div className="package-details mb-2">
+              <div className="detail-item small">
+                <i className="fas fa-plane me-1"></i>
+                <span>Flight Included</span>
+              </div>
+              <div className="detail-item small">
+                <i className="fas fa-hotel me-1"></i>
+                <span>5★ Accommodation</span>
+              </div>
+              <div className="detail-item small">
+                <i className="fas fa-utensils me-1"></i>
+                <span>Breakfast Included</span>
+              </div>
+            </div>
+            
+            <div className="d-flex justify-content-between align-items-center">
+              <div>
+                <span className="text-decoration-line-through text-light me-1 small">$1,499</span>
+                <span className="h6 text-primary">₹1,099</span>
+                <span className="badge bg-danger ms-1 small">Save 27%</span>
+              </div>
+              <button className="btn btn-sm btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Package 2 */}
+      <div className="col-10 col-sm-6 col-lg-4 flex-shrink-0" style={{scrollSnapAlign: 'start'}}>
+        <div className="package-card-standard h-100 mx-2">
+          <div className="package-img-container">
+            <img 
+              src="https://images.unsplash.com/photo-1535406208535-1429839cfd13?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+              alt="Maldives Package" 
+              className="img-fluid w-100"
+              style={{height: '180px', objectFit: 'cover'}}
+            />
+            <div className="package-tag">LUXURY</div>
+          </div>
+          <div className="package-body p-3">
+            <div className="d-flex justify-content-between mb-2">
+              <span className="badge bg-info">5 Days</span>
+              <span className="text-warning">★ 4.9 (187)</span>
+            </div>
+            <h3 className="h6">Maldives Paradise</h3>
+            <p className="small mb-2">Overwater bungalow with private beach access</p>
+            
+            <div className="package-details mb-2">
+              <div className="detail-item small">
+                <i className="fas fa-plane me-1"></i>
+                <span>Flight Included</span>
+              </div>
+              <div className="detail-item small">
+                <i className="fas fa-hotel me-1"></i>
+                <span>5★ Resort</span>
+              </div>
+              <div className="detail-item small">
+                <i className="fas fa-utensils me-1"></i>
+                <span>All Inclusive</span>
+              </div>
+            </div>
+            
+            <div className="d-flex justify-content-between align-items-center">
+              <div>
+                <span className="text-decoration-line-through text-light me-1 small">$2,299</span>
+                <span className="h6 text-primary">₹1,799</span>
+                <span className="badge bg-danger ms-1 small">Save 22%</span>
+              </div>
+              <button className="btn btn-sm btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Package 3 */}
+      <div className="col-10 col-sm-6 col-lg-4 flex-shrink-0" style={{scrollSnapAlign: 'start'}}>
+        <div className="package-card-standard h-100 mx-2">
+          <div className="package-img-container">
+            <img 
+              src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+              alt="Japan Package" 
+              className="img-fluid w-100"
+              style={{height: '180px', objectFit: 'cover'}}
+            />
+            <div className="package-tag">SEASONAL</div>
+          </div>
+          <div className="package-body p-3">
+            <div className="d-flex justify-content-between mb-2">
+              <span className="badge bg-info">10 Days</span>
+              <span className="text-warning">★ 4.7 (156)</span>
+            </div>
+            <h3 className="h6">Japan Cherry Blossom Tour</h3>
+            <p className="small mb-2">Tokyo, Kyoto, Osaka with sakura viewing</p>
+            
+            <div className="package-details mb-2">
+              <div className="detail-item small">
+                <i className="fas fa-plane me-1"></i>
+                <span>Flight Included</span>
+              </div>
+              <div className="detail-item small">
+                <i className="fas fa-hotel me-1"></i>
+                <span>4★ Hotels</span>
+              </div>
+              <div className="detail-item small">
+                <i className="fas fa-train me-1"></i>
+                <span>Bullet Train Pass</span>
+              </div>
+            </div>
+            
+            <div className="d-flex justify-content-between align-items-center">
+              <div>
+                <span className="h6 text-primary">₹2,499</span>
+              </div>
+              <button className="btn btn-sm btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div className="text-center mt-4">
+       <button className="btn view-all-btn px-4 py-2 d-flex align-items-center justify-content-center">
+    <span>View All Packages</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      className="bi bi-arrow-right ms-2"
+      viewBox="0 0 16 16"
+    >
+      <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-4.147-4.146a.5.5 0 1 1 .708-.708l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+    </svg>
+  </button>
+
+    </div>  </div>
+</section>
+
 {/* Social Stories Section - Dark Theme with Videos */}
 <section className="social-stories py-5 bg-dark">
   <div className="container">
     <div className="section-header text-center mb-5">
-      <h2 className="display-5 fw-bold mb-3 text-white">Honeymoon Package</h2>
+      <h2 className="display-5 fw-bold mb-3 text-white">#Adveture</h2>
       <p className="lead text-light opacity-75">Raw moments from our global adventures</p>
     </div>
 
@@ -1101,6 +1268,172 @@ export default function Home() {
     </div>
   </div>
 </section>
+{/* Standard Hot Selling Packages - Mobile Optimized */}
+<section className="standard-packages py-4 overflow-hidden">
+  <div className="container px-0 px-sm-3">
+    <div className="section-header text-center mb-4 px-3">
+      <h2 className="display-5 text-white fw-bold mb-3">Honeymoon Packages</h2>
+      <p className='lead  text-light'>Most popular deals booked by travelers</p>
+    </div>
+
+<div className="row g-3 flex-nowrap flex-sm-wrap overflow-x-auto pb-2 px-2 mx-0 scroll-hide" style={{scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch'}}>      {/* Package 1 */}
+      <div className="col-10 col-sm-6 col-lg-4 flex-shrink-0" style={{scrollSnapAlign: 'start'}}>
+        <div className="package-card-standard h-100 mx-2">
+          <div className="package-img-container">
+            <img 
+              src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+              alt="Bali Package" 
+              className="img-fluid w-100"
+              style={{height: '180px', objectFit: 'cover'}}
+            />
+            <div className="package-tag">BESTSELLER</div>
+          </div>
+          <div className="package-body p-3">
+            <div className="d-flex justify-content-between mb-2">
+              <span className="badge bg-info">7 Days</span>
+              <span className="text-warning">★ 4.8 (243)</span>
+            </div>
+            <h3 className="h6">Bali Premium Vacation</h3>
+            <p className="small mb-2">Private villa with pool & daily spa treatments</p>
+            
+            <div className="package-details mb-2">
+              <div className="detail-item small">
+                <i className="fas fa-plane me-1"></i>
+                <span>Flight Included</span>
+              </div>
+              <div className="detail-item small">
+                <i className="fas fa-hotel me-1"></i>
+                <span>5★ Accommodation</span>
+              </div>
+              <div className="detail-item small">
+                <i className="fas fa-utensils me-1"></i>
+                <span>Breakfast Included</span>
+              </div>
+            </div>
+            
+            <div className="d-flex justify-content-between align-items-center">
+              <div>
+                <span className="text-decoration-line-through text-light me-1 small">$1,499</span>
+                <span className="h6 text-primary">₹1,099</span>
+                <span className="badge bg-danger ms-1 small">Save 27%</span>
+              </div>
+              <button className="btn btn-sm btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Package 2 */}
+      <div className="col-10 col-sm-6 col-lg-4 flex-shrink-0" style={{scrollSnapAlign: 'start'}}>
+        <div className="package-card-standard h-100 mx-2">
+          <div className="package-img-container">
+            <img 
+              src="https://images.unsplash.com/photo-1535406208535-1429839cfd13?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+              alt="Maldives Package" 
+              className="img-fluid w-100"
+              style={{height: '180px', objectFit: 'cover'}}
+            />
+            <div className="package-tag">LUXURY</div>
+          </div>
+          <div className="package-body p-3">
+            <div className="d-flex justify-content-between mb-2">
+              <span className="badge bg-info">5 Days</span>
+              <span className="text-warning">★ 4.9 (187)</span>
+            </div>
+            <h3 className="h6">Maldives Paradise</h3>
+            <p className="small mb-2">Overwater bungalow with private beach access</p>
+            
+            <div className="package-details mb-2">
+              <div className="detail-item small">
+                <i className="fas fa-plane me-1"></i>
+                <span>Flight Included</span>
+              </div>
+              <div className="detail-item small">
+                <i className="fas fa-hotel me-1"></i>
+                <span>5★ Resort</span>
+              </div>
+              <div className="detail-item small">
+                <i className="fas fa-utensils me-1"></i>
+                <span>All Inclusive</span>
+              </div>
+            </div>
+            
+            <div className="d-flex justify-content-between align-items-center">
+              <div>
+                <span className="text-decoration-line-through text-light me-1 small">$2,299</span>
+                <span className="h6 text-primary">₹1,799</span>
+                <span className="badge bg-danger ms-1 small">Save 22%</span>
+              </div>
+              <button className="btn btn-sm btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Package 3 */}
+      <div className="col-10 col-sm-6 col-lg-4 flex-shrink-0" style={{scrollSnapAlign: 'start'}}>
+        <div className="package-card-standard h-100 mx-2">
+          <div className="package-img-container">
+            <img 
+              src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+              alt="Japan Package" 
+              className="img-fluid w-100"
+              style={{height: '180px', objectFit: 'cover'}}
+            />
+            <div className="package-tag">SEASONAL</div>
+          </div>
+          <div className="package-body p-3">
+            <div className="d-flex justify-content-between mb-2">
+              <span className="badge bg-info">10 Days</span>
+              <span className="text-warning">★ 4.7 (156)</span>
+            </div>
+            <h3 className="h6">Japan Cherry Blossom Tour</h3>
+            <p className="small mb-2">Tokyo, Kyoto, Osaka with sakura viewing</p>
+            
+            <div className="package-details mb-2">
+              <div className="detail-item small">
+                <i className="fas fa-plane me-1"></i>
+                <span>Flight Included</span>
+              </div>
+              <div className="detail-item small">
+                <i className="fas fa-hotel me-1"></i>
+                <span>4★ Hotels</span>
+              </div>
+              <div className="detail-item small">
+                <i className="fas fa-train me-1"></i>
+                <span>Bullet Train Pass</span>
+              </div>
+            </div>
+            
+            <div className="d-flex justify-content-between align-items-center">
+              <div>
+                <span className="h6 text-primary">₹2,499</span>
+              </div>
+              <button className="btn btn-sm btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div className="text-center mt-4">
+       <button className="btn view-all-btn px-4 py-2 d-flex align-items-center justify-content-center">
+    <span>View All Packages</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      className="bi bi-arrow-right ms-2"
+      viewBox="0 0 16 16"
+    >
+      <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-4.147-4.146a.5.5 0 1 1 .708-.708l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+    </svg>
+  </button>
+
+    </div>  </div>
+</section>
+
 {/* footer */}
 <footer className="bg-dark text-white pt-5 pb-4">
        <div className="header-bottom-line my-5" style={{ height: '2px', background: 'white', opacity: 0.1 }}></div>
