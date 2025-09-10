@@ -821,3 +821,7 @@ select.form-select:focus {
   .border-secondary {
     border-color: #333 !important;
   }
+
+  .description-container * {
+  color: white !important;
+}
