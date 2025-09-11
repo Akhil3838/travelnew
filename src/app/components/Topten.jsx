@@ -38,20 +38,22 @@ function Topten() {
             >
               <div className="package-card-standard h-100 mx-2">
                 {/* Image Section */}
-                <div className="package-img-container position-relative">
-                  <img
-                    src={pkg.packimages?.[0]?.image || '/default-image.jpg'}
-                    alt={pkg.package_title}
-                    className="img-fluid w-100"
-                    style={{ height: '180px', objectFit: 'cover' }}
-                  />
-                  {pkg.add_badge_status === 'yes' && (
-                    <div className="package-tag">
-                      {pkg.badge?.title || 'FEATURED'}
-                    </div>
-                  )}
-                </div>
-
+<Link href={`/package/${pkg.slug}`}>
+                  <div className="package-img-container position-relative">
+                    <img
+                      src={pkg.packimages?.[0]?.image || '/default-image.jpg'}
+                      alt={pkg.package_title}
+                      className="img-fluid w-100"
+                      style={{ height: '180px', objectFit: 'cover' }}
+                    />
+                    {pkg.add_badge_status === 'yes' && (
+                      <div className="package-tag">
+                        {pkg.badge?.title || 'FEATURED'}
+                      </div>
+                    )}
+                  </div>
+  
+</Link>
                 {/* Body Section */}
                 <div className="package-body p-3">
                   <div className="d-flex justify-content-between mb-2">
@@ -92,9 +94,7 @@ function Topten() {
                         <span className="h6 text-primary">₹{pkg.price}</span>
                       )}
                     </div>
-                    <Link href={`/packageDetails/${pkg.slug}`}>
                       <button className="btn btn-sm btn-primary">Book Now</button>
-                    </Link>
                   </div>
                 </div>
               </div>

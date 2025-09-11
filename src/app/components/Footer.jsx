@@ -33,10 +33,10 @@ function Footer() {
             </p>
             <div className="social-icons d-flex gap-3">
               <a href={`${Links[1]?.value}`} className="text-white fs-5"><i className="fab fa-facebook-f"></i></a>
-              <a href="#" className="text-white fs-5"><i className="fab fa-twitter"></i></a>
+              <a href="#" className="text-white fs-5"> <i className="fab fa-youtube"></i></a>
               <a href={`${Links[0]?.value}`} className="text-white fs-5"><i className="fab fa-instagram"></i></a>
-              <a href="#" className="text-white fs-5"><i className="fab fa-linkedin-in"></i></a>
-              <a href="#" className="text-white fs-5"><i className="fab fa-pinterest-p"></i></a>
+              {/* <a href="#" className="text-white fs-5"><i className="fab fa-linkedin-in"></i></a> */}
+              {/* <a href="#" className="text-white fs-5"><i className="fab fa-pinterest-p"></i></a> */}
             </div>
           </div>
     
