@@ -4,6 +4,7 @@ import FilterSidebar from "../components/FilterSidebar";
 import PackageList from "../components/PackageList";
 import { getAllPackages } from "../services/allApi";
 import Link from "next/link";
+import Footer from "../components/Footer";
 
 const Packages = () => {
   const [travelPackages, setTravelPackages] = useState([]);
@@ -80,6 +81,8 @@ const Packages = () => {
           
         </div>
       </div>
+
+<Footer/>
     </>
   );
 };

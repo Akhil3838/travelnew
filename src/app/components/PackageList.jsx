@@ -52,10 +52,10 @@ const PackageList = ({ packages, totalpage, onPageChange }) => {
             return (
               <li
                 key={pageNum}
-                className={`page-item ${currentPage === pageNum ? "active" : ""}`}
+                className={`page-item text-dark ${currentPage === pageNum ? "active" : ""}`}
               >
                 <button
-                  className="page-link"
+                  className="page-link "
                   onClick={() => handlePageClick(pageNum)}
                 >
                   {pageNum}

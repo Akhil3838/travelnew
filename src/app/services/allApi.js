@@ -72,3 +72,7 @@ export const getNewPkg=async()=>{
 export const searchPackageApi =async(search)=>{
     return await commonApi('GET',`${serverUrl}/search-package?search=${search}`,"","")
 }
+
+export const socialLinksApi =async()=>{
+    return await commonApi('GET',`${serverUrl}/get-allData`,"","")
+}
