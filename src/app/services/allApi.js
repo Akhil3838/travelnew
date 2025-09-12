@@ -40,7 +40,7 @@ export const getSinglePackages=async(id)=>{
 
 // Trending packages
 export const getTrendingPkg=async()=>{
-    return await commonApi('GET',`${serverUrl}/get-trendingpackages`,"","")
+    return await commonApi('GET',`${serverUrl}/get-trendingDestination`,"","")
 }
 
 // get filter datas
@@ -65,7 +65,7 @@ export const saveEnquery=async(reqBody)=>{
 
 // Trending packages
 export const getNewPkg=async()=>{
-    return await commonApi('GET',`${serverUrl}/get-newpackages`,"","")
+    return await commonApi('GET',`${serverUrl}/get-top-tours`,"","")
 }
 
 //search packages
@@ -75,4 +75,16 @@ export const searchPackageApi =async(search)=>{
 
 export const socialLinksApi =async()=>{
     return await commonApi('GET',`${serverUrl}/get-allData`,"","")
+}
+
+export const getTrekPkg=async()=>{
+    return await commonApi('GET',`${serverUrl}/get-top-trecking`,"","")
+}
+
+export const getPilgrimPkg=async()=>{
+    return await commonApi('GET',`${serverUrl}/get-pilgrims`,"","")
+}
+
+export const getHonymoonPkg=async()=>{
+    return await commonApi('GET',`${serverUrl}/get-honeymoon-packages`,"","")
 }
