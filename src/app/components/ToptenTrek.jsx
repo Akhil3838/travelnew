@@ -25,7 +25,7 @@ function ToptenTrek() {
           <div className="adventure-card h-100 mx-2">
             <div className="adventure-img-container">
               <img
-                src={pkg?.thumbnails?.[0] || "https://via.placeholder.com/300x180"} 
+                src={pkg.packimages?.[0]?.image  || "https://via.placeholder.com/300x180"} 
                 alt={pkg.package_title}
                 className="img-fluid w-100"
                 style={{ height: '180px', objectFit: 'cover' }}

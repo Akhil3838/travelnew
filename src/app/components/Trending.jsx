@@ -39,7 +39,7 @@ console.log(trendingPackages);
                       <div className="location-card">
                         <div className="location-image-container">
                           <img
-                            src={pkg.packimages?.[0]?.image || "https://via.placeholder.com/500x300?text=No+Image"}
+                            src={pkg.thumbnails?.[0]?.image}
                             alt={pkg.package_title}
                             className="location-image"
                           />
