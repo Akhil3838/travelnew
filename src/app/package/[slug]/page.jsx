@@ -363,9 +363,9 @@ const PackageDetails = () => {
               {/* Right Column - Booking Widget */}
               <div className="col-lg-4">
                 <div className="sticky-top" style={{ top: "20px" }}>
-                  <div className="card border-secondary bg-gray-800 mb-2">
+                  <div className="card border-secondary bg-dark mb-2">
               <div className="card-body">
-                <h4 className="fw-bold mb-3">Enquiry Form</h4>
+                <h4 className="fw-bold mb-3 text-white">Book This Tour</h4>
     
               <BookingForm packageId={details?.id}/>
     
@@ -386,15 +386,17 @@ const PackageDetails = () => {
               <div className="card h-100 border-0 shadow-sm">
                 <div className="row g-0 h-100">
                   <div className="col-md-5">
-                    <img
-                      src={
-                        pkg.thumbnails?.[0]?.image ??
-                        "https://via.placeholder.com/300x200"
-                      }
-                      alt={pkg.package_title}
-                      className="img-fluid rounded-start h-100"
-                      style={{ objectFit: "cover" }}
-                    />
+                   <Link href={`/package/${pkg.slug}`}>
+                      <img
+                        src={
+                          pkg.thumbnails?.[0]?.image ??
+                          "https://via.placeholder.com/300x200"
+                        }
+                        alt={pkg.package_title}
+                        className="img-fluid rounded-start h-100"
+                        style={{ objectFit: "cover" }}
+                      />
+                   </Link>
                   </div>
                   <div className="col-md-7">
                     <div className="card-body d-flex flex-column h-100">

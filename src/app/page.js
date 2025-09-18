@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import ToptenTrek from "./components/ToptenTrek";
 import Pilgrims from "./components/Pilgrims";
 import Honeymoon from "./components/Honeymoon";
+import Link from "next/link";
 
 export default function Home() {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -392,22 +393,25 @@ export default function Home() {
       {/* Destination 2 */}
     </div>
 
-<div className="text-center mt-4">
-       <button className="btn view-all-btn px-4 py-2 d-flex align-items-center justify-content-center">
-    <span>View All Packages</span>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      fill="currentColor"
-      className="bi bi-arrow-right ms-2"
-      viewBox="0 0 16 16"
-    >
-      <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-4.147-4.146a.5.5 0 1 1 .708-.708l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-    </svg>
-  </button>
-
-    </div>  </div>
+  <Link href="/packages" style={{ textDecoration: 'none' }}>
+  <div className="text-center mt-4">
+         <button className="btn view-all-btn px-4 py-2 d-flex align-items-center justify-content-center">
+      <span>View All Packages</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        className="bi bi-arrow-right ms-2"
+        viewBox="0 0 16 16"
+      >
+        <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-4.147-4.146a.5.5 0 1 1 .708-.708l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+      </svg>
+    </button>
+  
+      </div>
+  
+</Link>      </div>
 </section>
 
 {/* Standard Hot Selling Packages - Mobile Optimized */}
@@ -423,22 +427,26 @@ export default function Home() {
       {/* Package 2 */}
     </div>
 
-<div className="text-center mt-4">
-       <button className="btn view-all-btn px-4 py-2 d-flex align-items-center justify-content-center">
-    <span>View All Packages</span>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      fill="currentColor"
-      className="bi bi-arrow-right ms-2"
-      viewBox="0 0 16 16"
-    >
-      <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-4.147-4.146a.5.5 0 1 1 .708-.708l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-    </svg>
-  </button>
-
-    </div>  </div>
+  <Link href="/packages" style={{ textDecoration: 'none' }}>
+  <div className="text-center mt-4">
+         <button className="btn view-all-btn px-4 py-2 d-flex align-items-center justify-content-center">
+      <span>View All Packages</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        className="bi bi-arrow-right ms-2"
+        viewBox="0 0 16 16"
+      >
+        <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-4.147-4.146a.5.5 0 1 1 .708-.708l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+      </svg>
+    </button>
+  
+      </div> 
+  
+</Link>    
+ </div>
 </section>
 
 {/* Social Stories Section - Dark Theme with Videos */}
@@ -674,22 +682,25 @@ export default function Home() {
   
     </div>
 
-<div className="text-center mt-4">
-       <button className="btn view-all-btn px-4 py-2 d-flex align-items-center justify-content-center">
-    <span>View All Packages</span>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      fill="currentColor"
-      className="bi bi-arrow-right ms-2"
-      viewBox="0 0 16 16"
-    >
-      <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-4.147-4.146a.5.5 0 1 1 .708-.708l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-    </svg>
-  </button>
-
-    </div>  </div>
+ <Link href="/packages" style={{ textDecoration: 'none' }}>
+  <div className="text-center mt-4">
+         <button className="btn view-all-btn px-4 py-2 d-flex align-items-center justify-content-center">
+      <span>View All Packages</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        className="bi bi-arrow-right ms-2"
+        viewBox="0 0 16 16"
+      >
+        <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-4.147-4.146a.5.5 0 1 1 .708-.708l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 1 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+      </svg>
+    </button>
+  
+      </div> 
+  
+</Link>     </div>
 </section>
 
 {/* footer */}

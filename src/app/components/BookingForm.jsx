@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { saveEnquery } from '../services/allApi';
+import toast from 'react-hot-toast';
 
 
 function BookingForm({ packageId }) {
@@ -37,7 +38,7 @@ console.log(formData);
 
       const result = await saveEnquery(fd);
       console.log("Enquiry saved:", result);
-      alert("Enquiry submitted successfully!");
+ toast.success('✅ Booking Successful!');
     } catch (error) {
       console.error('Error saving enquiry:', error);
       alert("Failed to submit enquiry");
@@ -46,10 +47,10 @@ console.log(formData);
 
   return (
     <>
-             <form onSubmit={handleSubmit}>
+             <form onSubmit={handleSubmit} >
               {/* Name */}
               <div className="mb-3">
-                <label className="form-label">Name:</label>
+                <label className="form-label text-white">Name:</label>
                 <input
                   type="text"
                   name="name"
@@ -63,7 +64,7 @@ console.log(formData);
 
               {/* Email ID */}
               <div className="mb-3">
-                <label className="form-label">Email ID:</label>
+                <label className="form-label text-white">Email ID:</label>
                 <input
                   type="email"
                   name="email_id"
@@ -77,7 +78,7 @@ console.log(formData);
 
               {/* Phone Number */}
               <div className="mb-3">
-                <label className="form-label">Phone Number:</label>
+                <label className="form-label text-white">Phone Number:</label>
                 <input
                   type="tel"
                   name="phone_number"
@@ -91,7 +92,7 @@ console.log(formData);
 
               {/* Country */}
               <div className="mb-3">
-                <label className="form-label">Country:</label>
+                <label className="form-label text-white">Country:</label>
                 <input
                   type="text"
                   name="country"
@@ -105,7 +106,7 @@ console.log(formData);
 
               {/* Number of Persons */}
               <div className="mb-3">
-                <label className="form-label">Number of Persons:</label>
+                <label className="form-label text-white">Number of Persons:</label>
                 <select
                   name="number_of_persons"
                   value={formData.number_of_persons}
@@ -121,7 +122,7 @@ console.log(formData);
 
               {/* Lead Traveller */}
               <div className="mb-3">
-                <label className="form-label">Lead Traveller:</label>
+                <label className="form-label text-white">Lead Traveller:</label>
                 <input
                   type="text"
                   name="lead_traveller"
@@ -135,7 +136,7 @@ console.log(formData);
 
               {/* Message Box */}
               <div className="mb-3">
-                <label className="form-label">Message:</label>
+                <label className="form-label text-white">Message:</label>
                 <textarea
                   name="message_box"
                   value={formData.message_box}
@@ -149,7 +150,7 @@ console.log(formData);
 
               {/* Booking Date */}
               <div className="mb-3">
-                <label className="form-label">Booking Date:</label>
+                <label className="form-label text-white">Booking Date:</label>
                 <input
                   type="date"
                   name="booking_date"
@@ -161,7 +162,7 @@ console.log(formData);
               </div>
 
               {/* Submit Button */}
-              <button type="submit" className="btn btn-black bg-dark text-light w-100 fw-bold py-3 rounded-pill shadow-sm">
+              <button type="submit" className="btn btn-black border bg-dark text-light w-100 fw-bold py-3 rounded-pill shadow-sm">
                 Book Now
               </button>
             </form>

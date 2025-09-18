@@ -59,7 +59,7 @@ export const getCategories=async()=>{
 
 export const saveEnquery=async(reqBody)=>{
     
-    return await commonApi('POST',`${serverUrl}/save-enquiry`,reqBody,"")
+    return await commonApi('POST',`${serverUrl}/save-planbooking`,reqBody,"")
 }
 // new packages
 

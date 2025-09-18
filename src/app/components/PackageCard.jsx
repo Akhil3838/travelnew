@@ -60,12 +60,14 @@ const PackageCard = ({ pkg = {} }) => {
                 </span>
               )}
                     </div>
-                    <img
-                       src={imageUrl}
-              alt={package_title}
-                      className="img-fluid rounded-start h-100 object-fit-cover"
-                      style={{ minHeight: "250px" }}
-                    />
+                           <Link href={`/package/${slug}`}>
+                      <img
+                         src={imageUrl}
+                alt={package_title}
+                        className="img-fluid rounded-start h-100 object-fit-cover"
+                        style={{ minHeight: "250px" }}
+                      />
+                   </Link>
                   </div>
                   <div className="col-md-8">
                     <div className="card-body h-100 d-flex flex-column">
