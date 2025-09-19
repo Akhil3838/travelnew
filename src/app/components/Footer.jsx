@@ -1,6 +1,7 @@
 'use client'
 import React, {  useEffect, useState } from 'react'
 import { socialLinksApi } from '../services/allApi'
+import Link from 'next/link'
 
 function Footer() {
         const[Links,setLinks]=useState([])
@@ -29,7 +30,7 @@ function Footer() {
               <span className="logo-text fs-4 fw-bold">GoWonder</span>
             </div>
             <p className=" mb-4">
-              Discover the world with GoWonder. We create unforgettable travel experiences tailored just for you.
+             {Links[11]?.value}
             </p>
             <div className="social-icons d-flex gap-3">
               <a href={`${Links[1]?.value}`} className="text-white fs-5"><i className="fab fa-facebook-f"></i></a>
@@ -70,11 +71,11 @@ function Footer() {
             <ul className="list-unstyled text-muted">
               <li className="mb-3 d-flex align-items-start">
                 <i className="fas fa-map-marker-alt me-3 mt-1"></i>
-                <span>123 Travel Street, Wanderlust City, WC 12345</span>
+                <span>{Links[9]?.value}</span>
               </li>
               <li className="mb-3 d-flex align-items-center">
                 <i className="fas fa-phone-alt me-3"></i>
-                <span>+1 (555) 123-4567</span>
+                <span>{Links[10]?.value}</span>
               </li>
               <li className="mb-3 d-flex align-items-center">
                 <i className="fas fa-envelope me-3"></i>

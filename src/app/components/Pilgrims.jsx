@@ -70,8 +70,10 @@ function Pilgrims() {
                     </span>
                   )}
                 </div>
-                <button className="btn btn-sm btn-primary">Book Now</button>
-              </div>
+<Link href={`/package/${pkg.slug}`}>
+                  <button className="btn btn-sm btn-primary">Book Now</button>
+  
+</Link>              </div>
             </div>
           </div>
         </div>
