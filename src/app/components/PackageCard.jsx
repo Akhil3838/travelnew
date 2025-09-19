@@ -125,10 +125,12 @@ const PackageCard = ({ pkg = {} }) => {
                                   <i className="fas fa-eye me-1"></i> View
                                 </button>
                            </Link>
-                            <button className="btn btn-dark">
-                              <i className="fas fa-shopping-cart me-1"></i> Book Now
-                            </button>
-                          </div>
+<Link href={`/package/${slug}`}>
+                              <button className="btn btn-dark">
+                                <i className="fas fa-shopping-cart me-1"></i> Book Now
+                              </button>
+  
+</Link>                          </div>
                         </div>
                       </div>
                     </div>
