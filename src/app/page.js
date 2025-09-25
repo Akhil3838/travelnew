@@ -395,9 +395,9 @@ export default function Home() {
         No Chemical Process)
       </h3>
       <p>
-        In today’s fast-paced world, where health and food choices go hand-in-hand,
+        In todays fast-paced world, where health and food choices go hand-in-hand,
         selecting the right cooking oil has become increasingly challenging. With
-        endless options available in the market, it’s essential to make an informed
+        endless options available in the market, its essential to make an informed
         choice — one that not only meets your daily nutritional needs but also
         supports your long-term health and well-being.
       </p>
@@ -896,7 +896,7 @@ export default function Home() {
             <div className="col-lg-4 col-md-6 mb-4">
               <div className="review-card">
                 <div className="review-text">
-                  "Dear Swan Tours We are indeed grateful to you for having arranged our fantastic tour to Jodhpur and Jasalmer...Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours."
+                   &quot;Dear Swan Tours We are indeed grateful to you for having arranged our fantastic tour to Jodhpur and Jasalmer...Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours &quot;
                 </div>
                 <img
                   src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
@@ -914,7 +914,7 @@ export default function Home() {
             <div className="col-lg-4 col-md-6 mb-4">
               <div className="review-card">
                 <div className="review-text">
-                  "It was such a delightful experience! Everything was organized perfectly. Stress-free trip thanks to your team.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours."
+                  &quot;It was such a delightful experience! Everything was organized perfectly. Stress-free trip thanks to your team.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours. &quot;
                 </div>
                 <img
                   src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face"
@@ -932,7 +932,7 @@ export default function Home() {
             <div className="col-lg-4 col-md-6 mb-4">
               <div className="review-card">
                 <div className="review-text">
-                  "One of the best travel experiences we have had. The service was excellent and we look forward to booking again!vOur family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours."
+                  &quot;One of the best travel experiences we have had. The service was excellent and we look forward to booking again!vOur family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours. &quot;
                 </div>
                 <img
                   src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=150&h=150&fit=crop&crop=face"
@@ -955,7 +955,7 @@ export default function Home() {
             <div className="col-lg-4 col-md-6 mb-4">
               <div className="review-card">
                 <div className="review-text">
-                  "Our honeymoon trip was magical! Swan Tours planned everything seamlessly. Thank you for the beautiful memories.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours."
+                   &quot;Our honeymoon trip was magical! Swan Tours planned everything seamlessly. Thank you for the beautiful memories.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours. &quot;
                 </div>
                 <img
                   src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=150&h=150&fit=crop&crop=face"
@@ -973,7 +973,7 @@ export default function Home() {
             <div className="col-lg-4 col-md-6 mb-4">
               <div className="review-card">
                 <div className="review-text">
-                  "Professional team, timely responses, and a wonderful itinerary. Truly satisfied with Swan Tours service.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours."
+                 &quot;Professional team, timely responses, and a wonderful itinerary. Truly satisfied with Swan Tours service.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours. &quot;
                 </div>
                 <img
                   src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=150&h=150&fit=crop&crop=face"
@@ -991,7 +991,7 @@ export default function Home() {
             <div className="col-lg-4 col-md-6 mb-4">
               <div className="review-card">
                 <div className="review-text">
-                  "Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours."
+                   &quot;Our family trip was well managed, kids had fun and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours. &quot;
                 </div>
                 <img
                   src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=150&h=150&fit=crop&crop=face"
