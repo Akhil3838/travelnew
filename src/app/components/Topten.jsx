@@ -25,8 +25,8 @@ function Topten() {
     <>
       <div className="container px-0 px-sm-3">
         <div className="section-header text-center mb-4 px-3">
-          <h2 className="display-5 text-white fw-bold mb-3">Top Ten Tour</h2>
-          <p className="lead text-light">Most popular deals booked by travelers</p>
+          <h2 className="display-5 text-dark fw-bold mb-3">Top Ten Tour</h2>
+          <p className="lead text-dark">Most popular deals booked by travelers</p>
         </div>
 
         <div

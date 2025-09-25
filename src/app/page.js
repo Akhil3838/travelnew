@@ -372,6 +372,48 @@ export default function Home() {
 </section>
 {/* hot selling packages */}
 
+{/* about section */}
+
+<section className="about-section container">
+  <div className="row align-items-center">
+    {/* Left Image */}
+    <div className="col-lg-6 mb-4 mb-lg-0">
+      <div className="about-img">
+        <img
+          src="https://media.istockphoto.com/id/2147497907/photo/young-woman-traveler-relaxing-and-enjoying-the-tropical-sea-while-traveling-for-summer.jpg?s=612x612&w=0&k=20&c=iY2aqFsXX9Hzq_KwAZhy3ug74z0y7KHxUc_msPHyKzU="
+          alt="About Us"
+          className="img-fluid"
+        />
+      </div>
+    </div>
+
+    {/* Right Content */}
+    <div className="col-lg-6 about-content">
+      <h5>About Us</h5>
+      <h3>
+        We Extract Pure Cold & Wood Press Edible Oil (100% Pure, No Preservatives,
+        No Chemical Process)
+      </h3>
+      <p>
+        In today’s fast-paced world, where health and food choices go hand-in-hand,
+        selecting the right cooking oil has become increasingly challenging. With
+        endless options available in the market, it’s essential to make an informed
+        choice — one that not only meets your daily nutritional needs but also
+        supports your long-term health and well-being.
+      </p>
+
+      <button className="btn btn-custom">Know more</button>
+    </div>
+  </div>
+</section>
+
+
+
+{/* about section end */}
+
+
+
+
 {/* Standard Hot Selling Packages - Mobile Optimized */}
 <section className="standard-packages py-4 overflow-hidden">
       <Topten/>
@@ -383,8 +425,8 @@ export default function Home() {
 <section className="adventure-destinations py-4 overflow-hidden">
   <div className="container px-0 px-sm-3">
     <div className="section-header text-center mb-4 px-3">
- <h2 className="display-5 text-white fw-bold mb-3">Top Ten Trek</h2>
-      <p className="lead  text-light ">Discover heart-pounding experiences in the worlds most exciting destinations</p>    </div>
+ <h2 className="display-5  fw-bold mb-3">Top Ten Trek</h2>
+      <p className="lead">Discover heart-pounding experiences in the worlds most exciting destinations</p></div>
 
     <div className="row g-3 flex-nowrap flex-sm-wrap overflow-x-auto pb-2 px-2 mx-0 scroll-hide" style={{scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch'}}>
       {/* Destination 1 */}
@@ -418,8 +460,8 @@ export default function Home() {
 <section className="standard-packages py-4 overflow-hidden">
   <div className="container px-0 px-sm-3">
     <div className="section-header text-center mb-4 px-3">
-      <h2 className="display-5 text-white fw-bold mb-3">Pilgrims </h2>
-      <p className='lead  text-light'>Most popular deals booked by travelers</p>
+      <h2 className="display-5  fw-bold mb-3">Pilgrims </h2>
+      <p className='lead  '>Most popular deals booked by travelers</p>
     </div>
 
 <div className="row g-3 flex-nowrap flex-sm-wrap overflow-x-auto pb-2 px-2 mx-0 scroll-hide" style={{scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch'}}>      {/* Package 1 */}
@@ -449,15 +491,85 @@ export default function Home() {
  </div>
 </section>
 
+
+{/* why choose us */}
+
+<section className="why">
+  <div className="container py-5">
+    <h2 className="text-center section-title">Reason To Choose Us</h2>
+    <div className="row g-4">
+  
+      <div className="col-md-3 col-sm-6">
+        <div className="feature-card">
+          <img src="https://img.icons8.com/color/96/000000/guarantee.png" alt="Since 1995" />
+          <h6>Since 1995</h6>
+        </div>
+      </div>
+  
+      <div className="col-md-3 col-sm-6">
+        <div className="feature-card">
+          <img src="https://img.icons8.com/color/96/000000/map.png" alt="Itineraries" />
+          <h6>Well Planned Itineraries</h6>
+        </div>
+      </div>
+  
+      <div className="col-md-3 col-sm-6">
+        <div className="feature-card">
+          <img src="https://img.icons8.com/color/96/000000/secured-letter--v1.png" alt="Payment" />
+          <h6>Safe and Secure Payment</h6>
+        </div>
+      </div>
+  
+      <div className="col-md-3 col-sm-6">
+        <div className="feature-card">
+          <img src="https://img.icons8.com/color/96/000000/bus.png" alt="Transfers" />
+          <h6>Comfortable Transfers</h6>
+        </div>
+      </div>
+  
+      <div className="col-md-3 col-sm-6">
+        <div className="feature-card">
+          <img src="https://img.icons8.com/color/96/000000/cheap-2.png" alt="Lowest Rates" />
+          <h6>Lowest Rates Challenge</h6>
+        </div>
+      </div>
+  
+      <div className="col-md-3 col-sm-6">
+        <div className="feature-card">
+          <img src="https://cdn-icons-png.flaticon.com/128/6924/6924580.png" alt="Safe for Women" />
+          <h6>Safe For Solo Travellers and Women</h6>
+        </div>
+      </div>
+  
+      <div className="col-md-3 col-sm-6">
+        <div className="feature-card">
+          <img src="https://img.icons8.com/color/96/000000/conference.png" alt="Coordinators" />
+          <h6>Experienced Tour Coordinators</h6>
+        </div>
+      </div>
+  
+      <div className="col-md-3 col-sm-6">
+        <div className="feature-card">
+          <img src="https://img.icons8.com/color/96/000000/phone.png" alt="Support" />
+          <h6>24/7 Tele Customer Support</h6>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
+</section>
+
+{/* why choose end */}
+
 {/* Social Stories Section - Dark Theme with Videos */}
-<section className="social-stories py-5 bg-dark">
+{/* <section className="social-stories py-5 bg-dark">
   <div className="container">
     <div className="section-header text-center mb-5">
       <h2 className="display-5 fw-bold mb-3 text-white">#Adveture</h2>
       <p className="lead text-light opacity-75">Raw moments from our global adventures</p>
     </div>
 
-    {/* Mobile scrollable container */}
     <div className="d-block d-md-none">
       <div className="scrolling-wrapper pb-3 scroll-hide" style={{overflowX: 'auto', whiteSpace: 'nowrap'}}>
         <div className="d-inline-block mx-2" style={{width: '75vw'}}>
@@ -552,10 +664,8 @@ export default function Home() {
       </div>
     </div>
 
-    {/* Desktop grid layout (hidden on mobile) */}
     <div className="d-none d-md-block">
       <div className="row g-4">
-        {/* Instagram Story 1 - Video */}
         <div className="col-12 col-md-4 col-lg-3">
           <div className="story-card instagram-story bg-black rounded-4 overflow-hidden position-relative">
             <div className="story-video-container position-relative">
@@ -577,7 +687,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* YouTube Story 1 - Video */}
         <div className="col-12 col-md-4 col-lg-3">
           <div className="story-card youtube-story bg-black rounded-4 overflow-hidden position-relative">
             <div className="story-video-container position-relative">
@@ -602,7 +711,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Instagram Story 2 - Video */}
         <div className="col-12 col-md-4 col-lg-3">
           <div className="story-card instagram-story bg-black rounded-4 overflow-hidden position-relative">
             <div className="story-video-container position-relative">
@@ -624,7 +732,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* YouTube Story 2 - Video */}
         <div className="col-12 col-md-4 col-lg-3">
           <div className="story-card youtube-story bg-black rounded-4 overflow-hidden position-relative">
             <div className="story-video-container position-relative">
@@ -667,20 +774,92 @@ export default function Home() {
       </button>
     </div>
   </div>
-</section>
+</section> */}
 {/* Standard Hot Selling Packages - Mobile Optimized */}
 <section className="standard-packages py-4 overflow-hidden">
   <div className="container px-0 px-sm-3">
     <div className="section-header text-center mb-4 px-3">
-      <h2 className="display-5 text-white fw-bold mb-3">Honeymoon Packages</h2>
-      <p className='lead  text-light'>Most popular deals booked by travelers</p>
+      <h2 className="display-5  fw-bold mb-3">Honeymoon Packages</h2>
+      <p className='lead  '>Most popular deals booked by travelers</p>
     </div>
 
-<div className="row g-3 flex-nowrap flex-sm-wrap overflow-x-auto pb-2 px-2 mx-0 scroll-hide" style={{scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch'}}>      {/* Package 1 */}
-      <Honeymoon/>
-      {/* Package 2 */}
-  
+    <div className="container pb-5">
+  {/* <h2 className="section-title">BEST HONEYMOON DESTINATIONS</h2> */}
+
+  {/* Month Tabs */}
+  <div className="month-tabs mb-4 overflow-auto">
+    <a href="#" className="active">Jan</a>
+    <a href="#">Feb</a>
+    <a href="#">Mar</a>
+    <a href="#">April</a>
+    <a href="#">May</a>
+    <a href="#">June</a>
+    <a href="#">July</a>
+    <a href="#">Aug</a>
+    <a href="#">Sep</a>
+    <a href="#">Oct</a>
+    <a href="#">Nov</a>
+    <a href="#">Dec</a>
+  </div>
+
+  {/* Destinations */}
+  <div className="row g-4">
+    <div className="col-md-3">
+      <div className="honey-card">
+        <img 
+          src="https://aaochalo.com/wp-content/uploads/2025/06/stopover-in-dubai_dubai-by-night.jpg" 
+          alt="Dubai" 
+        />
+        <div className="honey-info">
+          <h5>Dubai</h5>
+          <p>Starting Price 25,300</p>
+        </div>
+      </div>
     </div>
+
+    <div className="col-md-3">
+      <div className="honey-card">
+        <img 
+          src="https://mediaim.expedia.com/destination/1/134beaf20a6cad7d8d144a2844549cc6.jpg" 
+          alt="Shimla" 
+        />
+        <div className="honey-info">
+          <h5>Shimla</h5>
+          <p>Starting Price 22,950</p>
+        </div>
+      </div>
+    </div>
+
+    <div className="col-md-3">
+      <div className="honey-card">
+        <img 
+          src="https://www.pelago.com/img/products/IN-India/kashmir-paradise-on-earth-tour-06-night-07-days/cd44565d-3ce0-442c-836b-76efb3eb25ad_kashmir-paradise-on-earth-tour-06-night-07-days-xlarge.jpg" 
+          alt="Kashmir" 
+        />
+        <div className="honey-info">
+          <h5>Kashmir</h5>
+          <p>Starting Price 19,850</p>
+        </div>
+      </div>
+    </div>
+
+    <div className="col-md-3">
+      <div className="honey-card">
+        <img 
+          src="https://www.shutterstock.com/image-photo/pura-ulun-danu-bratan-night-600nw-689858809.jpg" 
+          alt="Bali" 
+        />
+        <div className="honey-info">
+          <h5>Bali</h5>
+          <p>Starting Price 18,950</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
  <Link href="/packages" style={{ textDecoration: 'none' }}>
   <div className="text-center mt-4">
@@ -702,6 +881,160 @@ export default function Home() {
   
 </Link>     </div>
 </section>
+
+{/* google review */}
+<div className="reviews-section">
+  <div className="container">
+    <h2 className="section-title">Guest Reviews</h2>
+
+    <div id="reviewsCarousel" className="carousel slide" data-bs-ride="carousel">
+      <div className="carousel-inner">
+
+        {/* Slide 1 */}
+        <div className="carousel-item active">
+          <div className="row">
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="review-card">
+                <div className="review-text">
+                  "Dear Swan Tours We are indeed grateful to you for having arranged our fantastic tour to Jodhpur and Jasalmer...Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours."
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                  alt="Reviewer"
+                  className="reviewer-avatar"
+                />
+              </div>
+              <div className="reviewer-info">
+                <div className="star-rating">★★★★★</div>
+                <div className="location">Jodhpur Jasalmer Tour</div>
+                <div className="reviewer-name">Mr. Sudhakaran</div>
+              </div>
+            </div>
+
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="review-card">
+                <div className="review-text">
+                  "It was such a delightful experience! Everything was organized perfectly. Stress-free trip thanks to your team.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours."
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face"
+                  alt="Reviewer"
+                  className="reviewer-avatar"
+                />
+              </div>
+              <div className="reviewer-info">
+                <div className="star-rating">★★★★★</div>
+                <div className="location">Rajasthan Tour</div>
+                <div className="reviewer-name">Ms. Priya Sharma</div>
+              </div>
+            </div>
+
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="review-card">
+                <div className="review-text">
+                  "One of the best travel experiences we have had. The service was excellent and we look forward to booking again!vOur family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours."
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=150&h=150&fit=crop&crop=face"
+                  alt="Reviewer"
+                  className="reviewer-avatar"
+                />
+              </div>
+              <div className="reviewer-info">
+                <div className="star-rating">★★★★★</div>
+                <div className="location">Kerala Tour</div>
+                <div className="reviewer-name">Mr. Anil Kumar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Slide 2 */}
+        <div className="carousel-item">
+          <div className="row">
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="review-card">
+                <div className="review-text">
+                  "Our honeymoon trip was magical! Swan Tours planned everything seamlessly. Thank you for the beautiful memories.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours."
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=150&h=150&fit=crop&crop=face"
+                  alt="Reviewer"
+                  className="reviewer-avatar"
+                />
+              </div>
+              <div className="reviewer-info">
+                <div className="star-rating">★★★★★</div>
+                <div className="location">Maldives Tour</div>
+                <div className="reviewer-name">Mr. & Mrs. Ramesh</div>
+              </div>
+            </div>
+
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="review-card">
+                <div className="review-text">
+                  "Professional team, timely responses, and a wonderful itinerary. Truly satisfied with Swan Tours service.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours."
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=150&h=150&fit=crop&crop=face"
+                  alt="Reviewer"
+                  className="reviewer-avatar"
+                />
+              </div>
+              <div className="reviewer-info">
+                <div className="star-rating">★★★★★</div>
+                <div className="location">Europe Tour</div>
+                <div className="reviewer-name">Mrs. Kavita Nair</div>
+              </div>
+            </div>
+
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="review-card">
+                <div className="review-text">
+                  "Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours."
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=150&h=150&fit=crop&crop=face"
+                  alt="Reviewer"
+                  className="reviewer-avatar"
+                />
+              </div>
+              <div className="reviewer-info">
+                <div className="star-rating">★★★★★</div>
+                <div className="location">Shimla-Manali Tour</div>
+                <div className="reviewer-name">Mr. Sharma Family</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Controls */}
+      <button
+        className="carousel-control-prev "
+        type="button"
+        data-bs-target="#reviewsCarousel"
+        data-bs-slide="prev"
+      >
+        <i className="fa-solid fa-arrow-left fa-xl" style={{color:"black"}}></i>
+      </button>
+      <button
+        className="carousel-control-next  "
+        type="button"
+        data-bs-target="#reviewsCarousel"
+        data-bs-slide="next"
+       >
+        {/* <span className="carousel-control-next-icon"></span> */}
+        <i className="fa-solid fa-arrow-right fa-xl" style={{color:"black"}}></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+{/* google review end */}
+
+
 
 {/* footer */}
 <Footer/>

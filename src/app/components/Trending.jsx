@@ -23,12 +23,12 @@ console.log(trendingPackages);
 
   return (
     <>
-      <div className="container">
+      {/* <div className="container">
         <h2 className="display-5 text-white fw-bold mb-3  text-center">Trending Destinations</h2>
         <p className="lead  text-light text-center">Explore the most popular travel spots this season</p>
         
-    <div id="locationsCarousel" className="carousel slide"> {/* Removed data-bs-ride="carousel" */}
-      <div className="carousel-inner">        {/* Slide 1 - Active (contains 4 cards) */}
+    <div id="locationsCarousel" className="carousel slide"> 
+      <div className="carousel-inner">        
         <div className="carousel-inner">
           {trendingPackages.length > 0 ? (
             <div className="carousel-item active">
@@ -65,10 +65,9 @@ console.log(trendingPackages);
           )}
         </div>
             
-            {/* Slide 2 (you would duplicate the above structure with 4 different cards) */}
+            
           </div>
           
-          {/* Carousel Controls */}
           <button className="carousel-control-prev" type="button" data-bs-target="#locationsCarousel" data-bs-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Previous</span>
@@ -78,7 +77,6 @@ console.log(trendingPackages);
             <span className="visually-hidden">Next</span>
           </button>
           
-          {/* Carousel Indicators */}
           <div className="carousel-indicators">
             <button type="button" data-bs-target="#locationsCarousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#locationsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -104,7 +102,82 @@ console.log(trendingPackages);
             </div>
     
 </Link>     
- </div>
+ </div> */}
+
+
+
+ <div className="container">
+  <h1 className="section-title">Top Destinations</h1>
+
+  <div className="destinations-container">
+    {/* Munnar */}
+    <div className="destination-card">
+      <img
+        src="https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        alt="Munnar"
+        className="destination-image"
+      />
+      <div className="destination-name">Munnar</div>
+      <div className="tour-count">2 Tours</div>
+    </div>
+
+    {/* Thailand */}
+    <div className="destination-card">
+      <img
+        src="https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        alt="Thailand"
+        className="destination-image"
+      />
+      <div className="destination-name">Thailand</div>
+      <div className="tour-count">2 Tours</div>
+    </div>
+
+    {/* Ooty */}
+    <div className="destination-card">
+      <img
+        src="https://s3.india.com/wp-content/uploads/2024/07/Historical-Places-To-Visit-In-Ooty.jpg##image/jpg"
+        alt="Ooty"
+        className="destination-image"
+      />
+      <div className="destination-name">Ooty</div>
+      <div className="tour-count">4 Tours</div>
+    </div>
+
+    {/* Shimla */}
+    <div className="destination-card">
+      <img
+        src="https://lp-cms-production.imgix.net/2019-06/4b8ec4d679d3f74c6b5f87a448d28196-shimla.jpg?auto=format,compress&q=72&w=1095&fit=crop&crop=faces,edges"
+        alt="Shimla"
+        className="destination-image"
+      />
+      <div className="destination-name">Shimla</div>
+      <div className="tour-count">2 Tours</div>
+    </div>
+
+    {/* Kashmir */}
+    <div className="destination-card">
+      <img
+        src="https://wanderon-images.gumlet.io/gallery/new/2025/08/08/1754654165130-places-to-visit-in-kashmir.jpg"
+        alt="Kashmir"
+        className="destination-image"
+      />
+      <div className="destination-name">Kashmir</div>
+      <div className="tour-count">1 Tour</div>
+    </div>
+
+    {/* Bali */}
+    <div className="destination-card">
+      <img
+        src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        alt="Bali"
+        className="destination-image"
+      />
+      <div className="destination-name">Bali</div>
+      <div className="tour-count">1 Tour</div>
+    </div>
+  </div>
+</div>
+
     
     </>
   )

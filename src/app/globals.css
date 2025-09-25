@@ -172,7 +172,7 @@
 .dark-theme {
   --sans-font: 'Inter', sans-serif;
   --display-font: 'Poiret One', cursive;
-  background: #0a0a0a;
+  /* background: #0a0a0a; */
 }
 
 h1, h2 {
@@ -349,7 +349,7 @@ color: #f5faff;
 /* trending location */
 
 /* Trending Locations Styles */
-.trending-locations {
+/* .trending-locations {
   background-color: #090606;
 }
 
@@ -436,14 +436,123 @@ color: #f5faff;
 .view-all-btn:hover {
   background-color: #145d8c;
   transform: translateY(-2px);
-}
+} */
 
+ .trending-locations{
+              background-color: #f8f9fa;
+
+ }
+      .section-title {
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #333;
+            text-align: center;
+            font-size: 2.2rem;
+        }
+        .destinations-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 20px 0;
+        }
+        .destination-card {
+            text-align: center;
+            padding: 0 15px;
+            flex: 0 0 auto;
+            width: 16.66%; /* 6 items in one row */
+            transition: transform 0.3s ease;
+        }
+        .destination-card:hover {
+            transform: translateY(-5px);
+        }
+        .destination-image {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .destination-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .tour-count {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .destination-card {
+                width: 20%; /* 5 items per row on medium screens */
+            }
+        }
+        @media (max-width: 992px) {
+            .destination-card {
+                width: 25%; /* 4 items per row */
+            }
+        }
+        @media (max-width: 768px) {
+            .destination-card {
+                width: 33.33%; /* 3 items per row */
+            }
+        }
+        @media (max-width: 576px) {
+            .destination-card {
+                width: 50%; /* 2 items per row */
+            }
+        }
+
+
+        /* end trending */
+
+        /* about section in home page */
+
+        .about-section {
+      padding: 60px 0;
+    }
+    .about-img {
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    .about-content h5 {
+      color: #f9a825;
+      font-weight: bold;
+    }
+    .about-content h3 {
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    .about-content p {
+      color: #555;
+      line-height: 1.8;
+      text-align: justify;
+    }
+    .btn-custom {
+      background-color: #f9a825;
+      color: #000;
+      font-weight: 600;
+      border-radius: 25px;
+      padding: 10px 25px;
+    }
+    .btn-custom:hover {
+      background-color: #e18f00;
+      color: #fff;
+    }
+       
+    
+    /* about section in home page end */
 /* hot selling packages */
 
 /* Standard Package Styles */
-.standard-packages {
+/* .standard-packages {
   background-color: #000000;
-}
+} */
 
 .package-card-standard {
   background: #2d3436;
@@ -522,11 +631,10 @@ color: #f5faff;
 
 /* adveture destination */
 /* Adventure Destinations Styles */
-.adventure-destinations {
-  /* background-color: #424242; */
+/* .adventure-destinations {
   background-color: black;
 }
-
+ */
 .adventure-card {
   background: #2d3436;
   border-radius: 10px;
@@ -642,42 +750,7 @@ svg{
 /* .........................................................adujst............................................................................. */
 /* trending  carosel*/
 
-/* Carousel Styles */
-.carousel {
-  padding: 0 40px; /* Add padding for controls */
-}
 
-.carousel-control-next {
-  /* width: 10%; */
-  background-color: rgba(0,0,0,0.3);
-  border-radius: 50%;
-  /* height: 40px; */
-  top: 150px;
-  right: 50px;
-  transform: translateX(40%);
-}
-.carousel-control-prev {
-   background-color: rgba(0,0,0,0.3);
-  border-radius: 50%;
-  /* height: 40px; */
-  top: 150px;
-  right: 50px;
-  transform: translateX(-40%);
-
-} 
-
-.carousel-indicators {
-  display: none !important;
-}
-/* Make sure carousel items have consistent height */
-.carousel-item {
-  transition: transform 0.6s ease-in-out;
-}
-
-/* Center the cards in the carousel */
-.carousel-inner {
-  padding: 20px 0;
-}
 
 
 
@@ -825,3 +898,200 @@ select.form-select:focus {
   .description-container * {
   color: white !important;
 }
+/* why choose us */
+
+    .why {
+      background: #fdf8f4;
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .feature-card img {
+      width: 65px;
+      margin-bottom: 15px;
+    }
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+/* end why choose us */
+
+/* hony new */
+    .month-tabs {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .month-tabs a {
+      margin: 0 10px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #000;
+    }
+    .month-tabs a.active {
+      color: orange;
+    }
+    .honey-card {
+      position: relative;
+      color: #fff;
+      overflow: hidden;
+    }
+    .honey-card img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+    }
+    .honey-info {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+    }
+    .honey-info h5 {
+      font-weight: bold;
+      margin: 0;
+    }
+    .honey-info p {
+      margin: 0;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }   
+    
+    /* honey end */
+
+    /* google review */
+     .reviews-section {
+      padding: 80px 0;
+      background-color: #f8f9fa;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .review-card {
+      position: relative;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: auto;
+      transition: all 0.3s ease;
+    }
+
+    .review-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .review-text {
+      font-style: italic;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    .reviewer-avatar {
+      position: absolute;
+      bottom: -27px;
+      left: 24px;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .reviewer-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .star-rating {
+      color: #ffc107;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .location {
+      font-weight: 600;
+      color: #333;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+
+    .reviewer-name {
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(1);
+    }
+
+    @media (max-width: 768px) {
+      .review-card {
+        margin-bottom: 30px;
+      }
+    }
+      /* move controls closer inside the container */
+  .carousel-control-prev
+ {
+    width: auto;              /* shrink clickable area */
+    top: 25% !important;                 /* center vertically */
+    transform: translateY(-50%);
+    border-radius: 50%;
+    padding: 10px;
+  }
+
+  .carousel-control-prev {
+    left: -133px !important;   /* adjust distance from left */
+  }
+
+  .carousel-control-next {
+    right: -50px !important;
+    width: 32px !important;  /* adjust distance from right */
+     top: 25% !important;                 /* center vertically */
+     transform: translateY(-50%);
+      border-radius: 50%;
+    padding: 10px;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    filter: invert(1); /* make white icons visible */
+  }
+
+  
+
+  @media (max-width: 992px) {
+    .carousel-control-prev {
+      left: -20px;
+    }
+    .carousel-control-next {
+      right: -20px;
+    }
+  }
+
+    /* google review end */

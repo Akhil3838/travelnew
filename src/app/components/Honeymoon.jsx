@@ -26,14 +26,13 @@ function Honeymoon() {
     
   return (
     <>
-          {honeymoonPackages.map((pkg) => (
+          {/* {honeymoonPackages.map((pkg) => (
             <div
               key={pkg.id}
               className="col-10 col-sm-6 col-lg-4 flex-shrink-0"
               style={{ scrollSnapAlign: 'start' }}
             >
               <div className="package-card-standard h-100 mx-2">
-                {/* Image Section */}
 <Link href={`/package/${pkg.slug}`}>
                   <div className="package-img-container position-relative">
                     <img
@@ -50,7 +49,6 @@ function Honeymoon() {
                   </div>
   
 </Link>
-                {/* Body Section */}
                 <div className="package-body p-3">
                   <div className="d-flex justify-content-between mb-2">
                     <span className="badge bg-info">{pkg.days} Days</span>
@@ -61,7 +59,6 @@ function Honeymoon() {
                   <h3 className="h6">{pkg.package_title}</h3>
                   <p className="small mb-2">{pkg.small_description}</p>
 
-                  {/* Inclusions */}
                   <div className="package-details mb-2">
                     {pkg.inclusions?.slice(0, 3).map((inc) => (
                       <div className="detail-item small" key={inc.id}>
@@ -71,7 +68,6 @@ function Honeymoon() {
                     ))}
                   </div>
 
-                  {/* Price & CTA */}
                   <div className="d-flex justify-content-between align-items-center">
                     <div>
                       {pkg.special_price && pkg.special_price < pkg.price ? (
@@ -97,7 +93,8 @@ function Honeymoon() {
                 </div>
               </div>
             </div>
-          ))}
+          ))} */}
+
     
     </>
   )
