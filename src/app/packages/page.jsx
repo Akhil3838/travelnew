@@ -66,8 +66,8 @@ const Packages = () => {
 
       <div className="container py-5">
         <div className="text-center mb-5">
-          <h2 className="fw-bold display-5 text-white mb-3">Discover the Grand Canyon</h2>
-          <p className="text-white">Explore our curated selection of unforgettable adventures</p>
+          <h2 className="fw-bold display-5 text-dark mb-3">Discover the Grand Canyon</h2>
+          <p className="text-dark">Explore our curated selection of unforgettable adventures</p>
         </div>
         
         <div className="row">

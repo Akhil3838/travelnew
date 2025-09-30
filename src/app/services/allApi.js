@@ -88,3 +88,5 @@ export const getPilgrimPkg=async()=>{
 export const getHonymoonPkg=async()=>{
     return await commonApi('GET',`${serverUrl}/get-honeymoon-packages`,"","")
 }
+
+

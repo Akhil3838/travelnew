@@ -14,7 +14,7 @@ const PackageList = ({ packages, totalpage, onPageChange }) => {
     <>
               <div className="col-lg-9">
             <div className="d-flex justify-content-between align-items-center mb-4">
-              <div className="text-white">
+              <div className="text-dark">
                 <span className="me-2">Showing</span>
                 <strong>1-{packages.length}</strong> of {packages.length} tours
               </div>

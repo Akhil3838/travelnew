@@ -74,19 +74,19 @@ const PackageDetails = () => {
         </div>
       </header>
 
-        <div className="package-details bg-dark text-light">
+        <div className="package-details bg-white text-dark">
           {/* Hero Section */}
           <div className="bg-black text-white py-5">
             <div className="container">
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb breadcrumb-arrow bg-transparent p-0 m-0">
                   <li className="breadcrumb-item">
-                    <a href="#" className="text-white-50">Home</a>
+                    <a href="#" className="text-dark-50">Home</a>
                   </li>
                   <li className="breadcrumb-item">
-                    <a href="#" className="text-white-50">{details.category?.title}</a>
+                    <a href="#" className="text-dark-50">{details.category?.title}</a>
                   </li>
-                  <li className="breadcrumb-item active text-white" aria-current="page">
+                  <li className="breadcrumb-item active text-dark" aria-current="page">
                    {details.package_title}
                   </li>
                 </ol>
@@ -95,13 +95,13 @@ const PackageDetails = () => {
                 <div className="col-lg-8">
                   <h1 className="display-5 fw-bold mb-3">{details.package_title}</h1>
                   <div className="d-flex flex-wrap align-items-center gap-3 mb-3">
-                    <div className="bg-dark text-white px-3 py-1 rounded d-flex align-items-center">
+                    <div className="bg-dark text-dark px-3 py-1 rounded d-flex align-items-center">
                       <i className="fas fa-star me-2"></i>
                       <span>{details.review_stars || '4.8'}</span>
                       <span className="ms-2">({details.total_review_count || '16'} reviews)</span>
                     </div>
                       {details.is_trending === 'yes' && (
-                    <div className="badge bg-dark text-white px-3 py-2">
+                    <div className="badge bg-white text-dark px-3 py-2">
                       <i className="fas fa-tag me-1"></i> Best Seller
                     </div>
                   )}
@@ -216,16 +216,16 @@ const PackageDetails = () => {
     )}
                 </div>
     
-    <div className="mb-5 description-container">
+    <div className="mb-5 description-containe">
       {details.description && (
-        <div dangerouslySetInnerHTML={renderHTML(details.description)} />
+        <div  dangerouslySetInnerHTML={renderHTML(details.description)} />
       )}
     </div>
     
                 {/* Itinerary */}
                 <div className="mb-5">
                   <h2 className="fw-bold mb-4">Tour Plan</h2>
-                  <p className="text-mute mb-4">
+                  <p className=" mb-4">
                        {details?.plan_description}
                    </p>
     
