@@ -31,7 +31,7 @@ function ToptenTrek() {
                   src={pkg.packimages?.[0]?.image  || "https://via.placeholder.com/300x180"} 
                   alt={pkg.package_title}
                   className="img-fluid w-100"
-                  style={{ height: '180px', objectFit: 'cover' }}
+                  style={{ height: '232px', objectFit: 'cover' }}
                 />
                 <div className="adventure-level">
                   {pkg.add_badge_status === "yes" ? pkg.badge?.title : "EXTREME"}

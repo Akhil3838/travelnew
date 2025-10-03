@@ -124,6 +124,13 @@
     .section-header p {
       font-size: 1rem;
     }
+    .footer-top{
+      padding-top: 10rem !important;
+    }
+    .jst{
+      padding-top: 14rem !important;
+    }
+   
   }
   
   @media (max-width: 576px) {
@@ -489,7 +496,7 @@ color: #f5faff;
         /* Responsive adjustments */
         @media (max-width: 1200px) {
             .destination-card {
-                width: 20%; /* 5 items per row on medium screens */
+                width: 21%; /* 5 items per row on medium screens */
             }
         }
         @media (max-width: 992px) {
@@ -499,14 +506,31 @@ color: #f5faff;
         }
         @media (max-width: 768px) {
             .destination-card {
-                width: 33.33%; /* 3 items per row */
+                width: 38.33%; /* 3 items per row */
             }
         }
         @media (max-width: 576px) {
             .destination-card {
-                width: 50%; /* 2 items per row */
+                width: 57%; /* 2 items per row */
             }
         }
+
+        .destinations-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 20px 0;
+
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.destinations-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
 
 
         /* end trending */
@@ -555,12 +579,12 @@ color: #f5faff;
 } */
 
 .package-card-standard {
-  background: #2d3436;
+  background: #f1f2f3;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
-  color: #e0e0e0;
+  color: #050505;
 }
 
 .package-card-standard:hover {
@@ -570,7 +594,7 @@ color: #f5faff;
 
 .package-img-container {
   position: relative;
-  height: 200px;
+  height: 230px;
   overflow: hidden;
 }
 
@@ -738,9 +762,9 @@ color: #f5faff;
   }
 }
 /* ........................................................................................................................................ */
-p{
+/* p{
   color: #616161;
-}
+} */
 span{
   color: white;
 }
@@ -930,6 +954,10 @@ select.form-select:focus {
     .month-tabs {
       text-align: center;
       margin-bottom: 30px;
+
+        /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
     }
     .month-tabs a {
       margin: 0 10px;
@@ -967,6 +995,11 @@ select.form-select:focus {
       margin-bottom: 20px;
       font-weight: bold;
     }   
+
+.month-tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
     
     /* honey end */
 
@@ -1095,3 +1128,19 @@ select.form-select:focus {
   }
 
     /* google review end */
+
+
+      @media (max-width: 768px) {
+    
+    
+    .search-button {
+      width: 100%;
+    }
+    .search-button button{
+      width: 100%;
+    }
+  }
+
+  button{
+    background-color: #f27d01;
+  }

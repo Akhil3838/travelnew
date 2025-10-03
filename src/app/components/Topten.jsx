@@ -47,7 +47,7 @@ function Topten() {
                       src={pkg.packimages?.[0]?.image || '/default-image.jpg'}
                       alt={pkg.package_title}
                       className="img-fluid w-100"
-                      style={{ height: '180px', objectFit: 'cover' }}
+                      style={{ height: '230px', objectFit: 'cover' }}
                     />
                     {pkg.add_badge_status === 'yes' && (
                       <div className="package-tag">
@@ -73,7 +73,7 @@ function Topten() {
                     {pkg.inclusions?.slice(0, 3).map((inc) => (
                       <div className="detail-item small" key={inc.id}>
                         <i className="fas fa-check me-1"></i>
-                        <span>{inc.title}</span>
+                        <span className='text-dark'>{inc.title}</span>
                       </div>
                     ))}
                   </div>
@@ -83,7 +83,7 @@ function Topten() {
                     <div>
                       {pkg.special_price && pkg.special_price < pkg.price ? (
                         <>
-                          <span className="text-decoration-line-through text-light me-1 small">
+                          <span className="text-decoration-line-through text-dark me-1 small">
                             ${pkg.price}
                           </span>
                           <span className="h6 text-primary">

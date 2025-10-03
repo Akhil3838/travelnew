@@ -254,10 +254,12 @@ export default function Home() {
   </div>
 </div>
     {/* Search Button */}
-    <div>
+    <div className="search-button">
       <button
         type="submit"
-        className="btn btn-success rounded-pill px-4 d-flex align-items-center"
+        className="btn  rounded-pill px-4 d-flex align-items-center justify-content-center"
+        style={{ backgroundColor: '#305cde', color: 'white' }}
+
       >
         Search <i className="fas fa-search ms-2"></i>
       </button>
@@ -265,20 +267,31 @@ export default function Home() {
   </form>
 </div>
 
-        <div className="d-flex flex-wrap justify-content-center gap-3 mt-4">
-          <a href="/packages" className="btn btn-outline-light rounded-pill px-4">
-            <i className="fas fa-umbrella-beach me-2"></i> Beach Getaways
-          </a>
-          <a href="/packages" className="btn btn-outline-light rounded-pill px-4">
-            <i className="fas fa-mountain me-2"></i> Mountain Retreats
-          </a>
-          <a href="/packages" className="btn btn-outline-light rounded-pill px-4">
-            <i className="fas fa-heart me-2"></i> Romantic Escapes
-          </a>
-          <a href="/packages" className="btn btn-outline-light rounded-pill px-4">
-            <i className="fas fa-hiking me-2"></i> Adventure Trips
-          </a>
-        </div>
+<div className="d-flex justify-content-center align-items-center">
+         <div className="row g-3 mt-4">
+    <div className="col-6 col-md-auto d-flex justify-content-center text">
+      <a href="/packages" className="btn btn-outline-light rounded-pill w-100">
+        <i className="fas fa-umbrella-beach me-2"></i> Beach Getaways
+      </a>
+    </div>
+    <div className="col-6 col-md-auto d-flex justify-content-center align-items-center">
+      <a href="/packages" className="btn btn-outline-light rounded-pill w-100">
+        <i className="fas fa-mountain me-2"></i> Mountain Retreats
+      </a>
+    </div>
+    <div className="col-6 col-md-auto d-flex justify-content-center">
+      <a href="/packages" className="btn btn-outline-light rounded-pill w-100 text-center">
+        <i className="fas fa-heart me-2"></i> Romantic Escapes
+      </a>
+    </div>
+    <div className="col-6 col-md-auto d-flex justify-content-center">
+      <a href="/packages" className="btn btn-outline-light rounded-pill w-100">
+        <i className="fas fa-hiking me-2"></i> Adventure Trips
+      </a>
+    </div>
+  </div>
+  
+</div>
       </div>
     </div>
 
@@ -287,7 +300,7 @@ export default function Home() {
 
 {/* Offcanvas Menu (keep this outside the video section) */}
 <div
-  className="offcanvas offcanvas-end bg-dark text-white"
+  className="offcanvas offcanvas-end bg-white text-dark"
   tabIndex="-1"
   id="mobileMenu"
   aria-labelledby="mobileMenuLabel"
@@ -306,64 +319,84 @@ export default function Home() {
   </div>
 
   {/* <!-- Menu Items --> */}
-  <div className="offcanvas-body d-flex flex-column pt-3">
-    <div className="d-flex flex-column gap-2">
-      <a href="#" className="nav-link p-3 rounded hover-item">
-        <div className="d-flex align-items-center gap-3">
-          <i className="bi bi-geo-alt fs-5" style={{ color: "#4facfe" }}></i>
-          <span className="fw-medium">Destinations</span>
-        </div>
-      </a>
+<div className="offcanvas-body d-flex flex-column pt-3">
+  <div className="d-flex flex-column gap-2">
+    {/* Destinations */}
+    <a href="#" className="nav-link p-3 rounded hover-item">
+      <div className="d-flex align-items-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="text-dark" viewBox="0 0 16 16">
+          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+          <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+        </svg>
+        <span className="fw-medium text-dark">Destinations</span>
+      </div>
+    </a>
 
-      <a href="#" className="nav-link p-3 rounded hover-item">
-        <div className="d-flex align-items-center gap-3">
-          <i className="bi bi-star fs-5" style={{ color: "#f8c291" }}></i>
-          <span className="fw-medium">Experiences</span>
-        </div>
-      </a>
+    {/* Experiences */}
+    <a href="#" className="nav-link p-3 rounded hover-item">
+      <div className="d-flex align-items-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="text-dark" viewBox="0 0 16 16">
+          <path d="M2.866 14.85c-.078.444.36.791.746.593l3.39-1.787 3.389 1.787c.386.198.824-.149.746-.592l-.647-3.73 
+          2.713-2.64c.33-.319.158-.888-.282-.95l-3.762-.546L8.465.792a.513.513 0 
+          0 0-.927 0L5.354 6.034l-3.762.547c-.44.062-.612.63-.283.949l2.713 
+          2.64-.647 3.73z"/>
+        </svg>
+        <span className="fw-medium text-dark">Experiences</span>
+      </div>
+    </a>
 
-      <a href="#" className="nav-link p-3 rounded hover-item">
-        <div className="d-flex align-items-center gap-3">
-          <i className="bi bi-percent fs-5" style={{ color: "#78e08f" }}></i>
-          <span className="fw-medium">Deals</span>
-        </div>
-      </a>
+    {/* Deals */}
+    <a href="#" className="nav-link p-3 rounded hover-item">
+      <div className="d-flex align-items-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="text-dark" viewBox="0 0 16 16">
+          <path d="M13.442 2.558a1.5 1.5 0 0 0-2.121 0L1.5 12.379V15h2.621l9.821-9.821a1.5 
+          1.5 0 0 0 0-2.121zM12 6l-1-1 1-1 1 1-1 1z"/>
+        </svg>
+        <span className="fw-medium text-dark">Deals</span>
+      </div>
+    </a>
 
-      <a href="#" className="nav-link p-3 rounded hover-item">
-        <div className="d-flex align-items-center gap-3">
-          <i className="bi bi-info-circle fs-5" style={{ color: "#fd79a8" }}></i>
-          <span className="fw-medium">About</span>
-        </div>
-      </a>
-    </div>
-
-    {/* <!-- Auth Section --> */}
-    <div className="mt-2">
-<button 
-  className="btn w-100 py-3 fw-bold rounded-pill"
-  style={{
-    background: "rgba(79, 172, 254, 0.15)",
-    backdropFilter: "blur(10px)",
-    border: "1px solid rgba(79, 172, 254, 0.3)",
-    color: "#4facfe",
-    transition: "all 0.3s ease"
-  }}
-  onMouseOver={(e) => {
-    e.currentTarget.style.background = "rgba(79, 172, 254, 0.25)";
-    e.currentTarget.style.boxShadow = "0 0 15px rgba(79, 172, 254, 0.2)";
-  }}
-  onMouseOut={(e) => {
-    e.currentTarget.style.background = "rgba(79, 172, 254, 0.15)";
-    e.currentTarget.style.boxShadow = "none";
-  }}
->
-  Sign In
-</button>      <p className="text-center mt-3 mb-0  text-light">
-        Dont have an account? 
-        <a href="#" className="text-decoration-none ms-1" style={{ color: "#4facfefb" }}>Sign up</a>
-      </p>
-    </div>
+    {/* About */}
+    <a href="#" className="nav-link p-3 rounded hover-item">
+      <div className="d-flex align-items-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="text-dark" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zM6.002 5a1 1 0 1 1 2 
+          0 1 1 0 0 1-2 0zM8 6.75a.75.75 0 0 1 .75.75v4a.75.75 
+          0 0 1-1.5 0v-4A.75.75 0 0 1 8 6.75z"/>
+        </svg>
+        <span className="fw-medium text-dark">About</span>
+      </div>
+    </a>
   </div>
+
+  {/* Auth Section */}
+  <div className="mt-2">
+    <button
+      className="btn w-100 py-3 fw-bold rounded-pill"
+      style={{
+        background: "rgba(79, 172, 254, 0.15)",
+        backdropFilter: "blur(10px)",
+        border: "1px solid rgba(79, 172, 254, 0.3)",
+        color: "#4facfe",
+        transition: "all 0.3s ease"
+      }}
+      onMouseOver={(e) => {
+        e.currentTarget.style.background = "rgba(79, 172, 254, 0.25)";
+        e.currentTarget.style.boxShadow = "0 0 15px rgba(79, 172, 254, 0.2)";
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.background = "rgba(79, 172, 254, 0.15)";
+        e.currentTarget.style.boxShadow = "none";
+      }}
+    >
+      Sign In
+    </button>
+    <p className="text-center mt-3 mb-0 text-dark">
+      Don’t have an account? 
+      <a href="#" className="text-decoration-none ms-1" style={{ color: "#4facfe" }}>Sign up</a>
+    </p>
+  </div>
+</div>
 </div>
 
 {/* Trending Locations Section */}
@@ -402,7 +435,7 @@ export default function Home() {
         supports your long-term health and well-being.
       </p>
 
-      <button className="btn btn-custom">Know more</button>
+      <button className="btn btn-custom py-2 px-4" style={{background: '#305cde', color:'white'}}>Know more</button>
     </div>
   </div>
 </section>
@@ -499,56 +532,56 @@ export default function Home() {
     <h2 className="text-center section-title">Reason To Choose Us</h2>
     <div className="row g-4">
   
-      <div className="col-md-3 col-sm-6">
+      <div className="col-md-3 col-6">
         <div className="feature-card">
           <img src="https://img.icons8.com/color/96/000000/guarantee.png" alt="Since 1995" />
           <h6>Since 1995</h6>
         </div>
       </div>
   
-      <div className="col-md-3 col-sm-6">
+      <div className="col-md-3 col-6">
         <div className="feature-card">
           <img src="https://img.icons8.com/color/96/000000/map.png" alt="Itineraries" />
           <h6>Well Planned Itineraries</h6>
         </div>
       </div>
   
-      <div className="col-md-3 col-sm-6">
+      <div className="col-md-3 col-6">
         <div className="feature-card">
           <img src="https://img.icons8.com/color/96/000000/secured-letter--v1.png" alt="Payment" />
           <h6>Safe and Secure Payment</h6>
         </div>
       </div>
   
-      <div className="col-md-3 col-sm-6">
+      <div className="col-md-3 col-6">
         <div className="feature-card">
           <img src="https://img.icons8.com/color/96/000000/bus.png" alt="Transfers" />
           <h6>Comfortable Transfers</h6>
         </div>
       </div>
   
-      <div className="col-md-3 col-sm-6">
+      <div className="col-md-3 col-6">
         <div className="feature-card">
           <img src="https://img.icons8.com/color/96/000000/cheap-2.png" alt="Lowest Rates" />
           <h6>Lowest Rates Challenge</h6>
         </div>
       </div>
   
-      <div className="col-md-3 col-sm-6">
+      <div className="col-md-3 col-6">
         <div className="feature-card">
           <img src="https://cdn-icons-png.flaticon.com/128/6924/6924580.png" alt="Safe for Women" />
           <h6>Safe For Solo Travellers and Women</h6>
         </div>
       </div>
   
-      <div className="col-md-3 col-sm-6">
+      <div className="col-md-3 col-6">
         <div className="feature-card">
           <img src="https://img.icons8.com/color/96/000000/conference.png" alt="Coordinators" />
           <h6>Experienced Tour Coordinators</h6>
         </div>
       </div>
   
-      <div className="col-md-3 col-sm-6">
+      <div className="col-md-3 col-6">
         <div className="feature-card">
           <img src="https://img.icons8.com/color/96/000000/phone.png" alt="Support" />
           <h6>24/7 Tele Customer Support</h6>
@@ -812,7 +845,7 @@ export default function Home() {
         />
         <div className="honey-info">
           <h5>Dubai</h5>
-          <p>Starting Price 25,300</p>
+          <p className="text-light">Starting Price 25,300</p>
         </div>
       </div>
     </div>

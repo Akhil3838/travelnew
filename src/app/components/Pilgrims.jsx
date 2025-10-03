@@ -30,7 +30,7 @@ function Pilgrims() {
                   src={pkg?.thumbnails?.[0].image || "https://via.placeholder.com/300x180"}
                   alt={pkg.package_title}
                   className="img-fluid w-100"
-                  style={{ height: '180px', objectFit: 'cover' }}
+                  style={{ height: '230px', objectFit: 'cover' }}
                 />
                 <div className="package-tag">
                   {pkg.add_badge_status === "yes" ? (pkg.badge?.title || "FEATURED") : "BESTSELLER"}
@@ -49,7 +49,7 @@ function Pilgrims() {
                 {pkg.features && pkg.features.split(",").map((feature, index) => (
                   <div key={index} className="detail-item small">
                     <i className="fas fa-check me-1"></i>
-                    <span>{feature.trim()}</span>
+                    <span className='text-dark'>{feature.trim()}</span>
                   </div>
                 ))}
               </div>
@@ -57,7 +57,7 @@ function Pilgrims() {
               <div className="d-flex justify-content-between align-items-center">
                 <div>
                   {pkg.price && (
-                    <span className="text-decoration-line-through text-light me-1 small">
+                    <span className="text-decoration-line-through text-dark me-1 small">
                       ₹{pkg.price}
                     </span>
                   )}
