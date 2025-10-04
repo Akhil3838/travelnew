@@ -825,7 +825,7 @@ export default function Home() {
  <Link href="/packages" style={{ textDecoration: 'none' }}>
   <div className="text-center mt-4">
          <button className="btn view-all-btn px-4 py-2 d-flex align-items-center justify-content-center">
-      <span>View All Packages</span>
+      <span >View All Packages</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"

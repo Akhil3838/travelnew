@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 function Honey() {
   // ✅ Data for each month
@@ -28,36 +29,48 @@ function Honey() {
   const [activeMonth, setActiveMonth] = useState("Jan")
 
   return (
-    <>
-      <div className="container pb-5">
-        {/* Month Tabs */}
-        <div className="month-tabs mb-4 overflow-auto">
-          {months.map((month) => (
-            <a
-              key={month}
-              href="#"
-              className={activeMonth === month ? "active" : ""}
-              onClick={(e) => {
-                e.preventDefault()
-                setActiveMonth(month)
-              }}
-            >
-              {month}
-            </a>
-          ))}
-        </div>
+    <div className="container pb-5">
+      {/* Month Tabs */}
+      <div className="month-tabs mb-4 overflow-auto">
+        {months.map((month) => (
+          <a
+            key={month}
+            href="#"
+            className={activeMonth === month ? "active" : ""}
+            onClick={(e) => {
+              e.preventDefault()
+              setActiveMonth(month)
+            }}
+          >
+            {month}
+          </a>
+        ))}
+      </div>
 
-        {/* Destinations */}
-        <div className="row g-4">
+      {/* Destinations with animation */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeMonth}
+          className="row g-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.4 }}
+        >
           {honeyData[activeMonth]?.map((place, idx) => (
             <div className="col-md-3" key={idx}>
-              <div className="honey-card">
+              <motion.div
+                className="honey-card"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: idx * 0.1 }}
+              >
                 <img src={place.img} alt={place.name} />
                 <div className="honey-info">
                   <h5>{place.name}</h5>
                   <p>Starting Price {place.price}</p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           ))}
 
@@ -67,9 +80,9 @@ function Honey() {
               <p className="text-center text-muted">No destinations available for {activeMonth}</p>
             </div>
           )}
-        </div>
-      </div>
-    </>
+        </motion.div>
+      </AnimatePresence>
+    </div>
   )
 }
 
