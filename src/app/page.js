@@ -7,6 +7,7 @@ import ToptenTrek from "./components/ToptenTrek";
 import Pilgrims from "./components/Pilgrims";
 import Honeymoon from "./components/Honeymoon";
 import Link from "next/link";
+import Honey from "./components/Honey";
 
 export default function Home() {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -816,80 +817,7 @@ export default function Home() {
       <p className='lead  '>Most popular deals booked by travelers</p>
     </div>
 
-    <div className="container pb-5">
-  {/* <h2 className="section-title">BEST HONEYMOON DESTINATIONS</h2> */}
-
-  {/* Month Tabs */}
-  <div className="month-tabs mb-4 overflow-auto">
-    <a href="#" className="active">Jan</a>
-    <a href="#">Feb</a>
-    <a href="#">Mar</a>
-    <a href="#">April</a>
-    <a href="#">May</a>
-    <a href="#">June</a>
-    <a href="#">July</a>
-    <a href="#">Aug</a>
-    <a href="#">Sep</a>
-    <a href="#">Oct</a>
-    <a href="#">Nov</a>
-    <a href="#">Dec</a>
-  </div>
-
-  {/* Destinations */}
-  <div className="row g-4">
-    <div className="col-md-3">
-      <div className="honey-card">
-        <img 
-          src="https://aaochalo.com/wp-content/uploads/2025/06/stopover-in-dubai_dubai-by-night.jpg" 
-          alt="Dubai" 
-        />
-        <div className="honey-info">
-          <h5>Dubai</h5>
-          <p className="text-light">Starting Price 25,300</p>
-        </div>
-      </div>
-    </div>
-
-    <div className="col-md-3">
-      <div className="honey-card">
-        <img 
-          src="https://mediaim.expedia.com/destination/1/134beaf20a6cad7d8d144a2844549cc6.jpg" 
-          alt="Shimla" 
-        />
-        <div className="honey-info">
-          <h5>Shimla</h5>
-          <p>Starting Price 22,950</p>
-        </div>
-      </div>
-    </div>
-
-    <div className="col-md-3">
-      <div className="honey-card">
-        <img 
-          src="https://www.pelago.com/img/products/IN-India/kashmir-paradise-on-earth-tour-06-night-07-days/cd44565d-3ce0-442c-836b-76efb3eb25ad_kashmir-paradise-on-earth-tour-06-night-07-days-xlarge.jpg" 
-          alt="Kashmir" 
-        />
-        <div className="honey-info">
-          <h5>Kashmir</h5>
-          <p>Starting Price 19,850</p>
-        </div>
-      </div>
-    </div>
-
-    <div className="col-md-3">
-      <div className="honey-card">
-        <img 
-          src="https://www.shutterstock.com/image-photo/pura-ulun-danu-bratan-night-600nw-689858809.jpg" 
-          alt="Bali" 
-        />
-        <div className="honey-info">
-          <h5>Bali</h5>
-          <p>Starting Price 18,950</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<Honey/>
 
 
 
