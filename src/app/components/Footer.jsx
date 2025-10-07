@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 function Footer() {
   const [Links, setLinks] = useState([])
+   const [isLargeScreen, setIsLargeScreen] = useState(false)
 
   const socialLinks = async () => {
     const res = await socialLinksApi()
@@ -13,6 +14,11 @@ function Footer() {
 
   useEffect(() => {
     socialLinks()
+
+     const checkScreenSize = () => setIsLargeScreen(window.innerWidth >= 992)
+    checkScreenSize()
+    window.addEventListener('resize', checkScreenSize)
+    return () => window.removeEventListener('resize', checkScreenSize)
   }, [])
 
   // Helper function to get value by label
@@ -46,8 +52,13 @@ function Footer() {
       >
 
         {/* Top Info Section */}
-                         <div className="footer-top pb-3 text-white position-absolute top-0 start-50 translate-middle">
-        <div className="containe">
+ <div
+          className={
+            isLargeScreen
+              ? "footer-top pb-3 text-white position-absolute top-0 start-50 translate-middle"
+              : "footer-top mx-3 text-white"
+          }
+        >        <div className="containe">
           <div className="row text-center text-md-start">
             <div className="col-md-4 mb-3"  style={{ backgroundColor: 'orange' }}>
               <div className="p-3  text-dark rounded">

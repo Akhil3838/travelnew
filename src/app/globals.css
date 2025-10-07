@@ -127,11 +127,14 @@
     .footer-top{
       padding-top: 10rem !important;
     }
-    .jst{
+    /* .jst{
       padding-top: 14rem !important;
-    }
+    } */
    
   }
+  .footer-top {
+  padding-top: 1rem !important;
+}
   
   @media (max-width: 576px) {
     .col-6 {
@@ -141,7 +144,8 @@
     .story-card {
       border-radius: 0.5rem !important;
     }
-  }/* .......................................................end...................................................................... */
+  }
+  /* .......................................................end...................................................................... */
 .slider-input::-webkit-slider-thumb {
           appearance: none;
           width: 18px;
