@@ -108,7 +108,7 @@ console.log(trendingPackages);
 
  <div className="container">
 <div className='section-header text-center mb-4 px-3'>
-    <h1 className="display-5 orange" >Top Destinations</h1>
+    <h2 className="display-5 fw-bold orange" >Top Destinations</h2>
   <p className="lead text-dark text-center">Discover the worlds most loved travel escapes</p>
   
 </div>
