@@ -178,7 +178,7 @@
 /* ..................................................end..................................................................... */
 .dark-theme {
   --sans-font: 'Inter', sans-serif;
-  --display-font: 'Poiret One', cursive;
+--display-font: 'Playfair Display', serif;
   /* background: #0a0a0a; */
 }
 
@@ -202,7 +202,9 @@ body {
   color: white;
 }
 
-
+.orange{
+  color: orange;
+}
 /* Main Header Styles */
 
 
@@ -966,7 +968,8 @@ select.form-select:focus {
       color: #000;
     }
     .month-tabs a.active {
-      color: orange;
+      color: #305cde
+;
     }
     .honey-card {
       position: relative;
@@ -1012,9 +1015,12 @@ select.form-select:focus {
     .section-title {
       font-size: 2.5rem;
       font-weight: 600;
-      color: #333;
+      color: #f27d01;
       margin-bottom: 60px;
       text-align: center;
+    }
+    .display-5 {
+      color: #f27d01;
     }
 
     .review-card {
@@ -1144,5 +1150,160 @@ select.form-select:focus {
   button{
     background-color: #f27d01;
   }
+
+
+
+  /* gallery */
+
+/* ---------- TOP CONTENT SECTION ---------- */
+.gallery-top {
+  /* background-color: #f8fbff; */
+  /* background-image: url("https://as2.ftcdn.net/jpg/01/99/79/85/1000_F_199798549_SvruKZLBUxtg7mWGnuW972LmqURGpaV7.jpg"); */
+  background-repeat: repeat;
+  text-align: center;
+}
+
+.gallery-top .content {
+    background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsJTIwd2FsbHBhcGVyfGVufDB8fDB8fHww");
+  background-repeat: repeat;
+    padding: 80px 0;
+
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sub-title {
+  color: #a33b3b;
+  font-family: "Poiret One", cursive;
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.main-title {
+  color: #6b0000;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.main-title span {
+  color: #a33b3b;
+}
+
+.desc {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 1.8rem;
+  line-height: 1.6;
+}
+
+.btn-trip {
+  background-color: #f27d01;
+  color: #fff;
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-trip:hover {
+  background-color: #923405;
+}
+
+/* ---------- BOTTOM IMAGE GALLERY ---------- */
+.gallery-bottom {
+  padding: 40px 0 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-images {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  max-width: 1200px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Staggered column heights */
+.column:nth-child(1) {
+  margin-top: 99px;
+}
+
+.column:nth-child(2) {
+  margin-top: 0;
+}
+
+.column:nth-child(3) {
+  margin-top: 2px;
+}
+.column:nth-child(4) {
+  margin-top: 99px;
+}
+
+
+.gallery-images img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.gallery-images img:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 992px) {
+  .gallery-images {
+    flex-wrap: wrap;
+  }
+
+  .gallery-images img {
+    width: 220px;
+    height: 220px;
+  }
+
+  
+  .column:nth-child(2),
+  .column:nth-child(3) 
+  {
+    margin-top: 0;
+  }
+  
+  .column:nth-child(1){
+    margin-top: 175px;
+  }
+  .column:nth-child(4){
+    margin-top: 1px;
+  }
+
+
+}
+
+@media (max-width: 600px) {
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .gallery-images img {
+    width: 160px;
+    height: 160px;
+  }
+}
 
   

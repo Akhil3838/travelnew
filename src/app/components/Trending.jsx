@@ -107,8 +107,11 @@ console.log(trendingPackages);
 
 
  <div className="container">
-  <h1 className="section-title">Top Destinations</h1>
-
+<div className='section-header text-center mb-4 px-3'>
+    <h1 className="display-5 orange" >Top Destinations</h1>
+  <p className="lead text-dark text-center">Discover the worlds most loved travel escapes</p>
+  
+</div>
   <div className="destinations-container">
     {/* Munnar */}
     <div className="destination-card">

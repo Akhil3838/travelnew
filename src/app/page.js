@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Trending from "./components/Trending";
 import Topten from "./components/Topten";
 import Footer from "./components/Footer";
@@ -8,11 +8,29 @@ import Pilgrims from "./components/Pilgrims";
 import Honeymoon from "./components/Honeymoon";
 import Link from "next/link";
 import Honey from "./components/Honey";
+import Gallery from "./components/Gallery";
+import StickyHeader from "./components/StickyHeader";
 
 export default function Home() {
   const [videoLoaded, setVideoLoaded] = useState(false);
+   const [showHeader, setShowHeader] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 150) {
+        setShowHeader(true)
+      } else {
+        setShowHeader(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <main>
+<StickyHeader/>
       {/* Top Navigation Bar */}
 
 
@@ -843,6 +861,11 @@ export default function Home() {
 </Link>     </div>
 </section>
 
+<Gallery/>
+
+
+
+
 {/* google review */}
 <div className="reviews-section">
   <div className="container">
@@ -994,6 +1017,7 @@ export default function Home() {
 
 
 {/* google review end */}
+
 
 
 

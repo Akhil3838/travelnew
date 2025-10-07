@@ -23,7 +23,7 @@ function ToptenTrek() {
     <>
       {trekPackages.map((pkg) => (
         <div key={pkg.id} className="col-10 col-sm-6 col-lg-3 flex-shrink-0" style={{ scrollSnapAlign: 'start' }}>
-          <div className="adventure-card h-100 mx-2" style={{ backgroundColor:' #192750ff'}}>
+          <div className="adventure-card h-100 mx-2" style={{ backgroundColor:' #305cde'}}>
 <Link href={`/package/${pkg.slug}`}>
 
               <div className="adventure-img-container">
@@ -41,8 +41,8 @@ function ToptenTrek() {
 </Link>            <div className="adventure-content p-3">
               <h3 className="h6 mb-2">{pkg.package_title}</h3>
               <div className="d-flex justify-content-between mb-2">
-                <span className="text-warning fw-bold small">{pkg.destination || "Unknown"}</span>
-                <span className="text-warning small">★ {pkg.review_stars || 0}</span>
+                <span className=" fw-bold small" style={{ color: 'orange' }}>{pkg.destination || "Unknown"}</span>
+                <span className=" small" style={{ color: 'orange' }}>★ {pkg.review_stars || 0}</span>
               </div>
               <div className="adventure-features mb-3">
                 <span className="badge bg-light text-dark me-1 small">🥾 Trekking</span>
@@ -50,7 +50,16 @@ function ToptenTrek() {
                 <span className="badge bg-light text-dark small">{pkg.days} Days</span>
               </div>
 <Link href={`/package/${pkg.slug}`}>
-                <button className="btn btn-sm btn-outline-warning w-100">Explore</button>
+<button 
+  className="btn btn-sm w-100" 
+  style={{ 
+    border: '1px solid orange', 
+    color: 'orange', 
+    backgroundColor: 'transparent' 
+  }}
+>
+  Explore
+</button>
   
 </Link>            </div>
           </div>
