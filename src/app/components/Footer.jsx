@@ -147,24 +147,24 @@ function Footer() {
           </div>
 
           {/* Bottom Bar */}
-          {/* <div className="row mt-5">
+          <div className="row mt-5">
             <div className="col-12 d-flex flex-column flex-md-row justify-content-between align-items-center">
-              <p className="mb-0">© 2023 All Rights Reserved.</p>
+              <p className="mb-0">© 2025 All Rights Reserved.</p>
               <div className="footer-links mt-3 mt-md-0">
                 <a href="#" className="text-white me-3" style={{ textDecoration: 'none' }}>Terms</a>
                 <a href="#" className="text-white me-3" style={{ textDecoration: 'none' }}>Privacy Policy</a>
                 <a href="#" className="text-white" style={{ textDecoration: 'none' }}>Contact</a>
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
 
         {/* WhatsApp Floating Button */}
-        {/* <a href={`https://wa.me/${phone}`} target="_blank"
+        <a href={`https://wa.me/${phone}`} target="_blank"
           className="btn btn-success rounded-circle position-fixed"
           style={{ bottom: '20px', right: '20px' }}>
           <i className="fab fa-whatsapp fs-4"></i>
-        </a> */}
+        </a>
 
       </footer>
     </>
