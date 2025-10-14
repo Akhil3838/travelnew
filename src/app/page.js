@@ -104,7 +104,7 @@ export default function Home() {
                     letterSpacing: '0.5px'
                 }}
             >
-                GoWonder
+                Travelogue Pedia
             </span>
         </div>
 
@@ -327,7 +327,7 @@ export default function Home() {
   {/* <!-- Header --> */}
   <div className="offcanvas-header border-bottom border-secondary">
     <h5 id="mobileMenuLabel" className="fw-bold fs-4 mb-0">
-      <span style={{ color: "#fe984fff" }}>Go</span>Wonder
+      <span style={{ color: "#fe984fff" }}> Travelogue</span> Pedia
     </h5>
     <button
       type="button"

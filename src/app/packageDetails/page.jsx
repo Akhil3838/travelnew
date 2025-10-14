@@ -18,7 +18,7 @@ function Page() {
           <Link href={'/'} style={{ textDecoration: 'none' }}>
             <div className="logo-container d-flex align-items-center">
               <span className="logo-icon fs-3">✈️</span>
-              <span className="logo-text text-dark fw-bold ms-2 fs-5">GoWonder</span>
+              <span className="logo-text text-dark fw-bold ms-2 fs-5"> Travelogue Pedia</span>
             </div>
           </Link>
 

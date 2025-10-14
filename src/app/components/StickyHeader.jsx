@@ -37,7 +37,7 @@ function StickyHeader() {
             <Link href="/" style={{ textDecoration: 'none' }}>
               <div className="logo-container d-flex align-items-center">
                 <span className="logo-icon">✈️</span>
-                <span className="logo-text ms-2 fw-bold text-dark">GoWonder</span>
+                <span className="logo-text ms-2 fw-bold text-dark"> Travelogue Pedia</span>
               </div>
             </Link>
 

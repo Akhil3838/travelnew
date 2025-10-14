@@ -52,7 +52,7 @@ const PackageDetails = () => {
           <Link href={'/'} style={{textDecoration:'none'}}>
               <div className="logo-container d-flex align-items-center">
                 <span className="logo-icon">✈️</span>
-                <span className="logo-text">GoWonder</span>
+                <span className="logo-text"> Travelogue Pedia</span>
               </div>
           </Link>
 
