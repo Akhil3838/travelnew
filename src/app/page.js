@@ -111,7 +111,7 @@ export default function Home() {
         {/* Navigation with material ripple effect */}
         <nav className="main-nav d-none d-md-flex gap-1">
             <a 
-                href="#" 
+                href="/about" 
                 className="nav-link text-white position-relative overflow-hidden"
                 style={{
                     padding: '12px 16px',
@@ -125,7 +125,7 @@ export default function Home() {
                 About Us
             </a>
             <a 
-                href="#" 
+                href="contactus" 
                 className="nav-link text-white position-relative overflow-hidden"
                 style={{
                     padding: '12px 16px',
@@ -140,7 +140,7 @@ export default function Home() {
                 Contact Us
             </a>
             <a 
-                href="#" 
+                href="/blogs" 
                 className="nav-link text-white position-relative overflow-hidden"
                 style={{
                     padding: '12px 16px',
