@@ -2,12 +2,14 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import Footer from '../components/Footer'
+import StickyHeader from '../components/StickyHeader'
 
 function Page() {
   const [activeTab, setActiveTab] = useState('info')
 
   return (
     <>
+    <StickyHeader/>
     <div style={{backgroundColor:'#f3f3f3ff'}}>
 
       {/* Header */}
