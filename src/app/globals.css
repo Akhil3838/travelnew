@@ -1,4 +1,36 @@
 /* ................................................pagination in package........................................................................ */
+/* For entire page scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: orange; /* scrollbar thumb color */
+  border-radius: 10px;
+  border: 2px solid #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: orange; /* on hover */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d67028 #f0f0f0;
+}
+
+
+
+
+
+
+
+
   .page-link {
     margin: 0 2px;
     min-width: 40px;
@@ -213,8 +245,8 @@ body {
 
 
 .main-header {
-background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95));
-color: #f5faff;
+background: linear-gradient(to bottom, rgba(239, 239, 239, 0.95), rgba(246, 246, 246, 0.95));
+color: #000000;
 /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25); */
 }
 
@@ -1309,5 +1341,180 @@ select.form-select:focus {
     height: 160px;
   }
 }
+
+/* /....................topten details page....................... */
+
+  .tab-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .tab-buttons button {
+      border: 1px solid #28a745;
+      color: #28a745;
+      background: transparent;
+      border-radius: 30px;
+      padding: 8px 18px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+    .tab-buttons button.active,
+    .tab-buttons button:hover {
+      background-color: #28a745;
+      color: #fff;
+    }
+    .info-table {
+      border: 1px solid #dee2e6;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .info-table td, .info-table th {
+      vertical-align: middle;
+      padding: 15px;
+      font-size: 0.95rem;
+    }
+    .info-table th {
+      background-color: #f6f1ee !important;
+      width: 30%;
+      font-weight: 600;
+    }
+    .info-table ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    .info-table ul li {
+      margin-bottom: 5px;
+    }
+
+    /* Responsive Typography */
+    h4 {
+      font-size: clamp(1.25rem, 2vw + 0.5rem, 2rem); /* scales between 20px and 32px */
+    }
+    p {
+      font-size: clamp(0.9rem, 1vw + 0.4rem, 1.1rem);
+      line-height: 1.7;
+    }
+
+
+    .tab-buttons .btn {
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.tab-buttons .btn:hover {
+  transform: translateY(-2px);
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.text-orange {
+  color: orange !important;
+}
+
+.bg-orange {
+  background-color: orange !important;
+}
+
+/* Modern timeline container */
+.modern-timeline {
+  position: relative;
+  padding-left: 25px;
+}
+
+.modern-timeline::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: rgba(255, 165, 0, 0.4);
+}
+
+/* Timeline item card */
+.modern-timeline-item {
+  display: flex;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.modern-timeline-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 165, 0, 0.2);
+}
+
+/* Icon Circle */
+.timeline-icon {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  left: -22px;
+  top: 20px;
+  box-shadow: 0 3px 10px rgba(255, 165, 0, 0.4);
+}
+
+/* Content */
+.timeline-content {
+  margin-left: 50px;
+}
+
+@media (max-width: 768px) {
+  .modern-timeline {
+    padding-left: 0;
+  }
+  .modern-timeline::before {
+    display: none;
+  }
+  .timeline-icon {
+    position: static;
+    margin-bottom: 10px;
+    box-shadow: none;
+    background-color: white !important;
+
+  }
+  .timeline-content {
+    margin-left: 0;
+  }
+}
+
+.gallery-img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* Change default success button to orange */
+.btn-success {
+  background-color: #f27d01 !important;
+  border-color: #f27d01 !important;
+  color: #fff !important;
+}
+
+/* Outline version */
+.btn-outline-success {
+  color: #f27d01 !important;
+  border-color: #f27d01 !important;
+}
+
+.btn-outline-success:hover {
+  background-color: #f27d01 !important;
+  color: #fff !important;
+}
+
+
 
   

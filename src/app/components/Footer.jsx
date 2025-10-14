@@ -172,9 +172,9 @@ function Footer() {
 
         {/* WhatsApp Floating Button */}
         <a href={`https://wa.me/${phone}`} target="_blank"
-          className="btn btn-success rounded-circle position-fixed"
-          style={{ bottom: '20px', right: '20px' }}>
-          <i className="fab fa-whatsapp fs-4"></i>
+          className="btn btn-lg  rounded-circle position-fixed"
+          style={{ bottom: '20px', right: '20px' , backgroundColor: 'green' }}>
+          <i className="fab fa-whatsapp fs-4 text-white"></i>
         </a>
 
       </footer>

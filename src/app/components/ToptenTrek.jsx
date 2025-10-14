@@ -23,8 +23,8 @@ function ToptenTrek() {
     <>
       {trekPackages.map((pkg) => (
         <div key={pkg.id} className="col-10 col-sm-6 col-lg-3 flex-shrink-0" style={{ scrollSnapAlign: 'start' }}>
-          <div className="adventure-card h-100 mx-2" style={{ backgroundColor:' #305cde'}}>
-<Link href={`/package/${pkg.slug}`}>
+          <div className="adventure-card h-100 mx-2" style={{ backgroundColor:' #19264b'}}>
+<Link href={`/packageDetails`}>
 
               <div className="adventure-img-container">
                 <img
@@ -49,7 +49,7 @@ function ToptenTrek() {
                 <span className="badge bg-light text-dark me-1 small">{pkg.duration}</span>
                 <span className="badge bg-light text-dark small">{pkg.days} Days</span>
               </div>
-<Link href={`/package/${pkg.slug}`}>
+<Link href={`/packageDetails`}>
 <button 
   className="btn btn-sm w-100" 
   style={{ 
