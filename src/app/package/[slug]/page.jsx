@@ -3,7 +3,6 @@ import BookingForm from "@/app/components/BookingForm";
 import Footer from "@/app/components/Footer";
 import { getAllPackages, getSinglePackages } from "@/app/services/allApi";
 import Link from "next/link";
-// import EnqueryForm from "@/components/EnqueryForm";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
@@ -17,8 +16,6 @@ const PackageDetails = () => {
   const fetchPackageDetails = async (slug) => {
     try {
       const result = await getSinglePackages(slug);
-      console.log(result);
-      
       setDetails(result?.data?.package || null);
     } catch (error) {
       console.error("Error fetching packages:", error);
@@ -28,10 +25,10 @@ const PackageDetails = () => {
   const fetchAllPackages = async () => {
     try {
       const result = await getAllPackages();
-      setTravelPackages(result?.data?.packages || []); // ensure array
+      setTravelPackages(result?.data?.packages || []);
     } catch (error) {
       console.error("Error fetching packages:", error);
-      setTravelPackages([]); // prevent map crash
+      setTravelPackages([]);
     }
   };
 
@@ -45,25 +42,35 @@ const PackageDetails = () => {
   }
 
   const renderHTML = (htmlString) => ({ __html: htmlString });
+
   return (
-<>
-      <header className="main-header">
+    <>
+      {/* Header */}
+      <header className="main-header bg-white shadow-sm sticky-top">
         <div className="container d-flex justify-content-between align-items-center py-3">
-          <Link href={'/'} style={{textDecoration:'none'}}>
-              <div className="logo-container d-flex align-items-center">
-                <span className="logo-icon">✈️</span>
-                <span className="logo-text"> Travelogue Pedia</span>
-              </div>
+          <Link href="/" style={{ textDecoration: "none" }}>
+            <div className="logo-container d-flex align-items-center">
+              <span className="logo-icon fs-3 text-primary">✈️</span>
+              <span className="logo-text fw-bold fs-4 text-dark ms-2">
+                Travelogue Pedia
+              </span>
+            </div>
           </Link>
 
           <nav className="main-nav d-none d-md-flex gap-4">
-            <a href="#" className="nav-link">About Us</a>
-            <a href="#" className="nav-link">Contact Us</a>
-            <a href="#" className="nav-link">Blog</a>
+            <a href="#" className="text-dark fw-semibold hover-blue" style={{textDecoration:'none'}}>
+              About Us
+            </a>
+            <a href="#" className="text-dark fw-semibold hover-blue" style={{textDecoration:'none'}}>
+              Contact Us
+            </a>
+            <a href="#" className="text-dark fw-semibold hover-blue" style={{textDecoration:'none'}}>
+              Blog
+            </a>
           </nav>
 
           <button
-            className="mobile-menu-btn btn d-md-none"
+            className="mobile-menu-btn btn btn-outline-primary d-md-none rounded-circle"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#mobileMenu"
@@ -74,391 +81,267 @@ const PackageDetails = () => {
         </div>
       </header>
 
-        <div className="package-details bg-white text-dark">
-          {/* Hero Section */}
-          <div className="bg-black text-white py-5">
-            <div className="container">
-              <nav aria-label="breadcrumb">
-                <ol className="breadcrumb breadcrumb-arrow bg-transparent p-0 m-0">
-                  <li className="breadcrumb-item">
-                    <a href="#" className="text-dark-50">Home</a>
-                  </li>
-                  <li className="breadcrumb-item">
-                    <a href="#" className="text-dark-50">{details.category?.title}</a>
-                  </li>
-                  <li className="breadcrumb-item active text-dark" aria-current="page">
-                   {details.package_title}
-                  </li>
-                </ol>
-              </nav>
-              <div className="row align-items-center">
-                <div className="col-lg-8">
-                  <h1 className="display-5 fw-bold mb-3">{details.package_title}</h1>
-                  <div className="d-flex flex-wrap align-items-center gap-3 mb-3">
-                    <div className="bg-dark text-dark px-3 py-1 rounded d-flex align-items-center">
-                      <i className="fas fa-star me-2"></i>
-                      <span>{details.review_stars || '4.8'}</span>
-                      <span className="ms-2">({details.total_review_count || '16'} reviews)</span>
-                    </div>
-                      {details.is_trending === 'yes' && (
-                    <div className="badge bg-white text-dark px-3 py-2">
-                      <i className="fas fa-tag me-1"></i> Best Seller
-                    </div>
-                  )}
-                    {details.special_price && (
-                    <div className="badge bg-dark text-white px-3 py-2">
-                      {Math.round(((details.price - details.special_price) / details.price) * 100)}% Off
-    
-                    </div>
-                  )}
-                  </div>
-                  <div className="d-flex flex-wrap gap-4">
-                    <div>
-                      <i className="fas fa-map-marker-alt me-2 text-primary"></i>
-                      <span>Departure: {details.departure}</span>
-                    </div>
-                    <div>
-                      <i className="fas fa-clock me-2 text-primary"></i>
-                      <span>Duration:{details.duration} days</span>
-                    </div>
-                    <div>
-                      <i className="fas fa-calendar-alt me-2 text-primary"></i>
-                      <span>Product Code:{details.transport}</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-4 mt-4 mt-lg-0">
-                  <div className="bg-dark text-white p-4 rounded-3 border border-secondary">
-                    <div className="d-flex justify-content-between align-items-center mb-3">
-                      <div>
-                         {details.special_price && (
-                        <span className="text-decoration-line-through text-white me-2">
-                         ₹{details.price}
-                        </span>
-                      )}
-                        <span className="fw-bold text-warning fs-4">
-                         ₹{details.special_price || details.price}
-                        </span>
-                      </div>
-                      <span className="text-white small">per person</span>
-                    </div>
-                    <button className="btn btn-warning w-100 mb-3 py-3 fw-bold rounded-pill">
-                      <i className="fas fa-shopping-cart me-2"></i> Book Now
-                    </button>
-                    <div className="text-center small text-white">
-                      <i className="fas fa-lock me-1"></i> Secure booking
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-          {/* Main Content */}
-          <div className="container py-5">
-            <div className="row">
-              {/* Left Column */}
-              <div className="col-lg-8">
-                {/* Image Gallery */}
-                <div className="mb-5">
-                  <div className="row g-3">
-                     {details.packimages?.length > 0 && (
-    <>
-                        <div className="col-md-8">
-                          <img 
-                            src={details.packimages[0].image} 
-                            alt={details.package_title} 
-                            className="img-fluid rounded-3 w-100" 
-                            style={{ height: "400px", objectFit: "cover" }}
-                          />
-                        </div>
-        
-                        <div className="col-md-4">
-                          <div className="d-flex flex-column h-100 gap-3">
-                            {details.packimages.slice(1, 3).map((image, index) => (
-                              <img 
-                                key={index}
-                                src={image.image} 
-                                alt={details.package_title} 
-                                className="img-fluid rounded-3" 
-                                style={{ height: "190px", objectFit: "cover" }}
-                              />
-                            ))}
-                          </div>
-                        </div>
-                    </>     
-     )}   
-    
-                  </div>
-    {details.packimages?.length > 0 && (
-      <div className="d-flex mt-3 gap-2 flex-wrap">
-        {details.packimages.slice(0, 6).map((image, index) => (
-          <img 
-            key={index}
-            src={image.image} 
-            alt={`Tour ${index + 1}`} 
-            className="img-fluid rounded-3 d-none d-sm-block" // hide on xs
-            style={{ width: "120px", height: "80px", objectFit: "cover" }}
-          />
-        ))}
-    
-        {/* Show only 3 on mobile (xs) */}
-        {details.packimages.slice(0, 3).map((image, index) => (
-          <img 
-            key={`mobile-${index}`}
-            src={image.image} 
-            alt={`Tour Mobile ${index + 1}`} 
-            className="img-fluid rounded-3 d-block d-sm-none" // visible only on xs
-            style={{ width: "120px", height: "80px", objectFit: "cover" }}
-          />
-        ))}
-      </div>
-    )}
-                </div>
-    
-    <div className="mb-5 description-containe">
-      {details.description && (
-        <div  dangerouslySetInnerHTML={renderHTML(details.description)} />
-      )}
-    </div>
-    
-                {/* Itinerary */}
-                <div className="mb-5">
-                  <h2 className="fw-bold mb-4">Tour Plan</h2>
-                  <p className=" mb-4">
-                       {details?.plan_description}
-                   </p>
-    
-      <div className="accordion" id="itineraryAccordion">
-        {details?.tourplan?.map((item, index) => (
-          <div
-            className="accordion-item border-0 rounded shadow-sm mb-3 bg-light"
-            key={item.id}
-          >
-            <h3 className="accordion-header" id={`heading${item.day}`}>
-              <button
-                className="accordion-button collapsed bg-light py-3 px-4"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target={`#collapse${item.day}`}
-                aria-expanded="false"
-                aria-controls={`collapse${item.day}`}
+      {/* Package Hero Section */}
+      <section
+        className="text-white py-5"
+        style={{
+          background: "linear-gradient(90deg,#ff7b00, #ff7b0093)",
+        }}
+      >
+        <div className="container">
+          <nav aria-label="breadcrumb" className="mb-3">
+            <ol className="breadcrumb bg-transparent p-0">
+              <li className="breadcrumb-item">
+                <Link href="/" className="text-white-50 text-decoration-none">
+                  Home
+                </Link>
+              </li>
+              <li className="breadcrumb-item">
+                <span className="text-white-50">{details.category?.title}</span>
+              </li>
+              <li
+                className="breadcrumb-item active text-white"
+                aria-current="page"
               >
-                <span className="badge text-dark bg-light me-3">
-                  Day-{item.day}
-                </span>
-                <strong>{item.title}</strong>
-              </button>
-            </h3>
-            <div
-              id={`collapse${item.day}`}
-              className="accordion-collapse collapse"
-              aria-labelledby={`heading${item.day}`}
-              data-bs-parent="#itineraryAccordion"
-            >
-              <div className="accordion-body px-4 pt-0 pb-3">
-                <p className="mb-0 text-muted py-2">{item.content}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+                {details.package_title}
+              </li>
+            </ol>
+          </nav>
+
+          <div className="row align-items-center">
+            <div className="col-lg-8">
+              <h1 className="fw-bold mb-3">{details.package_title}</h1>
+              <div className="d-flex flex-wrap gap-3 mb-3">
+                <div className="badge bg-white text-primary px-3 py-2">
+                  <i className="fas fa-star me-2"></i>
+                  {details.review_stars || "4.8"} ({details.total_review_count || "16"} reviews)
                 </div>
-    
-    
-    
-                            {(details.inclusions?.length > 0 || details.exclusions?.length > 0) && (
-                  <div className="included-exclude-section my-5">
-                    <h4 className="fw-bold mb-4">Included/Exclude</h4>
-                    <div className="row">
-                      {details.inclusions?.length > 0 && (
-                        <div className="col-md-6">
-                          <h5>Included</h5>
-                          <ul className="list-unstyled">
-                            {details.inclusions.map((item, index) => (
-                              <li key={`inc-${index}`} className="mb-2 d-flex align-items-center">
-                                <i className="fas fa-check-circle text-success me-2"></i>
-                                {item.title}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                      {details.exclusions?.length > 0 && (
-                        <div className="col-md-6">
-                          <h5>Excluded</h5>
-                          <ul className="list-unstyled">
-                            {details.exclusions.map((item, index) => (
-                              <li key={`exc-${index}`} className="mb-2 d-flex align-items-center">
-                                <i className="fas fa-times-circle text-danger me-2"></i>
-                                {item.title}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </div>
+                {details.is_trending === "yes" && (
+                  <div className="badge bg-primary text-white px-3 py-2">
+                    <i className="fas fa-fire me-1"></i> Best Seller
                   </div>
                 )}
-    
-    
-    
-    
-    
-    
-                {/* Reviews */}
-                {/* <div className="mb-5">
-                  <h2 className="fw-bold mb-4">Customer Reviews</h2>
-                  <div className="d-flex align-items-center mb-4">
-                    <div className="bg-warning text-dark px-3 py-2 rounded d-flex align-items-center me-3">
-                      <i className="fas fa-star me-1"></i>
-                      <span className="fs-4 fw-bold">4.8</span>
-                    </div>
-                    <div>
-                      <h5 className=" text-white mb-1">Excellent</h5>
-                      <p className=" mb-0">Based on 16 reviews</p>
-                    </div>
+                {details.special_price && (
+                  <div className="badge bg-warning text-dark px-3 py-2">
+                    {Math.round(
+                      ((details.price - details.special_price) / details.price) * 100
+                    )}
+                    % Off
                   </div>
-    
-                  <div className="card border-secondary bg-gray-800 mb-3">
-                    <div className="card-body">
-                      <div className="d-flex justify-content-between mb-2">
-                        <h5 className="mb-0 text-dark">Amazing Experience!</h5>
-                        <div className="text-warning">
-                          <i className="fas fa-star"></i>
-                          <i className="fas fa-star"></i>
-                          <i className="fas fa-star"></i>
-                          <i className="fas fa-star"></i>
-                          <i className="fas fa-star"></i>
-                        </div>
-                      </div>
-                      <p className=" small">Reviewed by Michael J. • April 15, 2023</p>
-                      <p className=" text-dark">"This tour exceeded all expectations. Our guide was incredibly knowledgeable and made sure we saw all the best spots. The small group size made it feel very personal. Highly recommend!"</p>
-                    </div>
-                  </div>
-    
-                  <div className="card border-secondary bg-gray-800">
-                    <div className="card-body">
-                      <div className="d-flex justify-content-between mb-2">
-                        <h5 className="mb-0 ">Best Grand Canyon Tour</h5>
-                        <div className="text-warning">
-                          <i className="fas fa-star"></i>
-                          <i className="fas fa-star"></i>
-                          <i className="fas fa-star"></i>
-                          <i className="fas fa-star"></i>
-                          <i className="fas fa-star"></i>
-                        </div>
-                      </div>
-                      <p className=" small">Reviewed by Sarah L. • March 28, 2023</p>
-                      <p className=" text-dark">"The itinerary was perfect - we saw everything we wanted and more. Antelope Canyon was breathtaking. The hotels were comfortable and well-located. Worth every penny!"</p>
-                    </div>
-                  </div>
-    
-                  <button className="btn btn-outline-warning mt-4 rounded-pill px-4 py-2">
-                    <i className="fas fa-plus me-2"></i> Load More Reviews
-                  </button>
-                </div> */}
+                )}
               </div>
-    
-              {/* Right Column - Booking Widget */}
-              <div className="col-lg-4">
-                <div className="sticky-top" style={{ top: "20px" }}>
-                  <div className="card border-secondary bg-dark mb-2">
-              <div className="card-body">
-                <h4 className="fw-bold mb-3 text-white">Book This Tour</h4>
-    
-              <BookingForm packageId={details?.id}/>
-    
+
+              <div className="d-flex flex-wrap gap-4">
+                <span>
+                  <i className="fas fa-map-marker-alt me-2 text-warning"></i>
+                  Departure: {details.departure}
+                </span>
+                <span>
+                  <i className="fas fa-clock me-2 text-warning"></i>
+                  Duration: {details.duration} days
+                </span>
+                <span>
+                  <i className="fas fa-bus me-2 text-warning"></i>
+                  Transport: {details.transport}
+                </span>
               </div>
+            </div>
+
+            <div className="col-lg-4 mt-4 mt-lg-0">
+              <div className="bg-white text-dark p-4 rounded-3 shadow-sm">
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <div>
+                    {details.special_price && (
+                      <span className="text-decoration-line-through text-muted me-2">
+                        ₹{details.price}
+                      </span>
+                    )}
+                    <span className="fw-bold text-primary fs-4">
+                      ₹{details.special_price || details.price}
+                    </span>
                   </div>
+                  <small>per person</small>
                 </div>
+                <button className="btn btn-warning w-100 fw-bold py-3 rounded-pill text-white">
+                  <i className="fas fa-shopping-cart me-2"></i> Book Now
+                </button>
               </div>
             </div>
           </div>
-    
-          {/* Similar Tours */}
-    <div className="bg-black py-5">
-      <div className="container">
-        <h2 className="fw-bold mb-5 text-center">You May Also Like</h2>
+        </div>
+      </section>
+
+      {/* Main Section */}
+      <div className="container py-5">
         <div className="row">
-          {travelPackages.map((pkg) => (
-            <div className="col-md-6 mb-4" key={pkg.id}>
-              <div className="card h-100 border-0 shadow-sm">
-                <div className="row g-0 h-100">
-                  <div className="col-md-5">
-                   <Link href={`/package/${pkg.slug}`}>
-                      <img
-                        src={
-                          pkg.thumbnails?.[0]?.image ??
-                          "https://via.placeholder.com/300x200"
-                        }
-                        alt={pkg.package_title}
-                        className="img-fluid rounded-start h-100"
-                        style={{ objectFit: "cover" }}
-                      />
-                   </Link>
-                  </div>
-                  <div className="col-md-7">
-                    <div className="card-body d-flex flex-column h-100">
-                      <div className="d-flex justify-content-between mb-2">
-                        {pkg.add_badge_status === "yes" && (
-                          <span className="badge bg-primary">
-                            {pkg.badge || "Featured"}
-                          </span>
-                        )}
-                        {pkg.price > pkg.special_price && (
-                          <span className="badge bg-success">
-                            {Math.round(
-                              ((pkg.price - pkg.special_price) / pkg.price) * 100
-                            )}
-                            % Off
-                          </span>
-                        )}
-                      </div>
-                      <h5 className="card-title">{pkg.package_title}</h5>
-                      <div className="d-flex align-items-center mb-2">
-                        <div className="bg-warning text-white px-2 py-1 rounded d-flex align-items-center me-2">
-                          <i className="fas fa-star me-1"></i>
-                          <span>{pkg.review_stars}</span>
+          {/* Left Content */}
+          <div className="col-lg-8">
+            {/* Image Gallery */}
+            {details.packimages?.length > 0 && (
+              <div className="row g-3 mb-5">
+                <div className="col-md-8">
+                  <img
+                    src={details.packimages[0].image}
+                    className="img-fluid rounded-3 w-100 shadow-sm"
+                    style={{ height: "400px", objectFit: "cover" }}
+                    alt=""
+                  />
+                </div>
+                <div className="col-md-4 d-flex flex-column gap-3">
+                  {details.packimages.slice(1, 3).map((img, idx) => (
+                    <img
+                      key={idx}
+                      src={img.image}
+                      className="img-fluid rounded-3 shadow-sm"
+                      style={{ height: "190px", objectFit: "cover" }}
+                      alt=""
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Description */}
+            {details.description && (
+              <div
+                className="mb-5"
+                dangerouslySetInnerHTML={renderHTML(details.description)}
+              />
+            )}
+
+            {/* Itinerary */}
+            {details.tourplan?.length > 0 && (
+              <div className="mb-5">
+                <h3 className="fw-bold mb-4 text-primary">Tour Plan</h3>
+                <div className="accordion" id="tourPlanAccordion">
+                  {details.tourplan.map((item) => (
+                    <div
+                      key={item.id}
+                      className="accordion-item border-0 shadow-sm mb-3 rounded"
+                    >
+                      <h2 className="accordion-header">
+                        <button
+                          className="accordion-button collapsed bg-white fw-semibold"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target={`#collapse${item.day}`}
+                        >
+                          Day {item.day}: {item.title}
+                        </button>
+                      </h2>
+                      <div
+                        id={`collapse${item.day}`}
+                        className="accordion-collapse collapse"
+                        data-bs-parent="#tourPlanAccordion"
+                      >
+                        <div className="accordion-body text-muted">
+                          {item.content}
                         </div>
-                        <span className="text-muted small">
-                          ({pkg.total_review_count} reviews)
-                        </span>
                       </div>
-                      <div className="mt-auto">
-                        <div className="d-flex justify-content-between align-items-center">
-                          <div>
-                            {pkg.price > pkg.special_price && (
-                              <span className="text-decoration-line-through text-muted me-2">
-                                ₹{pkg.price}
-                              </span>
-                            )}
-                            <span className="fw-bold text-danger">
-                              ₹{pkg.special_price}
-                            </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Included / Excluded */}
+            {(details.inclusions?.length > 0 || details.exclusions?.length > 0) && (
+              <div className="my-5">
+                <h3 className="fw-bold text-primary mb-4">Included / Excluded</h3>
+                <div className="row">
+                  <div className="col-md-6">
+                    <h5 className="text-success">Included</h5>
+                    <ul className="list-unstyled">
+                      {details.inclusions?.map((i, idx) => (
+                        <li key={idx} className="mb-2">
+                          ✅ {i.title}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="col-md-6">
+                    <h5 className="text-danger">Excluded</h5>
+                    <ul className="list-unstyled">
+                      {details.exclusions?.map((i, idx) => (
+                        <li key={idx} className="mb-2">
+                          ❌ {i.title}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Booking Sidebar */}
+          <div className="col-lg-4">
+            <div className="card border-0 shadow-sm sticky-top" style={{ top: "20px" }}>
+              <div className="card-body">
+                <h4 className="fw-bold text-primary mb-3">Book This Tour</h4>
+                <BookingForm packageId={details?.id} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Similar Packages */}
+      <section
+        className="py-5"
+        style={{
+          background: "linear-gradient(90deg, #2f00ffff, #1500ffff)",
+        }}
+      >
+        <div className="container text-white">
+          <h2 className="fw-bold mb-5 text-center">You May Also Like</h2>
+          <div className="row">
+            {travelPackages.map((pkg) => (
+              <div className="col-md-6 mb-4" key={pkg.id}>
+                <div className="card border-0 shadow-sm h-100">
+                  <div className="row g-0">
+                    <div className="col-md-5">
+                      <Link href={`/package/${pkg.slug}`}>
+                        <img
+                          src={pkg.thumbnails?.[0]?.image}
+                          className="img-fluid rounded-start h-100"
+                          style={{ objectFit: "cover" }}
+                          alt=""
+                        />
+                      </Link>
+                    </div>
+                    <div className="col-md-7">
+                      <div className="card-body d-flex flex-column">
+                        <h5 className="card-title text-primary fw-bold">
+                          {pkg.package_title}
+                        </h5>
+                        <p className="small text-muted mb-2">
+                          {pkg.duration} Days | {pkg.departure}
+                        </p>
+                        <div className="mt-auto">
+                          <div className="fw-bold text-dark">
+                            ₹{pkg.special_price || pkg.price}
                           </div>
-                          <a
+                          <Link
                             href={`/package/${pkg.slug}`}
-                            className="btn btn-sm btn-gradient-outline-primary rounded-pill px-3"
+                            className="btn btn-sm btn-warning text-white mt-2 rounded-pill"
                           >
                             View Details
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </div>
-        </div>
+      </section>
 
-<Footer/>
-    
-</>  );
+      <Footer />
+    </>
+  );
 };
 
 export default PackageDetails;

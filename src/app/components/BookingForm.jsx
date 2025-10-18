@@ -50,7 +50,7 @@ console.log(formData);
              <form onSubmit={handleSubmit} >
               {/* Name */}
               <div className="mb-3">
-                <label className="form-label text-white">Name:</label>
+                <label className="form-label text-dark">Name:</label>
                 <input
                   type="text"
                   name="name"
@@ -64,7 +64,7 @@ console.log(formData);
 
               {/* Email ID */}
               <div className="mb-3">
-                <label className="form-label text-white">Email ID:</label>
+                <label className="form-label text-dark">Email ID:</label>
                 <input
                   type="email"
                   name="email_id"
@@ -78,7 +78,7 @@ console.log(formData);
 
               {/* Phone Number */}
               <div className="mb-3">
-                <label className="form-label text-white">Phone Number:</label>
+                <label className="form-label text-dark">Phone Number:</label>
                 <input
                   type="tel"
                   name="phone_number"
@@ -92,7 +92,7 @@ console.log(formData);
 
               {/* Country */}
               <div className="mb-3">
-                <label className="form-label text-white">Country:</label>
+                <label className="form-label text-dark">Country:</label>
                 <input
                   type="text"
                   name="country"
@@ -106,7 +106,7 @@ console.log(formData);
 
               {/* Number of Persons */}
               <div className="mb-3">
-                <label className="form-label text-white">Number of Persons:</label>
+                <label className="form-label text-dark">Number of Persons:</label>
                 <select
                   name="number_of_persons"
                   value={formData.number_of_persons}
@@ -122,7 +122,7 @@ console.log(formData);
 
               {/* Lead Traveller */}
               <div className="mb-3">
-                <label className="form-label text-white">Lead Traveller:</label>
+                <label className="form-label text-dark">Lead Traveller:</label>
                 <input
                   type="text"
                   name="lead_traveller"
@@ -136,7 +136,7 @@ console.log(formData);
 
               {/* Message Box */}
               <div className="mb-3">
-                <label className="form-label text-white">Message:</label>
+                <label className="form-label text-dark">Message:</label>
                 <textarea
                   name="message_box"
                   value={formData.message_box}
@@ -150,7 +150,7 @@ console.log(formData);
 
               {/* Booking Date */}
               <div className="mb-3">
-                <label className="form-label text-white">Booking Date:</label>
+                <label className="form-label text-dark">Booking Date:</label>
                 <input
                   type="date"
                   name="booking_date"
