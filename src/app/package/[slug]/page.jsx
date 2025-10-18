@@ -305,7 +305,7 @@ const PackageDetails = () => {
                         <img
                           src={pkg.thumbnails?.[0]?.image}
                           className="img-fluid rounded-start h-100"
-                          style={{ objectFit: "cover" }}
+                          style={{ objectFit: "cover",width:"100%",height:"100%" }}
                           alt=""
                         />
                       </Link>
