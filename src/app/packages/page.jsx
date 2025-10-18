@@ -82,6 +82,11 @@ const Packages = () => {
         </div>
       </div>
 
+      <div style={{paddingTop:'150px'}}>
+        
+
+      </div>
+
 <Footer/>
     </>
   );

@@ -73,10 +73,10 @@ const PackageCard = ({ pkg = {} }) => {
                     <div className="card-body h-100 d-flex flex-column">
                       <div className="d-flex justify-content-between align-items-start mb-2">
                         <h5 className="card-title fw-bold mb-0">{package_title}</h5>
-                        <div className="d-flex align-items-center bg-warning text-dark px-2 py-1 rounded">
+                        <div className="d-flex align-items-center bg-primary text-warning px-2 py-1 rounded">
                           <i className="fas fa-star me-1"></i>
-                          <span>{review_stars}</span>
-                          <span className="ms-1 small">({total_review_count})</span>
+                          <span className="text-white">{review_stars}</span>
+                          <span className="ms-1 small text-white">({total_review_count})</span>
                         </div>
                       </div>
 
@@ -126,7 +126,7 @@ const PackageCard = ({ pkg = {} }) => {
                                 </button>
                            </Link>
 <Link href={`/package/${slug}`}>
-                              <button className="btn btn-dark">
+                              <button className="btn btn-dark bg-orange">
                                 <i className="fas fa-shopping-cart me-1"></i> Book Now
                               </button>
   

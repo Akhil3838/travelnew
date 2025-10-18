@@ -82,17 +82,22 @@ const PackageDetails = () => {
       </header>
 
       {/* Package Hero Section */}
-      <section
-        className="text-white py-5"
-        style={{
-          // background: "linear-gradient(90deg,#ff7b00, #ff7b0093)",
-          backgroundImage: `url(https://img.freepik.com/free-vector/vector-abstract-moon-relief-map-generated-conceptual-lunar-elevation-map-isolines-landscape-surface-elevation-geographic-map-conceptual-design-elegant-background-presentations_1217-5656.jpg)`,
-        }}
-      >
+     <section
+  className="text-white py-5"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url(https://img.freepik.com/free-vector/vector-abstract-moon-relief-map-generated-conceptual-lunar-elevation-map-isolines-landscape-surface-elevation-geographic-map-conceptual-design-elegant-background-presentations_1217-5656.jpg)
+    `,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+
         <div className="container">
-          <nav aria-label="breadcrumb" className="mb-3">
+          <nav aria-label="breadcrumb" className="mb-3 ">
             <ol className="breadcrumb bg-transparent p-0">
-              <li className="breadcrumb-item">
+              <li className="breadcrumb-item ">
                 <Link href="/" className="text-white text-decoration-none">
                   Home
                 </Link>
@@ -133,15 +138,15 @@ const PackageDetails = () => {
               </div>
 
               <div className="d-flex flex-wrap gap-4">
-                <span>
+                <span className="text-white">
                   <i className="fas fa-map-marker-alt me-2 text-warning"></i>
                   Departure: {details.departure}
                 </span>
-                <span>
+                <span className="text-white">
                   <i className="fas fa-clock me-2 text-warning"></i>
                   Duration: {details.duration} days
                 </span>
-                <span>
+                <span className="text-white">
                   <i className="fas fa-bus me-2 text-warning"></i>
                   Transport: {details.transport}
                 </span>

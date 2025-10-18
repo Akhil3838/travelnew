@@ -193,16 +193,16 @@ const FilterSidebar = ({ onApplyFilters }) => {
                       </div>
                     </div> */}
     
-                    <button className="btn btn-dark w-100 mt-3" onClick={applyFilters}>Apply Filters</button>
+                    <button className="btn btn-dark bg-orange w-100 mt-3" onClick={applyFilters}>Apply Filters</button>
                     <button className="btn btn-link w-100 mt-2 text-decoration-none"  onClick={resetFilters}>Reset All Filters</button>
                   </div>
                 </div>
                 
-                <div className="card bg-dark text-white">
+                <div className="card boreder border-1 text-dark">
                   <div className="card-body">
                     <h5 className="card-title fw-bold mb-3">Need Help?</h5>
                     <p className="card-text small">Our travel experts are available 24/7 to help you plan your perfect trip.</p>
-                    <button className="btn btn-outline-light w-100">Contact Us</button>
+                    <button className="btn btn-outline-primary w-100">Contact Us</button>
                   </div>
                 </div>
               </div>

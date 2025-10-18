@@ -34,48 +34,52 @@ const PackageList = ({ packages, totalpage, onPageChange }) => {
 
             ))}
             
-      {/* Pagination */}
-      <nav aria-label="Pagination" className="mt-4">
-        <ul className="pagination justify-content-center">
-          <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
-            <button
-              className="page-link"
-              onClick={() => handlePageClick(currentPage - 1)}
-              disabled={currentPage === 1}
-            >
-              Previous
-            </button>
-          </li>
+{/* Modern Pagination with CSS & Bootstrap */}
+<nav aria-label="Pagination" className="mt-5">
+  <ul className="pagination justify-content-center modern-pagination">
+    {/* Previous Button */}
+    <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
+      <button
+        className="page-link modern-page-link"
+        onClick={() => handlePageClick(currentPage - 1)}
+        disabled={currentPage === 1}
+      >
+        <i className="bi bi-chevron-left me-2"></i>
+        Previous
+      </button>
+    </li>
 
-          {[...Array(totalpage)].map((_, index) => {
-            const pageNum = index + 1;
-            return (
-              <li
-                key={pageNum}
-                className={`page-item text-dark ${currentPage === pageNum ? "active" : ""}`}
-              >
-                <button
-                  className="page-link "
-                  onClick={() => handlePageClick(pageNum)}
-                >
-                  {pageNum}
-                </button>
-              </li>
-            );
-          })}
+    {/* Page Numbers */}
+    {[...Array(totalpage)].map((_, index) => {
+      const pageNum = index + 1;
+      return (
+        <li
+          key={pageNum}
+          className={`page-item ${currentPage === pageNum ? "active" : ""}`}
+        >
+          <button
+            className="page-link modern-page-link"
+            onClick={() => handlePageClick(pageNum)}
+          >
+            {pageNum}
+          </button>
+        </li>
+      );
+    })}
 
-          <li className={`page-item ${currentPage === totalpage ? "disabled" : ""}`}>
-            <button
-              className="page-link"
-              onClick={() => handlePageClick(currentPage + 1)}
-              disabled={currentPage === totalpage}
-            >
-              Next
-            </button>
-          </li>
-        </ul>
-      </nav>
-          </div>
+    {/* Next Button */}
+    <li className={`page-item ${currentPage === totalpage ? "disabled" : ""}`}>
+      <button
+        className="page-link modern-page-link"
+        onClick={() => handlePageClick(currentPage + 1)}
+        disabled={currentPage === totalpage}
+      >
+        Next
+        <i className="bi bi-chevron-right ms-2"></i>
+      </button>
+    </li>
+  </ul>
+</nav>          </div>
 
     </>
   )

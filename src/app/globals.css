@@ -809,8 +809,13 @@ span{
   color: rgb(12, 11, 11);
 }
 svg{
-  color: white;
+  color: rgb(27, 20, 20);
 }
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: #ffb84d !important; /* soft gold */
+}
+
 /* .........................................................adujst............................................................................. */
 /* trending  carosel*/
 
@@ -2402,3 +2407,84 @@ select.form-select:focus {
 
 
 
+/* Modern Pagination Styles */
+.modern-pagination {
+  gap: 8px;
+}
+
+.modern-page-link {
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+  font-weight: 500;
+  color: #64748b;
+  background: white;
+  transition: all 0.3s ease;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modern-page-link:hover {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #475569;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modern-page-link:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+.page-item.active .modern-page-link {
+  background: linear-gradient(135deg, #f6833b, #d86b1d) !important;
+  border-color: #3b82f6 !important;
+  color: white !important;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+  transform: scale(1.05);
+}
+
+.page-item.disabled .modern-page-link {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #94a3b8 !important;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Bootstrap Icons */
+
+/* Responsive */
+@media (max-width: 576px) {
+  .modern-pagination {
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  
+  .modern-page-link {
+    padding: 6px 12px !important;
+    font-size: 0.875rem;
+    min-width: 40px;
+  }
+}
+
+
+
+/* for responsive button in the package list */
+@media (max-width: 576px) {
+  .d-flex.gap-2 {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .d-flex.gap-2 a {
+    width: 100% !important;
+  }
+
+  .d-flex.gap-2 button {
+    width: 100% !important;
+  }
+}
