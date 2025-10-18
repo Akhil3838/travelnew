@@ -806,7 +806,7 @@ color: #000000;
   color: #616161;
 } */
 span{
-  color: white;
+  color: rgb(12, 11, 11);
 }
 svg{
   color: white;
@@ -2397,3 +2397,8 @@ select.form-select:focus {
 .blog-card:nth-child(4) { animation-delay: 0.4s; }
 .blog-card:nth-child(5) { animation-delay: 0.5s; }
 .blog-card:nth-child(6) { animation-delay: 0.6s; }
+
+
+
+
+

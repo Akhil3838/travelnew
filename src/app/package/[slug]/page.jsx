@@ -46,7 +46,7 @@ const PackageDetails = () => {
   return (
     <>
       {/* Header */}
-      <header className="main-header bg-white shadow-sm sticky-top">
+      <header className="main-header bg-white shadow-sm sticky-top z-3">
         <div className="container d-flex justify-content-between align-items-center py-3">
           <Link href="/" style={{ textDecoration: "none" }}>
             <div className="logo-container d-flex align-items-center">
@@ -85,19 +85,20 @@ const PackageDetails = () => {
       <section
         className="text-white py-5"
         style={{
-          background: "linear-gradient(90deg,#ff7b00, #ff7b0093)",
+          // background: "linear-gradient(90deg,#ff7b00, #ff7b0093)",
+          backgroundImage: `url(https://img.freepik.com/free-vector/vector-abstract-moon-relief-map-generated-conceptual-lunar-elevation-map-isolines-landscape-surface-elevation-geographic-map-conceptual-design-elegant-background-presentations_1217-5656.jpg)`,
         }}
       >
         <div className="container">
           <nav aria-label="breadcrumb" className="mb-3">
             <ol className="breadcrumb bg-transparent p-0">
               <li className="breadcrumb-item">
-                <Link href="/" className="text-white-50 text-decoration-none">
+                <Link href="/" className="text-white text-decoration-none">
                   Home
                 </Link>
               </li>
               <li className="breadcrumb-item">
-                <span className="text-white-50">{details.category?.title}</span>
+                <span className="text-white">{details.category?.title}</span>
               </li>
               <li
                 className="breadcrumb-item active text-white"
@@ -162,7 +163,7 @@ const PackageDetails = () => {
                   </div>
                   <small>per person</small>
                 </div>
-                <button className="btn btn-warning w-100 fw-bold py-3 rounded-pill text-white">
+                <button className="btn btn-sm bg-orange w-100 fw-bold py-3 rounded-pill text-white">
                   <i className="fas fa-shopping-cart me-2"></i> Book Now
                 </button>
               </div>
@@ -276,7 +277,7 @@ const PackageDetails = () => {
 
           {/* Booking Sidebar */}
           <div className="col-lg-4">
-            <div className="card border-0 shadow-sm sticky-top" style={{ top: "20px" }}>
+            <div className="card border-0 shadow-sm " style={{ top: "20px" }}>
               <div className="card-body">
                 <h4 className="fw-bold text-primary mb-3">Book This Tour</h4>
                 <BookingForm packageId={details?.id} />
@@ -290,10 +291,10 @@ const PackageDetails = () => {
       <section
         className="py-5"
         style={{
-          background: "linear-gradient(90deg, #2f00ffff, #1500ffff)",
+          background: "linear-gradient(90deg, #f4f2f1ff)",
         }}
       >
-        <div className="container text-white">
+        <div className="container text-dark">
           <h2 className="fw-bold mb-5 text-center">You May Also Like</h2>
           <div className="row">
             {travelPackages.map((pkg) => (
@@ -324,7 +325,7 @@ const PackageDetails = () => {
                           </div>
                           <Link
                             href={`/package/${pkg.slug}`}
-                            className="btn btn-sm btn-warning text-white mt-2 rounded-pill"
+                            className="btn btn-sm bg-orange text-white mt-2 rounded-pill"
                           >
                             View Details
                           </Link>
@@ -338,7 +339,9 @@ const PackageDetails = () => {
           </div>
         </div>
       </section>
+<div style={{paddingTop:'150px',backgroundColor:'#f4f2f1ff'}}>
 
+</div>
       <Footer />
     </>
   );
