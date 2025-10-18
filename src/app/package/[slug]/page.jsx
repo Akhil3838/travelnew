@@ -220,7 +220,7 @@ const PackageDetails = () => {
                       key={item.id}
                       className="accordion-item border-0 shadow-sm mb-3 rounded"
                     >
-                      <h2 className="accordion-header">
+                      <h4 className="accordion-header">
                         <button
                           className="accordion-button collapsed bg-white fw-semibold"
                           type="button"
@@ -229,7 +229,7 @@ const PackageDetails = () => {
                         >
                           Day {item.day}: {item.title}
                         </button>
-                      </h2>
+                      </h4>
                       <div
                         id={`collapse${item.day}`}
                         className="accordion-collapse collapse"
