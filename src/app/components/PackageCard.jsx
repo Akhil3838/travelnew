@@ -1,145 +1,98 @@
+"use client";
 import Link from "next/link";
-import React, { useState } from "react";
-// import EnquiryForm from "./EnqueryForm";
+import React from "react";
 
 const PackageCard = ({ pkg = {} }) => {
-  // State for controlling modal visibility
-//   const [showEnquiryModal, setShowEnquiryModal] = useState(false);
-
-  // Destructure with defaults based on your API response
   const {
     id,
-    package_title = "Tour Package",
-    small_description = "Explore amazing destinations",
-    price = 0,
-    special_price = price,
-    days = "N/A",
-    departure = "N/A",
-    transport = "Not specified",
-    review_stars = 0,
-    total_review_count = 0,
-    features = "",
-    thumbnails = [],
-    add_badge_status = "no",
-    badge = null,
-    category = {},
-    slug = ""
+    package_title = "JW Marriott Marquis Hotel Dubai",
+    small_description = "Pool",
+    price = 92401,
+    special_price = 68540,
+    review_stars = 9.6,
+    total_review_count = 1137,
+    thumbnails = [{ image: "https://via.placeholder.com/500x300?text=Hotel+Image" }],
+    badge = "100% off flights",
   } = pkg;
 
-  // Process features into highlights
-  const highlights = features ? features.split(',') : [
-    "Comfortable transportation",
-    "Professional guide",
-    "Memorable experience"
-  ];
+  const imageUrl = thumbnails[0]?.image;
 
-  // Get first thumbnail image or use placeholder
-  const imageUrl = thumbnails[0]?.image || "https://via.placeholder.com/300x200?text=Tour+Image";
-
-  // Calculate discount percentage if special price exists
-  const discountPercent = special_price < price 
-    ? Math.round(((price - special_price) / price) * 100)
-    : 0;
-
+  const discountPercent =
+    special_price < price ? Math.round(((price - special_price) / price) * 100) : 0;
 
   return (
-    <>
-                  <div key={pkg.id} className="card mb-4">
-                <div className="row g-0">
-                  <div className="col-md-4 position-relative">
-                    <div className="position-absolute top-0 start-0 m-3 d-flex flex-column gap-2">
-                       {add_badge_status === "yes" && badge && (
-                        <span className="badge bg-danger text-white">
-                          <i className="fas fa-tag me-1"></i> {badge}
-                        </span>
-                      )}
-                     
-                       {discountPercent > 0 && (
-                <span className="badge bg-dark text-white">
-                  {discountPercent}% Off
+    <div
+      className="card border-0 shadow-sm rounded-4 overflow-hidden mb-4"
+      style={{ transition: "transform 0.2s", cursor: "pointer" }}
+    >
+      <div className="row g-0">
+        {/* Left Image */}
+        <div className="col-md-5 position-relative">
+          <Link href={`/package/${id}`}>
+            <img
+              src={imageUrl}
+              alt={package_title}
+              className="img-fluid w-100 h-100 object-fit-cover"
+              style={{ minHeight: "220px" }}
+            />
+          </Link>
+        </div>
+
+        {/* Right Info */}
+        <div className="col-md-7 p-3 d-flex flex-column justify-content-between">
+          <div>
+            <h5 className="fw-bold mb-1">{package_title}</h5>
+            <p className="text-secondary mb-2">
+              <i className="fas fa-swimming-pool me-1"></i> {small_description}
+            </p>
+
+            <div className="d-flex align-items-center gap-2 mb-2">
+              <span className="badge bg-success text-white rounded-pill px-3 py-2 small fw-semibold">
+                {badge}
+              </span>
+              {discountPercent > 0 && (
+                <span className="badge bg-light text-dark border rounded-pill px-3 py-2 small fw-semibold">
+                  {discountPercent}% off
                 </span>
               )}
-                    </div>
-                           <Link href={`/package/${slug}`}>
-                      <img
-                         src={imageUrl}
-                alt={package_title}
-                        className="img-fluid rounded-start h-100 object-fit-cover"
-                        style={{ minHeight: "250px" }}
-                      />
-                   </Link>
-                  </div>
-                  <div className="col-md-8">
-                    <div className="card-body h-100 d-flex flex-column">
-                      <div className="d-flex justify-content-between align-items-start mb-2">
-                        <h5 className="card-title fw-bold mb-0">{package_title}</h5>
-                        <div className="d-flex align-items-center bg-primary text-warning px-2 py-1 rounded">
-                          <i className="fas fa-star me-1"></i>
-                          <span className="text-white">{review_stars}</span>
-                          <span className="ms-1 small text-white">({total_review_count})</span>
-                        </div>
-                      </div>
+            </div>
+          </div>
 
-                                    {/* Description */}
-              <p className="text-muted small mb-3">{small_description}</p>
+          {/* Rating */}
+          <div className="d-flex align-items-center mb-2">
+            <span
+              className="badge bg-success text-white fw-bold fs-6 me-2"
+              style={{ borderRadius: "8px" }}
+            >
+              {review_stars}
+            </span>
+            <div>
+              <div className="fw-semibold text-dark">Exceptional</div>
+              <small className="text-muted">{total_review_count} reviews</small>
+            </div>
+          </div>
 
-
-                      
-                      <div className="mb-3">
-                        <ul className="list-unstyled mb-0">
-                          {highlights.map((highlight, index) => (
-                            <li key={index} className="mb-1">
-                              <i className="fas fa-check-circle text-dark me-2"></i>
-                              {highlight}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <div className="mt-auto">
-                        <div className="d-flex justify-content-between align-items-center mb-3">
-                          <div className="text-dark">
-                            <i className="fas fa-map-marker-alt me-1"></i>
-                            <span className="text-dark">From: </span>
-                            <strong>{transport}</strong>
-                          </div>
-                          <div className="text-muted">
-                            <i className="fas fa-clock me-1"></i>
-                            <span className="text-dark">{days} days</span>
-                          </div>
-                        </div>
-                        
-                        <div className="d-flex justify-content-between align-items-center">
-                          <div>
-                            <span className="text-decoration-line-through text-muted me-2">
-                                ₹{price.toLocaleString()}
-                            </span>
-                            <span className="fw-bold text-dark fs-4">
-                             ₹{special_price.toLocaleString()}
-                            </span>
-                            <span className="text-muted ms-2 small">per person</span>
-                          </div>
-                          <div className="d-flex gap-2">
-                           <Link href={`/package/${slug}`}>
-                                <button className="btn btn-outline-dark">
-                                  <i className="fas fa-eye me-1"></i> View
-                                </button>
-                           </Link>
-<Link href={`/package/${slug}`}>
-                              <button className="btn btn-dark bg-orange">
-                                <i className="fas fa-shopping-cart me-1"></i> Book Now
-                              </button>
-  
-</Link>                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          {/* Price Section */}
+          <div className="mt-2">
+            <div className="text-end">
+              <div>
+                <span className="text-decoration-line-through text-muted me-2">
+                  ₹{price.toLocaleString()}
+                </span>
+                <span className="fw-bold fs-4 text-dark">₹{special_price.toLocaleString()}</span>
               </div>
+              <div className="text-muted small">
+                per traveller <br /> includes flight + stay <br />
+                <span className="fw-semibold text-dark">
+                  ₹{(special_price * 2).toLocaleString()} package total
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-    </>
-  )
-}
-
-export default PackageCard
+export default PackageCard;

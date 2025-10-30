@@ -2488,3 +2488,9 @@ select.form-select:focus {
     width: 100% !important;
   }
 }
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+

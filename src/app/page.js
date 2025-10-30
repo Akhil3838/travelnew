@@ -5,7 +5,6 @@ import Topten from "./components/Topten";
 import Footer from "./components/Footer";
 import ToptenTrek from "./components/ToptenTrek";
 import Pilgrims from "./components/Pilgrims";
-import Honeymoon from "./components/Honeymoon";
 import Link from "next/link";
 import Honey from "./components/Honey";
 import Gallery from "./components/Gallery";
@@ -424,6 +423,81 @@ export default function Home() {
 </section>
 {/* hot selling packages */}
 
+{/* One Way Taxi Section */}
+{/* One Way Taxi Section */}
+<div
+  className="container-fluid py-5"
+  style={{
+    backgroundColor: "#001f3f",
+    color: "white",
+  }}
+>
+  <div className="container">
+    <h2 className="text-center mb-5 fw-bold">
+      🚖 One Way Taxi Routes
+    </h2>
+
+    <div className="row g-4">
+      {[
+        { from: "Kerala", to: "Goa" },
+        { from: "Kerala", to: "Bangalore" },
+        { from: "Kerala", to: "Chennai" },
+        { from: "Kerala", to: "Mysore" },
+      ].map((trip, index) => (
+        <div key={index} className="col-12 col-md-6 col-lg-3">
+          <div
+            className="card border-0 text-center h-100"
+            style={{
+              position: "relative",
+              overflow: "hidden",
+              borderRadius: "30px 30px 80px 30px", // 👈 custom shape
+              background: "linear-gradient(145deg, #ffffff, #e6f0ff)",
+              color: "#001f3f",
+              boxShadow: "0 6px 16px rgba(255,255,255,0.1)",
+              transition: "transform 0.3s ease, box-shadow 0.3s ease",
+              cursor: "pointer",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-5px)";
+              e.currentTarget.style.boxShadow =
+                "0 8px 20px rgba(255,255,255,0.3)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow =
+                "0 6px 16px rgba(255,255,255,0.1)";
+            }}
+          >
+            {/* Decorative wave effect */}
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "50px",
+                background:
+                  "linear-gradient(90deg, #0d6efd 0%, #00bcd4 100%)",
+                clipPath:
+                  "polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 60%)",
+              }}
+            ></div>
+
+            <div className="card-body py-5 mt-3">
+              <i
+                className="fa-solid fa-car-side mb-3"
+                style={{ fontSize: "2rem", color: "#0d6efd" }}
+              ></i>
+              <h5 className="fw-bold mb-0">
+                {trip.from} → {trip.to}
+              </h5>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
 {/* about section */}
 
 <section className="about-section container">

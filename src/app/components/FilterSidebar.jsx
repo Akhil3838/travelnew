@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from "react";
 import { PackageFilters } from "../services/allApi";
+import RecentPosts from "./RecentPosts";
 
 const FilterSidebar = ({ onApplyFilters }) => {
   const [filters, setFilters] = useState({ categories: [], days: [] });
@@ -197,6 +198,10 @@ const FilterSidebar = ({ onApplyFilters }) => {
                     <button className="btn btn-link w-100 mt-2 text-decoration-none"  onClick={resetFilters}>Reset All Filters</button>
                   </div>
                 </div>
+
+               {/* recently  posts */}
+<RecentPosts/>
+
                 
                 <div className="card boreder border-1 text-dark">
                   <div className="card-body">
