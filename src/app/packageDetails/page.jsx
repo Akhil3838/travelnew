@@ -199,7 +199,8 @@ function Page() {
           <div style={{paddingTop:'150px'}}></div>
     
     
-</div>      <Footer />
+</div>   
+   <Footer />
     </>
   )
 }

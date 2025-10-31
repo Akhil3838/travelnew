@@ -439,10 +439,10 @@ export default function Home() {
 
     <div className="row g-4">
       {[
-        { from: "Kerala", to: "Goa" },
-        { from: "Kerala", to: "Bangalore" },
-        { from: "Kerala", to: "Chennai" },
-        { from: "Kerala", to: "Mysore" },
+        { from: "Bangalore", to: "Goa" },
+        { from: "Delhi", to: "Bangalore" },
+        { from: "Chennai", to: "Chennai" },
+        { from: "Mysore", to: "shivamogga" },
       ].map((trip, index) => (
         <div key={index} className="col-12 col-md-6 col-lg-3">
           <div
@@ -623,7 +623,7 @@ export default function Home() {
 <section className="why">
   <div className="container py-5">
     <h2 className="text-center section-title">Reason To Choose Us</h2>
-    <div className="row g-4">
+    <div className="row g-4 mt-4">
   
       <div className="col-md-3 col-6">
         <div className="feature-card">
@@ -945,7 +945,7 @@ export default function Home() {
   <div className="container">
     <h2 className="section-title">Guest Reviews</h2>
 
-    <div id="reviewsCarousel" className="carousel slide" data-bs-ride="carousel">
+    <div id="reviewsCarousel" className="carousel slide  mt-5" data-bs-ride="carousel">
       <div className="carousel-inner">
 
         {/* Slide 1 */}

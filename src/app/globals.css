@@ -216,8 +216,10 @@
 /* ..................................................end..................................................................... */
 .dark-theme {
   --sans-font: 'Inter', sans-serif;
---display-font: 'Playfair Display', serif;
-  /* background: #0a0a0a; */
+--display-font: "Oswald", sans-serif;
+
+ /* font-family: "Oswald", sans-serif; */
+/* background: #0a0a0a; */
 }
 
 h1, h2 {

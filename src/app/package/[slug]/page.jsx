@@ -9,12 +9,13 @@ import React, { useEffect, useState } from "react";
 const PackageDetails = () => {
   const params = useParams();
   const { slug } = params;
+  const [activeTab, setActiveTab] = useState('info')
 
   const [details, setDetails] = useState(null);
   const [travelPackages, setTravelPackages] = useState([]);
 
   const fetchPackageDetails = async (slug) => {
-    try {
+    try {  
       const result = await getSinglePackages(slug);
       setDetails(result?.data?.package || null);
     } catch (error) {
@@ -154,6 +155,8 @@ const PackageDetails = () => {
             </div>
 
             <div className="col-lg-4 mt-4 mt-lg-0">
+
+              
               <div className="bg-white text-dark p-4 rounded-3 shadow-sm">
                 <div className="d-flex justify-content-between align-items-center mb-3">
                   <div>
@@ -170,6 +173,10 @@ const PackageDetails = () => {
                 </div>
                 <button className="btn btn-sm bg-orange w-100 fw-bold py-3 rounded-pill text-white">
                   <i className="fas fa-shopping-cart me-2"></i> Book Now
+                </button>
+
+                 <button className="btn btn-sm  w-100 fw-bold py-3 mt-2 rounded-pill border text-dark shadow">
+                  <i className="fas fa-shopping-cart me-2"></i> Private Trip Enquery
                 </button>
               </div>
             </div>
@@ -216,7 +223,7 @@ const PackageDetails = () => {
             )}
 
             {/* Itinerary */}
-            {details.tourplan?.length > 0 && (
+             {/* {details.tourplan?.length > 0 && (
               <div className="mb-5">
                 <h3 className="fw-bold mb-4 text-primary">Tour Plan</h3>
                 <div className="accordion" id="tourPlanAccordion">
@@ -248,36 +255,148 @@ const PackageDetails = () => {
                   ))}
                 </div>
               </div>
-            )}
+            )}  */}
 
-            {/* Included / Excluded */}
-            {(details.inclusions?.length > 0 || details.exclusions?.length > 0) && (
-              <div className="my-5">
-                <h3 className="fw-bold text-primary mb-4">Included / Excluded</h3>
-                <div className="row">
-                  <div className="col-md-6">
-                    <h5 className="text-success">Included</h5>
-                    <ul className="list-unstyled">
-                      {details.inclusions?.map((i, idx) => (
-                        <li key={idx} className="mb-2">
-                          ✅ {i.title}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="col-md-6">
-                    <h5 className="text-danger">Excluded</h5>
-                    <ul className="list-unstyled">
-                      {details.exclusions?.map((i, idx) => (
-                        <li key={idx} className="mb-2">
-                          ❌ {i.title}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+         <div className="container my-5">
+            {/* Tabs */}
+            <div className="tab-buttons d-flex flex-wrap gap-2 mb-4">
+              <button
+                className={`btn ${activeTab === 'info' ? 'btn-success' : 'btn-outline-success'}`}
+                onClick={() => setActiveTab('info')}
+              >
+                <i className="bi bi-info-circle me-1"></i> Information
+              </button>
+              <button
+                className={`btn ${activeTab === 'plan' ? 'btn-success' : 'btn-outline-success'}`}
+                onClick={() => setActiveTab('plan')}
+              >
+                <i className="bi bi-calendar-check me-1"></i> Travel Plan
+              </button>
+              <button
+                className={`btn ${activeTab === 'gallery' ? 'btn-success' : 'btn-outline-success'}`}
+                onClick={() => setActiveTab('gallery')}
+              >
+                <i className="bi bi-images me-1"></i> Tour Gallery
+              </button>
+              <button
+                className={`btn ${activeTab === 'location' ? 'btn-success' : 'btn-outline-success'}`}
+                onClick={() => setActiveTab('location')}
+              >
+                <i className="bi bi-geo-alt me-1"></i> Location
+              </button>
+            </div>
+    
+            {/* Information Tab */}
+{activeTab === 'info' && (
+  <div className="fade-in">
+    <h4 className="fw-bold text-success">{details.destinationName || "Kashmir"}</h4>
+    <p className="text-muted">
+     Kashmir, also referred to as “Paradise on Earth,” is an enchanting region that boasts picturesque landscapes, pristine lakes, lush green valleys, and vibrant gardens, making it a perfect destination for nature lovers, adventure enthusiasts, and peace seekers alike.
+    </p>
+
+    <table className="table table-bordered info-table">
+      <tbody>
+        <tr>
+          <th>Destination</th>
+          <td>{details.places || "N/A"}</td>
+        </tr>
+        <tr>
+          <th>Departure</th>
+          <td>{details.departure || "Yes Required"}</td>
+        </tr>
+        <tr>
+          <th>Duration</th>
+          <td>{details.duration || "3 Nights / 4 Days"}</td>
+        </tr>
+
+        {/* ✅ Dynamic Included / Excluded Section */}
+        {(details.inclusions?.length > 0 || details.exclusions?.length > 0) && (
+          <>
+            <tr>
+              <th>Included</th>
+              <td>
+                <ul className="list-unstyled mb-0">
+                  {details.inclusions?.map((item, index) => (
+                    <li key={index}>✅ {item.title}</li>
+                  ))}
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>Excluded</th>
+              <td>
+                <ul className="list-unstyled mb-0">
+                  {details.exclusions?.map((item, index) => (
+                    <li key={index}>❌ {item.title}</li>
+                  ))}
+                </ul>
+              </td>
+            </tr>
+          </>
+        )}
+      </tbody>
+    </table>
+  </div>
+)}
+    
+            {/* Travel Plan Tab */}
+{activeTab === 'plan' && (
+  <div className="fade-in">
+    <h4 className="fw-bold text-success mb-4">Travel Plan - 4 Days</h4>
+    
+    <div className="modern-timeline">
+      {details.tourplan.map((item, i) => (
+        <div key={i} className="modern-timeline-item shadow-sm rounded-4 p-4 mb-4 bg-white position-relative">
+          <div className="timeline-icon bg-orange text-white rounded-circle d-flex align-items-center justify-content-center">
+            <i className={`${item.icon} fs-4`}></i>
+          </div>
+          <div className="timeline-content ps-4">
+            <h6 className="text-uppercase text-orange fw-bold">{item.day} Day</h6>
+            <h5 className="fw-semibold mb-2">{item.title}</h5>
+            <p className="text-muted mb-0"> {item.content}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+    
+            {/* Tour Gallery Tab */}
+            {activeTab === 'gallery' && (
+              <div className="fade-in">
+                <h4 className="fw-bold text-success mb-3">Tour Gallery</h4>
+                <div className="row g-3">
+                  {details.packimages.map((img, i) => (
+                    <div className="col-6 col-md-3" key={i}>
+                      <div className="gallery-card shadow-sm rounded overflow-hidden">
+                        <img
+                          src={`${img.image}`}
+                          alt="Kashmir Tour"
+                          className="img-fluid gallery-img"
+                        />
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             )}
+    
+            {/* Location Tab */}
+            {activeTab === 'location' && (
+              <div className="fade-in">
+                <h4 className="fw-bold text-success mb-3">Location</h4>
+                <div className="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d507951.255566565!2d74.6337!3d34.0837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e18f2cb27c8b41%3A0x6d7f3c13e8ce64b3!2sSrinagar!5e0!3m2!1sen!2sin!4v1707843459312!5m2!1sen!2sin"
+                    allowFullScreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            )}
+          </div>
+
+
           </div>
 
           {/* Booking Sidebar */}
