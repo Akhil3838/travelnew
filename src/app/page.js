@@ -437,64 +437,66 @@ export default function Home() {
       🚖 One Way Taxi Routes
     </h2>
 
-    <div className="row g-4">
-      {[
-        { from: "Bangalore", to: "Goa" },
-        { from: "Delhi", to: "Bangalore" },
-        { from: "Chennai", to: "Chennai" },
-        { from: "Mysore", to: "shivamogga" },
+    <div className="row g-4 justify-content-center">
+      {[ 
+        { from: "Bangalore", to: "Goa", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/3e/36/95/baga-sea-beach.jpg?w=800&h=-1&s=1" },
+        { from: "Delhi", to: "Bangalore", img: "https://www.shutterstock.com/image-photo/bangalore-cityscape-night-aerial-bengaluru-600nw-2206710297.jpg" },
+        { from: "Chennai", to: "Chennai", img: "https://www.shutterstock.com/image-photo/bangalore-cityscape-night-aerial-bengaluru-600nw-2206710297.jpg" },
+        { from: "Mysore", to: "Shivamogga", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/3e/36/95/baga-sea-beach.jpg?w=800&h=-1&s=1" },
       ].map((trip, index) => (
-        <div key={index} className="col-12 col-md-6 col-lg-3">
+        <div key={index} className="col-12 col-md-6 col-lg-6">
           <div
-            className="card border-0 text-center h-100"
+            className="card border-0 overflow-hidden shadow-sm h-100"
             style={{
-              position: "relative",
-              overflow: "hidden",
-              borderRadius: "30px 30px 80px 30px", // 👈 custom shape
-              background: "linear-gradient(145deg, #ffffff, #e6f0ff)",
+              borderRadius: "20px",
+              backgroundColor: "#f8f9fa",
               color: "#001f3f",
-              boxShadow: "0 6px 16px rgba(255,255,255,0.1)",
-              transition: "transform 0.3s ease, box-shadow 0.3s ease",
-              cursor: "pointer",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-5px)";
-              e.currentTarget.style.boxShadow =
-                "0 8px 20px rgba(255,255,255,0.3)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow =
-                "0 6px 16px rgba(255,255,255,0.1)";
             }}
           >
-            {/* Decorative wave effect */}
-            <div
+            <img
+              src={trip.img}
+              alt={`${trip.from} to ${trip.to}`}
+              className="img-fluid"
               style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
                 width: "100%",
-                height: "50px",
-                background:
-                  "linear-gradient(90deg, #0d6efd 0%, #00bcd4 100%)",
-                clipPath:
-                  "polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 60%)",
+                height: "220px",
+                objectFit: "cover",
               }}
-            ></div>
-
-            <div className="card-body py-5 mt-3">
-              <i
-                className="fa-solid fa-car-side mb-3"
-                style={{ fontSize: "2rem", color: "#0d6efd" }}
-              ></i>
-              <h5 className="fw-bold mb-0">
+            />
+            <div className="card-body text-center py-4">
+              <h5 className="fw-bold mb-2">
                 {trip.from} → {trip.to}
               </h5>
+              <p className="text-muted mb-0">
+                Book a one-way cab from {trip.from} to {trip.to} at the best price.
+              </p>
             </div>
           </div>
         </div>
       ))}
+    </div>
+
+    {/* View All Button */}
+    <div className="text-center mt-5">
+      <button
+        className="btn btn-outline-light px-4 py-2 rounded-pill fw-semibold"
+        style={{
+          borderColor: "#0d6efd",
+          color: "#0d6efd",
+          backgroundColor: "white",
+          transition: "0.3s",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = "#fd790dff";
+          e.currentTarget.style.color = "white";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = "white";
+          e.currentTarget.style.color = "#fd790dff";
+        }}
+      >
+        View All One Way Taxi Routes
+      </button>
     </div>
   </div>
 </div>
