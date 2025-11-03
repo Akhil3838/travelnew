@@ -10,6 +10,7 @@ const PackageDetails = () => {
   const params = useParams();
   const { slug } = params;
   const [activeTab, setActiveTab] = useState('info')
+  const [showEnquiry, setShowEnquiry] = useState(false)
 
   const [details, setDetails] = useState(null);
   const [travelPackages, setTravelPackages] = useState([]);
@@ -17,6 +18,8 @@ const PackageDetails = () => {
   const fetchPackageDetails = async (slug) => {
     try {  
       const result = await getSinglePackages(slug);
+      console.log(result);
+      
       setDetails(result?.data?.package || null);
     } catch (error) {
       console.error("Error fetching packages:", error);
@@ -59,13 +62,13 @@ const PackageDetails = () => {
           </Link>
 
           <nav className="main-nav d-none d-md-flex gap-4">
-            <a href="#" className="text-dark fw-semibold hover-blue" style={{textDecoration:'none'}}>
+            <a href="/about" className="text-dark fw-semibold hover-blue" style={{textDecoration:'none'}}>
               About Us
             </a>
-            <a href="#" className="text-dark fw-semibold hover-blue" style={{textDecoration:'none'}}>
+            <a href="/contactus" className="text-dark fw-semibold hover-blue" style={{textDecoration:'none'}}>
               Contact Us
             </a>
-            <a href="#" className="text-dark fw-semibold hover-blue" style={{textDecoration:'none'}}>
+            <a href="/blogs" className="text-dark fw-semibold hover-blue" style={{textDecoration:'none'}}>
               Blog
             </a>
           </nav>
@@ -175,7 +178,7 @@ const PackageDetails = () => {
                   <i className="fas fa-shopping-cart me-2"></i> Book Now
                 </button>
 
-                 <button className="btn btn-sm  w-100 fw-bold py-3 mt-2 rounded-pill border text-dark shadow">
+                 <button className="btn btn-sm  w-100 fw-bold py-3 mt-2 rounded-pill border text-dark shadow" onClick={() => setShowEnquiry(true)}>
                   <i className="fas fa-shopping-cart me-2"></i> Private Trip Enquery
                 </button>
               </div>
@@ -289,16 +292,16 @@ const PackageDetails = () => {
             {/* Information Tab */}
 {activeTab === 'info' && (
   <div className="fade-in">
-    <h4 className="fw-bold text-success">{details.destinationName || "Kashmir"}</h4>
+    <h4 className="fw-bold text-success">{details.package_title}</h4>
     <p className="text-muted">
-     Kashmir, also referred to as “Paradise on Earth,” is an enchanting region that boasts picturesque landscapes, pristine lakes, lush green valleys, and vibrant gardens, making it a perfect destination for nature lovers, adventure enthusiasts, and peace seekers alike.
+    {details.small_description || "N/A"}
     </p>
 
     <table className="table table-bordered info-table">
       <tbody>
         <tr>
           <th>Destination</th>
-          <td>{details.places || "N/A"}</td>
+          <td>{details.destination || "N/A"}</td>
         </tr>
         <tr>
           <th>Departure</th>
@@ -404,7 +407,7 @@ const PackageDetails = () => {
             <div className="card border-0 shadow-sm " style={{ top: "20px" }}>
               <div className="card-body">
                 <h4 className="fw-bold text-primary mb-3">Book This Tour</h4>
-                <BookingForm packageId={details?.id} />
+                <BookingForm packageId={details?.id} basePrice={details?.special_price || details?.price} baseCampPrice={details?.base_camp_price} />
               </div>
             </div>
           </div>
@@ -467,6 +470,27 @@ const PackageDetails = () => {
 
 </div>
       <Footer />
+
+      {showEnquiry && (
+        <div
+          className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+          style={{ background: "rgba(0,0,0,0.6)", zIndex: 1050 }}
+          onClick={() => setShowEnquiry(false)}
+        >
+          <div
+            className="bg-white rounded-3 shadow p-3 p-md-4"
+            style={{ width: "95%", maxWidth: "640px", maxHeight: "90vh", overflowY: "auto" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="d-flex justify-content-between align-items-center mb-2">
+              <h5 className="mb-0">Private Trip Enquiry</h5>
+              <button className="btn btn-sm btn-outline-secondary" onClick={() => setShowEnquiry(false)} aria-label="Close enquiry form">✕</button>
+            </div>
+            <div className="mb-3 small text-muted">Fill the form and we will get back to you with a custom plan.</div>
+            <BookingForm packageId={details?.id} basePrice={details?.special_price || details?.price} baseCampPrice={details?.base_camp_price} />
+          </div>
+        </div>
+      )}
     </>
   );
 };

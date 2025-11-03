@@ -47,9 +47,9 @@ const Packages = () => {
           </Link>
 
           <nav className="main-nav d-none d-md-flex gap-4">
-            <a href="#" className="nav-link">About Us</a>
-            <a href="#" className="nav-link">Contact Us</a>
-            <a href="#" className="nav-link">Blog</a>
+            <a href="/about" className="nav-link">About Us</a>
+            <a href="/contactus" className="nav-link">Contact Us</a>
+            <a href="/blogs" className="nav-link">Blog</a>
           </nav>
 
           <button
