@@ -326,13 +326,14 @@ export default function Home() {
   {/* <!-- Header --> */}
   <div className="offcanvas-header border-bottom border-secondary">
     <Link href={'/'} style={{textDecoration:'none'}}>
-      <h5 id="mobileMenuLabel" className="fw-bold fs-4 mb-0">
-        <span style={{ color: "#fe984fff" }}> Travelogue</span> Pedia
-      </h5>
-   </Link>
+      <div className="d-flex align-items-center">
+        <span className="fs-4 me-2">✈️</span>
+        <span className="fw-bold fs-5 text-dark">Travelogue Pedia</span>
+      </div>
+    </Link>
     <button
       type="button"
-      className="btn-close btn-close-white"
+      className="btn-close"
       data-bs-dismiss="offcanvas"
       aria-label="Close"
     ></button>
@@ -408,6 +409,7 @@ export default function Home() {
     </p>
   </div>
 </div>
+
 </div>
 
 {/* Trending Locations Section */}

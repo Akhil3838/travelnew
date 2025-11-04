@@ -120,6 +120,7 @@ function BlogList() {
         </header>
   
         {/* Offcanvas Menu (keep this outside the video section) */}
+      {/* Offcanvas Menu (keep this outside the video section) */}
 <div
   className="offcanvas offcanvas-end bg-white text-dark"
   tabIndex="-1"
@@ -129,13 +130,14 @@ function BlogList() {
   {/* <!-- Header --> */}
   <div className="offcanvas-header border-bottom border-secondary">
     <Link href={'/'} style={{textDecoration:'none'}}>
-      <h5 id="mobileMenuLabel" className="fw-bold fs-4 mb-0">
-        <span style={{ color: "#fe984fff" }}> Travelogue</span> Pedia
-      </h5>
-   </Link>
+      <div className="d-flex align-items-center">
+        <span className="fs-4 me-2">✈️</span>
+        <span className="fw-bold fs-5 text-dark">Travelogue Pedia</span>
+      </div>
+    </Link>
     <button
       type="button"
-      className="btn-close btn-close-white"
+      className="btn-close"
       data-bs-dismiss="offcanvas"
       aria-label="Close"
     ></button>
