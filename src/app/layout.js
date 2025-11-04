@@ -12,13 +12,18 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         {/* Google Fonts */}
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet"/>      
-  {/* Bootstrap CSS */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&display=swap"
+          rel="stylesheet"
+        />
+
+        {/* Bootstrap CSS */}
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
           crossOrigin="anonymous"
         />
 
@@ -26,15 +31,22 @@ export default function RootLayout({ children }) {
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+          integrity="sha512-2Vf0vZq2G8qU+2XCeuLq0kQfR9kPKmcnRtDR+xT+tV5EbSBxUgh5cwnP4B6c9SX1tgnDZTUbndsc5i5nJZ8iDQ=="
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
         />
       </head>
+
       <body className="dark-theme">
         {children}
-          <Toaster position="top-right" />
+        <Toaster position="top-right" />
+
+        {/* Bootstrap JS */}
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
           crossOrigin="anonymous"
-          defer
+          strategy="afterInteractive"
         />
       </body>
     </html>
