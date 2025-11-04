@@ -535,39 +535,60 @@ color: #000000;
             font-size: 0.9rem;
         }
         
-        /* Responsive adjustments */
-        @media (max-width: 1200px) {
-            .destination-card {
-                width: 21%; /* 5 items per row on medium screens */
-            }
-        }
-        @media (max-width: 992px) {
-            .destination-card {
-                width: 25%; /* 4 items per row */
-            }
-        }
-        @media (max-width: 768px) {
-            .destination-card {
-                width: 38.33%; /* 3 items per row */
-            }
-        }
-        @media (max-width: 576px) {
-            .destination-card {
-                width: 57%; /* 2 items per row */
-            }
-        }
 
-        .destinations-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding: 20px 0;
-
-    /* Hide scrollbar */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* IE and Edge */
+.destinations-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
+
+.destination-card {
+  flex: 0 0 auto; /* prevent shrinking */
+  scroll-snap-align: start;
+  /* background: #fff; */
+  border-radius: 15px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  overflow: hidden;
+  text-align: center;
+}
+
+/* ✅ Responsive widths */
+@media (max-width: 1200px) {
+  .destination-card {
+    width: 21%;
+  }
+}
+
+@media (max-width: 992px) {
+  .destination-card {
+    width: 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  .destination-card {
+    width: 38.33%;
+  }
+  .destinations-container {
+  display: flex;
+  justify-content: flex-start; /* Important */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; /* optional: gives smooth snapping */
+  padding: 10px 10px 20px 10px; /* less padding on left */
+  gap: 15px; /* space between cards */
+
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+}
+
+@media (max-width: 576px) {
+  .destination-card {
+    width: 65%; /* make more visible in small screens */
+  }
+}
+
 
 .destinations-container::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
