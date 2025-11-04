@@ -40,7 +40,7 @@ export const getSinglePackages=async(id)=>{
 
 // Trending packages
 export const getTrendingPkg=async()=>{
-    return await commonApi('GET',`${serverUrl}/get-trendingDestination`,"","")
+    return await commonApi('GET',`${serverUrl}/get-destinationLocation`,"","")
 }
 
 // get filter datas
