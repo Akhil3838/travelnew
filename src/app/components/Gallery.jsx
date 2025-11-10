@@ -1,6 +1,26 @@
-import React from "react";
+'use client'
+import React, {  useEffect, useState } from "react";
+import { getGallery } from "../services/allApi";
 
 function Gallery() {
+  const [imagess, setImagess] = useState({});
+
+  const fetchImages = async () => {
+    try {
+      const result = await getGallery();
+      // console.log(data?.galleries.images);
+      
+      setImagess(result?.data.galleries[0]);
+
+    } catch (error) {
+      console.error("Error fetching images:", error);
+    }
+  }
+          console.log(imagess);
+
+  useEffect(() => {
+    fetchImages();
+  }, []);
   return (
     <>
       {/* ---- Top Content Section ---- */}
@@ -22,20 +42,20 @@ function Gallery() {
       <section className="gallery-bottom">
         <div className="gallery-images">
           <div className="column">
-            <img src="https://images.unsplash.com/photo-1571497569639-7bd0fcd36c64?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dHJhdmVsJTIwYmVhY2h8ZW58MHx8MHx8fDA%3D" alt="Himalaya" style={{ height: "330px" }}/>
+            <img src={imagess?.image4} alt="Himalaya" style={{ height: "330px" }}/>
           </div>
 
           <div className="column">
-            <img src="https://img.delicious.com.au/WIXeICQZ/del/2018/12/istanbul-turkey-97382-2.jpg" alt="Monastery" style={{ height: "330px" }} />
-            <img src="https://media.istockphoto.com/id/1086145112/photo/young-solo-traveler-woman-in-singapore-street-market-checking-the-map.jpg?s=612x612&w=0&k=20&c=4b4m5BMZg8B2LjaMLsM3G5M1XWe9XTCHwaadEiBLTwM=" alt="Desert" style={{ height: "156px" }} />
+            <img src={imagess?.image3} alt="Monastery" style={{ height: "330px" }} />
+            <img src={imagess.image5} alt="Desert" style={{ height: "156px" }} />
           </div>
 
           <div className="column">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj0JgydlIxpqAI1sMkapfFCHsohn7AUyAVlg&s" alt="Snow Cabin" style={{ height: "156px" }} />
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlzNzkU1arhu64C1JWFQ19UbFxfTHBu7zuFw&s" alt="Houseboat"   style={{ height: "330px" }} />
+            <img src={imagess?.image2} alt="Snow Cabin" style={{ height: "156px" }} />
+            <img src={imagess?.image1} alt="Houseboat"   style={{ height: "330px" }} />
           </div>
            <div className="column">
-            <img src="https://img.freepik.com/free-photo/man-standing-rock-near-lake_410324-106.jpg?semt=ais_hybrid&w=740&q=80" alt="Himalaya" style={{ height: "330px" }}/>
+            <img src={imagess?.image6} alt="Himalaya" style={{ height: "330px" }}/>
           </div>
         </div>
       </section>

@@ -9,7 +9,9 @@ function Trending() {
   const fetchTrendingPackages = async () => {
     try {
       const result = await getTrendingPkg();
-      setLocations(result?.data?.location_destinations || []);
+      console.log(result);
+      
+      setLocations(result?.data?.destinations || []);
     } catch (error) {
       console.error('Error fetching trending destinations:', error);
     }
@@ -33,12 +35,14 @@ function Trending() {
           {locations.length > 0 ? (
             locations.map((item, index) => (
               <div key={index} className="destination-card">
-                <img
-                  src={item.location_image}
-                  alt={item.location}
-                  className="destination-image"
-                />
-                <div className="destination-name">{item.location}</div>
+               <Link href={`/`}>
+                  <img
+                    src={item.destination_image}
+                    alt={item.destination}
+                    className="destination-image"
+                  />
+               </Link>
+                <div className="destination-name">{item.destination}</div>
                 <div className="tour-count">{item.package_count} Tours</div>
               </div>
             ))

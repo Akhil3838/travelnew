@@ -13,6 +13,8 @@ const FilterSidebar = ({ onApplyFilters }) => {
   const AllFilters = async () => {
     try {
       const result = await PackageFilters();
+      console.log(result);
+      
       setFilters(result?.data || { categories: [], days: [] });
     } catch (error) {
       console.error("Error fetching filters:", error);
@@ -70,6 +72,29 @@ const FilterSidebar = ({ onApplyFilters }) => {
                   <div className="card-body">
                     <h5 className="card-title fw-bold mb-3">Refine Your Search</h5>
                     <hr className="my-3" />
+                            {/* Categories */}
+        {/* <div className="mb-4">
+          <h6 className="fw-semibold mb-3">Category</h6>
+          {filters.destination.map((cat) => (
+            <div className="form-check mb-2" key={cat.id}>
+              <input
+                className="form-check-input"
+                type="checkbox"
+                id={`cat-${cat.id}`}
+                checked={selectedCategories.includes(cat.id)}
+                onChange={() => handleCategoryChange(cat.id)}
+              />
+              <label
+                className="form-check-label d-flex align-items-center"
+                htmlFor={`cat-${cat.id}`}
+              >
+                <span className="ms-2 text-dark">{cat.destination}</span>
+              </label>
+            </div>
+          ))}
+        </div> */}
+    
+
                     
         {/* Categories */}
         <div className="mb-4">

@@ -9,6 +9,7 @@ import Link from "next/link";
 import Honey from "./components/Honey";
 import Gallery from "./components/Gallery";
 import StickyHeader from "./components/StickyHeader";
+import Onewaytaxi from "./components/Onewaytaxi";
 
 export default function Home() {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -419,7 +420,6 @@ export default function Home() {
 
 </section>
 {/* hot selling packages */}
-
 {/* One Way Taxi Section */}
 <div
   className="container-fluid py-5"
@@ -428,73 +428,7 @@ export default function Home() {
     color: "white",
   }}
 >
-  <div className="container">
-    <h2 className="text-center mb-5 fw-bold">
-      🚖 One Way Taxi Routes
-    </h2>
-
-    <div className="row g-4 justify-content-center">
-      {[ 
-        { from: "Bangalore", to: "Goa", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/3e/36/95/baga-sea-beach.jpg?w=800&h=-1&s=1" },
-        { from: "Delhi", to: "Bangalore", img: "https://www.shutterstock.com/image-photo/bangalore-cityscape-night-aerial-bengaluru-600nw-2206710297.jpg" },
-        { from: "Chennai", to: "Chennai", img: "https://www.shutterstock.com/image-photo/bangalore-cityscape-night-aerial-bengaluru-600nw-2206710297.jpg" },
-        { from: "Mysore", to: "Shivamogga", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/3e/36/95/baga-sea-beach.jpg?w=800&h=-1&s=1" },
-      ].map((trip, index) => (
-        <div key={index} className="col-12 col-md-6 col-lg-6">
-          <div
-            className="card border-0 overflow-hidden shadow-sm h-100"
-            style={{
-              borderRadius: "20px",
-              backgroundColor: "#f8f9fa",
-              color: "#001f3f",
-            }}
-          >
-            <img
-              src={trip.img}
-              alt={`${trip.from} to ${trip.to}`}
-              className="img-fluid"
-              style={{
-                width: "100%",
-                height: "220px",
-                objectFit: "cover",
-              }}
-            />
-            <div className="card-body text-center py-4">
-              <h5 className="fw-bold mb-2">
-                {trip.from} → {trip.to}
-              </h5>
-              <p className="text-muted mb-0">
-                Book a one-way cab from {trip.from} to {trip.to} at the best price.
-              </p>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    {/* View All Button */}
-    <div className="text-center mt-5">
-      <button
-        className="btn btn-outline-light px-4 py-2 rounded-pill fw-semibold"
-        style={{
-          borderColor: "#0d6efd",
-          color: "#0d6efd",
-          backgroundColor: "white",
-          transition: "0.3s",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = "#fd790dff";
-          e.currentTarget.style.color = "white";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = "white";
-          e.currentTarget.style.color = "#fd790dff";
-        }}
-      >
-        View All One Way Taxi Routes
-      </button>
-    </div>
-  </div>
+  <Onewaytaxi/>
 </div>
 {/* about section */}
 

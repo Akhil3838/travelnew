@@ -13,6 +13,7 @@ const PackageCard = ({ pkg = {} }) => {
     total_review_count = 1137,
     thumbnails = [{ image: "https://via.placeholder.com/500x300?text=Hotel+Image" }],
     badge = "100% off flights",
+    slug
   } = pkg;
 
   const imageUrl = thumbnails[0]?.image;
@@ -28,7 +29,7 @@ const PackageCard = ({ pkg = {} }) => {
       <div className="row g-0">
         {/* Left Image */}
         <div className="col-md-5 position-relative">
-          <Link href={`/package/${id}`}>
+          <Link href={`/package/${slug}`}>
             <img
               src={imageUrl}
               alt={package_title}

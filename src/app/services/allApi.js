@@ -90,3 +90,21 @@ export const getHonymoonPkg=async()=>{
 }
 
 
+export const getHonymoonPkgApi=async(reqBody)=>{
+  console.log(reqBody);
+  
+    return await commonApi('POST',`${serverUrl}/get-honeymoon-packages`,reqBody,"")
+}
+
+
+// gallery
+export const getGallery=async()=>{
+    return await commonApi('GET',`${serverUrl}/get-allimages`,"","")
+}
+
+// one way root
+export const oneWayRoot=async()=>{
+    return await commonApi('GET',`${serverUrl}/get-all_taxi_routes`,"","")
+}
+
+
