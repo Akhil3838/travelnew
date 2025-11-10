@@ -24,7 +24,7 @@ function ToptenTrek() {
       {trekPackages.map((pkg) => (
         <div key={pkg.id} className="col-10 col-sm-6 col-lg-3 flex-shrink-0" style={{ scrollSnapAlign: 'start' }}>
           <div className="adventure-card h-100 mx-2" style={{ backgroundColor:' #19264b'}}>
-<Link href={`/packageDetails`}>
+<Link href={`/package/${pkg.slug}`}>
 
               <div className="adventure-img-container">
                 <img
