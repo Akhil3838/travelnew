@@ -113,9 +113,9 @@ function Footer() {
             <div className="col-lg-2 col-md-6">
               <h5 className="fw-bold mb-3">QUICK LINKS</h5>
               <ul className="list-unstyled">
-                <li className='mb-2'><a href="#" className="text-decoration-none text-white">→ Home</a></li>
-                <li className='mb-2'><a href="#" className="text-decoration-none text-white">→ Temple Tour</a></li>
-                <li className='mb-2'><a href="#" className="text-decoration-none text-white">→ Services</a></li>
+                <li className='mb-2'><a href="/" className="text-decoration-none text-white">→ Home</a></li>
+                <li className='mb-2'><a href="/rent-vehicle" className="text-decoration-none text-white">→ Rent a car</a></li>
+                <li className='mb-2'><a href="/wedding-car" className="text-decoration-none text-white">→ Weddding cars</a></li>
                 <li className='mb-2'><a href="#" className="text-decoration-none text-white">→ FAQ</a></li>
                 <li className='mb-2'><a href="#" className="text-decoration-none text-white">→ About Us</a></li>
               </ul>
