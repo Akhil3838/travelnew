@@ -15,6 +15,8 @@ const Packages = () => {
   const Allpackages = async (appliedFilters = null, page = 1) => {
     try {
       const result = await getAllPackages({ ...appliedFilters, page });
+      console.log(result);
+      
       setTotalPage(result?.data?.total || 1);
       setTravelPackages(result?.data?.packages || []);
     } catch (error) {

@@ -3,35 +3,30 @@ import { commonApi } from "./commonApi";
 import { serverUrl } from "./serverUrl";
 
 
-// get all packages
-
 export const getAllPackages = async (filter = {}) => {
-  let query = "";
   const params = new URLSearchParams();
 
-  if (filter.categoryIds?.length) {
-    params.append("category_id", filter.categoryIds.join(","));
-  }
-  if (filter.days?.length) {
-    params.append("days", filter.days.join(","));
-  }
-  if (filter.minPrice !== undefined) {
-    params.append("min_price", filter.minPrice);
-  }
-  if (filter.maxPrice !== undefined) {
-    params.append("max_price", filter.maxPrice);
-  }
-  if (filter.page !== undefined) {
-    params.append("page", filter.page);
-  }
+  const appendList = (key, list) => {
+    if (Array.isArray(list) && list.length) {
+      params.append(key, list.join(","));
+    }
+  };
 
-  // Only build query if there are params
-  if ([...params].length > 0) {
-    query = `?${params.toString()}`;
-  }
+  appendList("category_id", filter.categoryIds);
+  appendList("destinations", filter.destinations);
+  appendList("days", filter.days);
 
-  return await commonApi("GET", `${serverUrl}/get-allpackages${query}`, "", "");
+  if (filter.minPrice !== undefined) params.append("min_price", filter.minPrice);
+  if (filter.maxPrice !== undefined) params.append("max_price", filter.maxPrice);
+  if (filter.page !== undefined) params.append("page", filter.page);
+
+  const query = params.toString() ? `?${params.toString()}` : "";
+
+  console.log("QUERY:", query);
+
+  return await commonApi("GET", `${serverUrl}/get-allpackages${query}`);
 };
+
 // get signle packages
 
 export const getSinglePackages=async(id)=>{
@@ -58,6 +53,8 @@ export const getCategories=async()=>{
 //save enquery
 
 export const saveEnquery=async(reqBody)=>{
+  console.log(reqBody);
+  
     
     return await commonApi('POST',`${serverUrl}/save-planbooking`,reqBody,"")
 }
@@ -105,6 +102,17 @@ export const getGallery=async()=>{
 // one way root
 export const oneWayRoot=async()=>{
     return await commonApi('GET',`${serverUrl}/get-all_taxi_routes`,"","")
+}
+
+
+// REnt a car
+export const rentACar=async()=>{
+    return await commonApi('GET',`${serverUrl}/get-all_rent_cars`,"","")
+}
+
+// wedding car booking
+export const weddingCar=async()=>{
+    return await commonApi('GET',`${serverUrl}/get-all_wedding_cars`,"","")
 }
 
 

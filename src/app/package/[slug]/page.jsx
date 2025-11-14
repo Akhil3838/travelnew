@@ -504,7 +504,7 @@ const PackageDetails = () => {
             <div className="card border-0 shadow-sm " style={{ top: "20px" }}>
               <div className="card-body">
                 <h4 className="fw-bold text-primary mb-3">Book This Tour</h4>
-                <BookingForm packageId={details?.id} basePrice={details?.special_price || details?.price} baseCampPrice={details?.base_camp_price} />
+                <BookingForm packageId={details?.id} basePrice={details?.special_price || details?.price} baseCampPrice={details?.base_camp_price} departuredates={details?.departuredates} transportation={details?.transportation} />
               </div>
             </div>
           </div>

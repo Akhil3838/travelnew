@@ -35,8 +35,7 @@ function Trending() {
           {locations.length > 0 ? (
             locations.map((item, index) => (
               <div key={index} className="destination-card">
-               <Link href={`/`}>
-                  <img
+<Link href={`/packages`}>                  <img
                     src={item.destination_image}
                     alt={item.destination}
                     className="destination-image"

@@ -49,7 +49,7 @@ function ToptenTrek() {
                 <span className="badge bg-light text-dark me-1 small">{pkg.duration}</span>
                 <span className="badge bg-light text-dark small">{pkg.days} Days</span>
               </div>
-<Link href={`/packageDetails`}>
+<Link href={`/package/${pkg.slug}`}>
 <button 
   className="btn btn-sm w-100" 
   style={{ 
