@@ -452,14 +452,14 @@ export default function Home() {
     We Craft Unforgettable Travel Experiences  
     (Personalized Trips, Expert Planning, Hassle-Free Journeys)
   </h3>
-  <p>
-    In today's fast-moving world, traveling is more than just visiting new places —
-    it's about creating memories, discovering cultures, and experiencing life beyond
-    routine. With countless destinations and travel options available, planning the
-    perfect trip can feel overwhelming. Thats why were here: to guide you with
-    expert insights, curated itineraries, and seamless travel planning that suits
-    your style and needs.
-  </p>
+<p>
+  In today&apos;s fast-moving world, traveling is more than just visiting new places —
+  it&apos;s about creating memories, discovering cultures, and experiencing life beyond
+  routine. With countless destinations and travel options available, planning the
+  perfect trip can feel overwhelming. That&apos;s why we&apos;re here: to guide you with
+  expert insights, curated itineraries, and seamless travel planning that suits
+  your style and needs.
+</p>
 
 <Link href="/about">
     <button className="btn btn-custom py-2 px-4" style={{background: '#305cde', color:'white'}}>Know more</button>
