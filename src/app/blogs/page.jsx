@@ -218,7 +218,7 @@ function BlogList() {
   
         {/* Hero Section */}
         {/* Categories Filter */}
-        <section className="categories-section py-4">
+        {/* <section className="categories-section py-4">
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -235,10 +235,10 @@ function BlogList() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
   
         {/* Featured Post */}
-        <section className="featured-post py-5">
+        {/* <section className="featured-post py-5">
           <div className="container">
             {blogPosts.filter(post => post.featured).map(featuredPost => (
               <div key={featuredPost.id} className="featured-card">
@@ -280,10 +280,10 @@ function BlogList() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
   
         {/* Blog Grid */}
-        <section className="blog-grid pb-5">
+        <section className="blog-grid pb-5 mt-5">
           <div className="container">
             <div className="row mb-5">
               <div className="col-12">
