@@ -446,22 +446,26 @@ export default function Home() {
     </div>
 
     {/* Right Content */}
-    <div className="col-lg-6 about-content">
-      <h5>About Us</h5>
-      <h3>
-        We Extract Pure Cold & Wood Press Edible Oil (100% Pure, No Preservatives,
-        No Chemical Process)
-      </h3>
-      <p>
-        In todays fast-paced world, where health and food choices go hand-in-hand,
-        selecting the right cooking oil has become increasingly challenging. With
-        endless options available in the market, its essential to make an informed
-        choice — one that not only meets your daily nutritional needs but also
-        supports your long-term health and well-being.
-      </p>
+<div className="col-lg-6 about-content">
+  <h5>About Us</h5>
+  <h3>
+    We Craft Unforgettable Travel Experiences  
+    (Personalized Trips, Expert Planning, Hassle-Free Journeys)
+  </h3>
+  <p>
+    In today's fast-moving world, traveling is more than just visiting new places —
+    it's about creating memories, discovering cultures, and experiencing life beyond
+    routine. With countless destinations and travel options available, planning the
+    perfect trip can feel overwhelming. Thats why were here: to guide you with
+    expert insights, curated itineraries, and seamless travel planning that suits
+    your style and needs.
+  </p>
 
-      <button className="btn btn-custom py-2 px-4" style={{background: '#305cde', color:'white'}}>Know more</button>
-    </div>
+<Link href="/about">
+    <button className="btn btn-custom py-2 px-4" style={{background: '#305cde', color:'white'}}>Know more</button>
+  
+</Link >
+</div>
   </div>
 </section>
 

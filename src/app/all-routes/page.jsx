@@ -1,7 +1,9 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { oneWayRoot } from '../services/allApi';
+import { allOneWayRootsApi } from '../services/allApi';
 import Link from 'next/link';
+import StickyHeader from '../components/StickyHeader';
+import Footer from '../components/Footer';
 
 function Onewaytaxi() {
   const [data, setData] = useState([]);
@@ -9,7 +11,7 @@ function Onewaytaxi() {
   // Fetch Taxi Routes
   const fetchTaxiRoutes = async () => {
     try {
-      const result = await oneWayRoot();
+      const result = await allOneWayRootsApi();
       console.log(result);
       if (result?.status && Array.isArray(result.data.taxi_routes)) {
         setData(result.data.taxi_routes);
@@ -25,8 +27,49 @@ function Onewaytaxi() {
 
   return (
     <>
-      <div className="container text-center">
-        <h2 className="mb-5 fw-bold">🚖 One Way Taxi Routes</h2>
+          <StickyHeader />
+
+      {/* Header */}
+      <header className="main-header bg-light shadow-sm">
+        <div className="container d-flex justify-content-between align-items-center py-3">
+          <Link href={'/'} style={{ textDecoration: 'none' }}>
+            <div className="logo-container d-flex align-items-center">
+              <span className="logo-icon fs-3">✈️</span>
+              <span className="logo-text text-dark fw-bold ms-2 fs-5"> Travelogue Pedia</span>
+            </div>
+          </Link>
+
+          <nav className="main-nav d-none d-md-flex gap-4">
+            <a href="/about" className="nav-link">About Us</a>
+            <a href="/contactus" className="nav-link">Contact Us</a>
+            <a href="/blogs" className="nav-link">Blog</a>
+          </nav>
+
+          <button
+            className="mobile-menu-btn btn d-md-none"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu"
+          >
+            ☰
+          </button>
+        </div>
+      </header>
+
+      {/* Intro Ribbon */}
+
+            <section className="gradient-ribbon text-white" style={{ background: 'linear-gradient(135deg,rgb(32, 11, 86) 0%,rgb(28, 3, 67) 100%)' }}>
+        <div className="container py-5 text-center">
+          <div className="section-kicker text-uppercase small fw-semibold opacity-75">All Taxi Routes</div>
+          <h1 className="h1 fw-bold mb-3" style={{ fontSize: '3rem' }}>One way taxi routes</h1>
+          <p className="mb-0 lead">Find the perfect vehicle for your journey.</p>
+        </div>
+      </section>
+
+
+
+      <div className="container text-center my-5">
+        {/* <h2 className="mb-5 fw-bold">🚖 One Way Taxi Routes</h2> */}
 
         {/* Two cards per row */}
         <div className="row g-4 justify-content-center">
@@ -73,31 +116,11 @@ function Onewaytaxi() {
         </div>
 
         {/* View All Button */}
-<Link href={'/all-routes'}>
-          <div className="text-center mt-5">
-            <button
-              className="btn px-4 py-2 fw-semibold"
-              style={{
-                border: "2px solid #fd790dff",
-                borderRadius: "30px",
-                color: "#fd790dff",
-                backgroundColor: "transparent",
-                transition: "0.3s",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#fd790dff";
-                e.currentTarget.style.color = "white";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "transparent";
-                e.currentTarget.style.color = "#fd790dff";
-              }}
-            >
-              View All One Way Taxi Routes
-            </button>
-          </div>
-  
-</Link>      </div>
+      </div>
+
+            <div style={{paddingTop:'150px'}}></div>
+
+      <Footer/>
     </>
   );
 }

@@ -101,7 +101,7 @@ export const getGallery=async()=>{
 
 // one way root
 export const oneWayRoot=async()=>{
-    return await commonApi('GET',`${serverUrl}/get-all_taxi_routes`,"","")
+    return await commonApi('GET',`${serverUrl}/get-taxi_routes`,"","")
 }
 
 
@@ -114,5 +114,12 @@ export const rentACar=async()=>{
 export const weddingCar=async()=>{
     return await commonApi('GET',`${serverUrl}/get-all_wedding_cars`,"","")
 }
+
+
+// one way root
+export const allOneWayRootsApi=async()=>{
+    return await commonApi('GET',`${serverUrl}/get-all_taxi_routes`,"","")
+}
+
 
 

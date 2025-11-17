@@ -174,12 +174,12 @@ const Packages = () => {
     `,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    minHeight: "60vh",
+    minHeight: "20vh",
     display: "flex",
     alignItems: "center",
   }}
 >
-  <div className="container py-5">
+  <div className="container ">
     {/* Breadcrumb */}
     <nav aria-label="breadcrumb" className="mb-4">
       <ol className="breadcrumb bg-transparent p-0 mb-0">
@@ -195,82 +195,6 @@ const Packages = () => {
     </nav>
 
     {/* Hero Content */}
-    <div className="row align-items-center">
-      <div className="col-lg-8">
-        <h1
-          className="fw-bold display-4 mb-3"
-          style={{
-            letterSpacing: "0.5px",
-            lineHeight: "1.2",
-            textShadow: "0 3px 10px rgba(0,0,0,0.4)",
-          }}
-        >
-          Discover Your Next Adventure
-        </h1>
-        <p className="lead text-light mb-4" style={{ maxWidth: "600px" }}>
-          Explore curated travel experiences across breathtaking destinations —
-          find your dream vacation with exclusive offers and handpicked stays.
-        </p>
-
-        {/* Info Highlights */}
-        <div className="d-flex flex-wrap gap-4 mb-4">
-          <div className="d-flex align-items-center">
-            <div className="bg-light text-dark rounded-circle d-flex justify-content-center align-items-center me-2" style={{ width: "40px", height: "40px" }}>
-              <i className="fas fa-plane-departure"></i>
-            </div>
-            <span className="text-light">Flight + Stay Packages</span>
-          </div>
-          <div className="d-flex align-items-center">
-            <div className="bg-light text-dark rounded-circle d-flex justify-content-center align-items-center me-2" style={{ width: "40px", height: "40px" }}>
-              <i className="fas fa-wallet"></i>
-            </div>
-            <span className="text-light">Best Price Guarantee</span>
-          </div>
-          <div className="d-flex align-items-center">
-            <div className="bg-light text-dark rounded-circle d-flex justify-content-center align-items-center me-2" style={{ width: "40px", height: "40px" }}>
-              <i className="fas fa-star"></i>
-            </div>
-            <span className="text-light">Top Rated Experiences</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Right-side search area */}
-      <div className="col-lg-4 mt-4 mt-lg-0">
-        <div
-          className="bg-white text-dark rounded-4 shadow p-4"
-          style={{ maxWidth: "380px" }}
-        >
-          <h5 className="fw-semibold mb-3 text-center">
-            <i className="fas fa-search me-2 text-primary"></i> Find Your Package
-          </h5>
-          <form>
-            <div className="mb-3">
-              <label className="form-label fw-semibold">Destination</label>
-              <input
-                type="text"
-                className="form-control rounded-pill"
-                placeholder="Enter destination"
-              />
-            </div>
-            <div className="mb-3">
-              <label className="form-label fw-semibold">Travel Month</label>
-              <select className="form-select rounded-pill">
-                <option>November 2025</option>
-                <option>December 2025</option>
-                <option>January 2026</option>
-              </select>
-            </div>
-            <button
-              type="submit"
-              className="btn btn-dark w-100 rounded-pill fw-semibold"
-            >
-              Search Packages
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
   </div>
 
   {/* Decorative wave bottom */}
