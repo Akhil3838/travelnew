@@ -128,19 +128,19 @@ function ContactUs() {
 
                 <div className="d-flex flex-wrap gap-4 mt-2">
                   <label className="d-flex align-items-center gap-2">
-                    <input type="radio" name="subject" defaultChecked /> General Inquiry
+                    <input type="radio" name="subject" defaultChecked /> Tour Enquiry
                   </label>
 
                   <label className="d-flex align-items-center gap-2">
-                    <input type="radio" name="subject" /> General Inquiry
+                    <input type="radio" name="subject" /> Destination Enquiry
                   </label>
 
                   <label className="d-flex align-items-center gap-2">
-                    <input type="radio" name="subject" /> General Inquiry
+                    <input type="radio" name="subject" /> Plan Enquiry
                   </label>
 
                   <label className="d-flex align-items-center gap-2">
-                    <input type="radio" name="subject" /> General Inquiry
+                    <input type="radio" name="subject" />Hotel  Enquiry
                   </label>
                 </div>
               </div>
