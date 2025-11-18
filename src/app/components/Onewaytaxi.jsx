@@ -44,23 +44,25 @@ function Onewaytaxi() {
                     color: "#001f3f",
                   }}
                 >
-                  {/* Image Section */}
+
+                  {/* Image Section (Reduced Height) */}
                   <div className="col-12 col-md-6 p-0">
                     <img
                       src={route.image}
                       alt={route.title}
-                      className="img-fluid w-100 h-100 object-fit-cover"
-                      style={{ minHeight: "200px" }}
+                      className="img-fluid w-100 object-fit-cover"
+                      style={{ height: "260px" }}   // ⬅ Reduced image height
                     />
                   </div>
 
                   {/* Description */}
-                  <div className="col-12 col-md-6 p-4 text-start">
-                    <h4 className="fw-bold mb-2">{route.title}</h4>
-                    <p className="text-muted mb-0">
+                  <div className="col-12 col-md-6 p-3 text-start"> {/* ⬅ reduced padding */}
+                    <h5 className="fw-bold mb-2">{route.title}</h5>
+                    <p className="text-muted mb-0" style={{ fontSize: "0.95rem" }}>
                       {route.description}
                     </p>
                   </div>
+
                 </div>
               </div>
             ))
@@ -94,6 +96,7 @@ function Onewaytaxi() {
             </button>
           </div>
         </Link>
+
       </div>
     </>
   );

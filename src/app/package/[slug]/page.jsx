@@ -482,18 +482,19 @@ const PackageDetails = () => {
             )}
     
             {/* Location Tab */}
-            {activeTab === 'location' && (
-              <div className="fade-in">
-                <h4 className="fw-bold text-success mb-3">Location</h4>
-                <div className="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d507951.255566565!2d74.6337!3d34.0837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e18f2cb27c8b41%3A0x6d7f3c13e8ce64b3!2sSrinagar!5e0!3m2!1sen!2sin!4v1707843459312!5m2!1sen!2sin"
-                    allowFullScreen
-                    loading="lazy"
-                  ></iframe>
-                </div>
-              </div>
-            )}
+{activeTab === 'location' && (
+  <div className="fade-in">
+    <h4 className="fw-bold text-success mb-3">Location</h4>
+
+    <div className="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+      <iframe
+        src={`https://www.google.com/maps?q=${encodeURIComponent(details?.destination)}&output=embed`}
+        allowFullScreen
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+)}
           </div>
 
 
