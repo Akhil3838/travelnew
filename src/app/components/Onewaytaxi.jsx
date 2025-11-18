@@ -21,46 +21,43 @@ function Onewaytaxi() {
 
   useEffect(() => {
     fetchTaxiRoutes();
-  }, []); // added dependency array to prevent infinite loop
+  }, []);
 
   return (
     <>
-      <div className="container text-center">
+      <div className="container text-center py-4">
         <h2 className="mb-5 fw-bold">🚖 One Way Taxi Routes</h2>
 
-        {/* Two cards per row */}
+        {/* Cards */}
         <div className="row g-4 justify-content-center">
           {data.length > 0 ? (
             data.map((route, index) => (
               <div key={route.id} className="col-12 col-md-6 d-flex justify-content-center">
                 <div
-                  className={`card border-0 overflow-hidden shadow-sm d-flex align-items-center flex-md-row ${
+                  className={`card border-0 overflow-hidden shadow-sm w-100 d-flex flex-column flex-md-row ${
                     index % 2 !== 0 ? "flex-md-row-reverse" : ""
                   }`}
                   style={{
-                    width: "100%",
                     maxWidth: "650px",
                     borderRadius: "15px",
                     backgroundColor: "#f8f9fa",
                     color: "#001f3f",
-                    minHeight: "220px",
                   }}
                 >
                   {/* Image Section */}
-                  <img
-                    src={route.image}
-                    alt={route.title}
-                    style={{
-                      width: "50%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
+                  <div className="col-12 col-md-6 p-0">
+                    <img
+                      src={route.image}
+                      alt={route.title}
+                      className="img-fluid w-100 h-100 object-fit-cover"
+                      style={{ minHeight: "200px" }}
+                    />
+                  </div>
 
-                  {/* Description Section */}
-                  <div className="card-body text-start p-4">
+                  {/* Description */}
+                  <div className="col-12 col-md-6 p-4 text-start">
                     <h4 className="fw-bold mb-2">{route.title}</h4>
-                    <p className="text-muted mb-0" style={{ fontSize: "1rem" }}>
+                    <p className="text-muted mb-0">
                       {route.description}
                     </p>
                   </div>
@@ -73,7 +70,7 @@ function Onewaytaxi() {
         </div>
 
         {/* View All Button */}
-<Link href={'/all-routes'}>
+        <Link href={'/all-routes'}>
           <div className="text-center mt-5">
             <button
               className="btn px-4 py-2 fw-semibold"
@@ -96,8 +93,8 @@ function Onewaytaxi() {
               View All One Way Taxi Routes
             </button>
           </div>
-  
-</Link>      </div>
+        </Link>
+      </div>
     </>
   );
 }
