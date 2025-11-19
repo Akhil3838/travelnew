@@ -1,19 +1,167 @@
-'use client'
-import React, { useState } from 'react'
-import Link from 'next/link'
-import Footer from '../components/Footer'
-import StickyHeader from '../components/StickyHeader'
+'use client';
 
-function Page() {
-  const [activeTab, setActiveTab] = useState('info')
+import Link from "next/link";
+import React from "react";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect } from "react";
+import StickyHeader from "../components/StickyHeader";
+
+export default function Page() {
+
+  // Enable Bootstrap JS for offcanvas
 
   return (
     <>
-    <StickyHeader/>
-    <div style={{backgroundColor:'#f3f3f3ff'}}>
+      <style>{`
+        /* Sidebar Box */
+        .sidebar-box {
+          border: 1px solid #e5e5e5;
+          border-radius: 12px;
+          padding: 20px;
+          background: #fff;
+        }
+        .sidebar-title {
+          font-size: 20px;
+          font-weight: 600;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 15px;
+        }
+        .sidebar-title span {
+          font-size: 24px;
+          cursor: pointer;
+          color: #555;
+        }
+        .range-label {
+          font-size: 15px;
+          font-weight: 600;
+          margin-bottom: 10px;
+        }
+        .range-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 15px;
+        }
+        .range-circle {
+          width: 20px;
+          height: 20px;
+          border: 2px solid #ff5722;
+          border-radius: 50%;
+        }
+        .filter-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 12px;
+          font-size: 15px;
+        }
+        .filter-row input {
+          transform: scale(1.2);
+          margin-right: 8px;
+        }
+        .filter-count {
+          color: #777;
+          font-size: 14px;
+        }
+        .section-divider {
+          border-top: 1px solid #ddd;
+          margin: 25px 0;
+        }
+        .brand-search {
+          border-radius: 8px;
+          font-size: 15px;
+        }
+        .capacity-icon {
+          width: 40px;
+          height: auto;
+          object-fit: contain;
+        }
 
-      {/* Header */}
-      <header className="main-header bg-light shadow-sm">
+        /* CARD STYLES */
+        .car-card-box {
+          border: 1px solid #e5e5e5;
+          border-radius: 12px;
+          padding: 20px;
+          margin-bottom: 25px;
+          background: #fff;
+          position: relative;
+          transition: 0.3s;
+        }
+        .car-card-box:hover {
+          box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+        }
+        .more-icon {
+          position: absolute;
+          top: 18px;
+          right: 18px;
+          font-size: 20px;
+          cursor: pointer;
+          color: #777;
+        }
+        .car-image {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          object-fit: cover;
+        }
+        .car-name {
+          font-size: 24px;
+          font-weight: 600;
+        }
+        .rating-text {
+          font-size: 16px;
+          font-weight: 500;
+          margin-top: 5px;
+        }
+        .price-text {
+          font-size: 20px;
+          font-weight: 600;
+          margin-top: 8px;
+        }
+        .offer-btn {
+          background: #ff5a1f;
+          color: white;
+          padding: 10px 22px;
+          border-radius: 8px;
+          border: none;
+          margin-top: 15px;
+          font-size: 16px;
+        }
+
+        /* Mobile Filter Button */
+        .mobile-filter-btn {
+          display: none;
+          position: fixed;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 1050;
+          background: #ff5a1f;
+          color: white;
+          border: none;
+          padding: 12px 24px;
+          border-radius: 30px;
+          font-weight: 600;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 1024px) {
+          .mobile-filter-btn { display: block; }
+          .desktop-sidebar { display: none !important; }
+          .car-cards-container { width: 100%; }
+        }
+        @media (min-width: 1025px) {
+          .mobile-filter-btn { display: none !important; }
+          .desktop-sidebar { display: block !important; }
+        }
+      `}
+      </style>
+
+        <StickyHeader/>
+
+     <header className="main-header bg-light shadow-sm">
         <div className="container d-flex justify-content-between align-items-center py-3">
           <Link href={'/'} style={{ textDecoration: 'none' }}>
             <div className="logo-container d-flex align-items-center">
@@ -23,9 +171,9 @@ function Page() {
           </Link>
 
           <nav className="main-nav d-none d-md-flex gap-4">
-            <a href="#" className="nav-link fw-semibold">About Us</a>
-            <a href="#" className="nav-link fw-semibold">Contact Us</a>
-            <a href="#" className="nav-link fw-semibold">Blog</a>
+            <a href="/about" className="nav-link">About Us</a>
+            <a href="/contactus" className="nav-link">Contact Us</a>
+            <a href="/blogs" className="nav-link">Blog</a>
           </nav>
 
           <button
@@ -40,169 +188,269 @@ function Page() {
         </div>
       </header>
 
-      {/* Main Content */}
-          <div className="container my-5">
-            {/* Tabs */}
-            <div className="tab-buttons d-flex flex-wrap gap-2 mb-4">
-              <button
-                className={`btn ${activeTab === 'info' ? 'btn-success' : 'btn-outline-success'}`}
-                onClick={() => setActiveTab('info')}
-              >
-                <i className="bi bi-info-circle me-1"></i> Information
-              </button>
-              <button
-                className={`btn ${activeTab === 'plan' ? 'btn-success' : 'btn-outline-success'}`}
-                onClick={() => setActiveTab('plan')}
-              >
-                <i className="bi bi-calendar-check me-1"></i> Travel Plan
-              </button>
-              <button
-                className={`btn ${activeTab === 'gallery' ? 'btn-success' : 'btn-outline-success'}`}
-                onClick={() => setActiveTab('gallery')}
-              >
-                <i className="bi bi-images me-1"></i> Tour Gallery
-              </button>
-              <button
-                className={`btn ${activeTab === 'location' ? 'btn-success' : 'btn-outline-success'}`}
-                onClick={() => setActiveTab('location')}
-              >
-                <i className="bi bi-geo-alt me-1"></i> Location
-              </button>
-            </div>
-    
-            {/* Information Tab */}
-            {activeTab === 'info' && (
-              <div className="fade-in">
-                <h4 className="fw-bold text-success">Kashmir</h4>
-                <p className="text-muted">
-                  Kashmir, also referred to as “Paradise on Earth,” is an enchanting region that boasts picturesque landscapes,
-                  pristine lakes, lush green valleys, and vibrant gardens, making it a perfect destination for nature lovers,
-                  adventure enthusiasts, and peace seekers alike.
-                </p>
-    
-                <table className="table table-bordered info-table">
-                  <tbody>
-                    <tr>
-                      <th>Destination</th>
-                      <td>Gulmarg, Pahalgam, Srinagar, Dal Lake</td>
-                    </tr>
-                    <tr>
-                      <th>Departure</th>
-                      <td>Yes Required</td>
-                    </tr>
-                    <tr>
-                      <th>Duration</th>
-                      <td>3 Nights / 4 Days</td>
-                    </tr>
-                    <tr>
-                      <th>Included</th>
-                      <td>
-                        <ul>
-                          <li>Pick-up and drop-off from Airport</li>
-                          <li>3-star accommodation with breakfast</li>
-                          <li>Guided sightseeing tours</li>
-                          <li>One night stay in a houseboat</li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>Excluded</th>
-                      <td>✖ Flight Charges</td>
-                    </tr>
-                  </tbody>
-                </table>
+      {/* Offcanvas Menu (keep this outside the video section) */}
+      {/* Offcanvas Menu (keep this outside the video section) */}
+<div
+  className="offcanvas offcanvas-end bg-white text-dark"
+  tabIndex="-1"
+  id="mobileMenu"
+  aria-labelledby="mobileMenuLabel"
+>
+  {/* <!-- Header --> */}
+  <div className="offcanvas-header border-bottom border-secondary">
+    <Link href={'/'} style={{textDecoration:'none'}}>
+      <div className="d-flex align-items-center">
+        <span className="fs-4 me-2">✈️</span>
+        <span className="fw-bold fs-5 text-dark">Travelogue Pedia</span>
+      </div>
+    </Link>
+    <button
+      type="button"
+      className="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+
+  {/* <!-- Menu Items --> */}
+<div className="offcanvas-body d-flex flex-column pt-3">
+  <div className="d-flex flex-column gap-2">
+    {/* Destinations */}
+    <a href="/about" className="nav-link p-3 rounded hover-item">
+      <div className="d-flex align-items-center gap-3">
+        {/* <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="text-dark" viewBox="0 0 16 16">
+          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+          <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+        </svg> */}
+        <span className="fw-medium text-dark">About</span>
+      </div>
+    </a>
+
+        {/* Deals */}
+    <a href="/blogs" className="nav-link p-3 rounded hover-item">
+      <div className="d-flex align-items-center gap-3">
+        {/* <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="text-dark" viewBox="0 0 16 16">
+          <path d="M13.442 2.558a1.5 1.5 0 0 0-2.121 0L1.5 12.379V15h2.621l9.821-9.821a1.5 
+          1.5 0 0 0 0-2.121zM12 6l-1-1 1-1 1 1-1 1z"/>
+        </svg> */}
+        <span className="fw-medium text-dark">Blogs</span>
+      </div>
+    </a>
+
+
+
+    {/* Experiences */}
+    <a href="/contactus" className="nav-link p-3 rounded hover-item">
+      <div className="d-flex align-items-center gap-3">
+        {/* <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="text-dark" viewBox="0 0 16 16">
+          <path d="M2.866 14.85c-.078.444.36.791.746.593l3.39-1.787 3.389 1.787c.386.198.824-.149.746-.592l-.647-3.73 
+          2.713-2.64c.33-.319.158-.888-.282-.95l-3.762-.546L8.465.792a.513.513 0 
+          0 0-.927 0L5.354 6.034l-3.762.547c-.44.062-.612.63-.283.949l2.713 
+          2.64-.647 3.73z"/>
+        </svg> */}
+        <span className="fw-medium text-dark">Contact Us</span>
+      </div>
+    </a>
+
+  </div>
+
+  {/* Auth Section */}
+  <div className="mt-2">
+    <button
+      className="btn w-100 py-3 fw-bold rounded-pill"
+      style={{
+        background: "rgba(204, 130, 32, 1)",
+        backdropFilter: "blur(10px)",
+        border: "1px solid rgba(79, 172, 254, 0.3)",
+        color: "#050506ff",
+        transition: "all 0.3s ease"
+      }}
+      onMouseOver={(e) => {
+        e.currentTarget.style.background = "rgba(166, 181, 195, 0.25)";
+        e.currentTarget.style.boxShadow = "0 0 15px rgba(79, 172, 254, 0.2)";
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.background = "rgba(79, 172, 254, 0.15)";
+        e.currentTarget.style.boxShadow = "none";
+      }}
+    >
+      Sign In
+    </button>
+    <p className="text-center mt-3 mb-0 text-dark">
+      Don’t have an account? 
+      <a href="#" className="text-decoration-none ms-1" style={{ color: "#4facfe" }}>Sign up</a>
+    </p>
+  </div>
+</div>
+</div>
+
+      <div className="container mt-3">
+
+        {/* Banner */}
+        {/* <div className="position-relative d-flex justify-content-center">
+          <img 
+            src="https://www.shutterstock.com/image-vector/modern-dark-blue-gradient-abstract-600nw-2493387771.jpg"
+            className="w-100"
+            style={{ height: "100px", objectFit: "cover" }}
+          />
+          <button className="btn btn-light filter-btn">Enquiry</button>
+        </div> */}
+
+        {/* Mobile Filter Button */}
+        <button className="mobile-filter-btn" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas">
+          <i className="fas fa-filter me-2"></i> Filter
+        </button>
+
+        <div className="row mt-3">
+
+          {/* LEFT SIDEBAR */}
+          <div className="col-lg-3 col-md-4 desktop-sidebar">
+            <div className="sidebar-box">
+              <div className="sidebar-title">
+                Budget Range <span>-</span>
               </div>
-            )}
-    
-            {/* Travel Plan Tab */}
-{activeTab === 'plan' && (
-  <div className="fade-in">
-    <h4 className="fw-bold text-success mb-4">Travel Plan - 4 Days</h4>
-    
-    <div className="modern-timeline">
-      {[
-        {
-          day: 'Day 1',
-          title: 'Arrival in Srinagar',
-          description: 'Meet our representative at the airport and transfer to the hotel. Visit Dal Lake and enjoy a Shikara ride.',
-          icon: 'bi bi-airplane-engines'
-        },
-        {
-          day: 'Day 2',
-          title: 'Srinagar to Gulmarg',
-          description: 'Drive to Gulmarg, enjoy the scenic beauty and cable car ride (Gondola). Return to Srinagar by evening.',
-          icon: 'bi bi-mountain'
-        },
-        {
-          day: 'Day 3',
-          title: 'Srinagar to Pahalgam',
-          description: 'Visit saffron fields and Awantipura ruins en route to Pahalgam. Explore the Lidder River and Betaab Valley.',
-          icon: 'bi bi-tree'
-        },
-        {
-          day: 'Day 4',
-          title: 'Departure',
-          description: 'Check out from hotel and transfer to the airport with sweet memories of Kashmir.',
-          icon: 'bi bi-suitcase2'
-        }
-      ].map((item, i) => (
-        <div key={i} className="modern-timeline-item shadow-sm rounded-4 p-4 mb-4 bg-white position-relative">
-          <div className="timeline-icon bg-orange text-white rounded-circle d-flex align-items-center justify-content-center">
-            <i className={`${item.icon} fs-4`}></i>
+
+              <div className="range-label">₹ 1 Lakh - 50 Crore</div>
+
+              <div className="range-wrapper">
+                <div className="range-circle"></div>
+                <input type="range" className="form-range mx-2" min="1" max="100" />
+                <div className="range-circle"></div>
+              </div>
+
+              <div className="filter-row"><div><input type="checkbox" /> 1 - 5 Lakh</div><div className="filter-count">(13)</div></div>
+              <div className="filter-row"><div><input type="checkbox" /> 5 - 10 Lakh</div><div className="filter-count">(56)</div></div>
+
+              <div className="section-divider"></div>
+
+{/* brand */}
+
+             <div>
+                <div className="sidebar-title">
+                  Brand <span>-</span>
+                </div>
+  
+                {/* <div className="range-label">₹ 1 Lakh - 50 Crore</div> */}
+  
+               
+  
+                <div className="filter-row"><div><input type="checkbox" /> Maruthi</div><div className="filter-count">(13)</div></div>
+                <div className="filter-row"><div><input type="checkbox" /> Tata </div><div className="filter-count">(56)</div></div>
+                <div className="filter-row"><div><input type="checkbox" /> Kia </div><div className="filter-count">(56)</div></div>
+
+  
+                <div className="section-divider"></div>
+             </div>
+
+
+             {/* Vehicle Type*/}
+
+             <div>
+                <div className="sidebar-title">
+                  Vehicle Type <span>-</span>
+                </div>
+  
+                {/* <div className="range-label">₹ 1 Lakh - 50 Crore</div> */}
+  
+               
+  
+                <div className="filter-row"><div><input type="checkbox" /> Sedan</div><div className="filter-count">(13)</div></div>
+                <div className="filter-row"><div><input type="checkbox" /> SUV </div><div className="filter-count">(56)</div></div>
+                <div className="filter-row"><div><input type="checkbox" /> Luxury </div><div className="filter-count">(56)</div></div>
+
+  
+                <div className="section-divider"></div>
+             </div>
+
+                          {/* Fuel Type*/}
+
+             <div>
+                <div className="sidebar-title">
+                  Fuel Type <span>-</span>
+                </div>
+  
+                {/* <div className="range-label">₹ 1 Lakh - 50 Crore</div> */}
+  
+               
+  
+                <div className="filter-row"><div><input type="checkbox" /> Diesel </div><div className="filter-count">(13)</div></div>
+                <div className="filter-row"><div><input type="checkbox" /> Petrol  </div><div className="filter-count">(56)</div></div>
+                <div className="filter-row"><div><input type="checkbox" /> CNG </div><div className="filter-count">(56)</div></div>
+
+  
+                <div className="section-divider"></div>
+             </div>
+
+
+            </div>
+
+            
+
+
           </div>
-          <div className="timeline-content ps-4">
-            <h6 className="text-uppercase text-orange fw-bold">{item.day}</h6>
-            <h5 className="fw-semibold mb-2">{item.title}</h5>
-            <p className="text-muted mb-0">{item.description}</p>
+
+          {/* RIGHT CAR LIST */}
+          <div className="col-lg-9 col-md-8 col-12 car-cards-container">
+
+            <h3 className="mb-4">273 Cars in India With Search Options</h3>
+
+            {/* CARD 1 */}
+            <div className="car-card-box">
+              <div className="more-icon">⋮</div>
+              <div className="row">
+                <div className="col-md-4">
+                  <img src="https://imgd.aeplcdn.com/1200x900/n/cw/ec/186613/hyundai-venue-right-rear-three-quarter2.jpeg?isig=0" className="car-image" />
+                </div>
+                <div className="col-md-8">
+                  <h3 className="car-name">Hyundai Venue</h3>
+                  <div className="rating-text">⭐ 4.7 <span className="text-muted">(27 Reviews)</span></div>
+                  <p className="price-text">₹7.90 - 15.69 Lakh *</p>
+                  <p className="text-muted">*Ex-Showroom Price in New Delhi</p>
+                  <p><span>20.99 kmpl</span> • <span>1493 cc</span> • <span>5 seater</span></p>
+                  <button className="offer-btn">Book Now</button>
+                </div>
+              </div>
+            </div>
+
+            {/* CARD 2 */}
+            <div className="car-card-box">
+              <div className="more-icon">⋮</div>
+              <div className="row">
+                <div className="col-md-4">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxc1ozvEB6nWh4zFQ_U3AKEegFsSNPHThveA&s" className="car-image" />
+                </div>
+                <div className="col-md-8">
+                  <h3 className="car-name">Defender</h3>
+                  <div className="rating-text">⭐ 4.5 <span className="text-muted">(316 Reviews)</span></div>
+                  <p className="price-text">₹98 Lakh - 2.60 Cr *</p>
+                  <p className="text-muted">*Ex-Showroom Price in New Delhi</p>
+                  <p><span>14.01 kmpl</span> • <span>5000 cc</span> • <span>7 seater</span></p>
+                  <button className="offer-btn">Book Now</button>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-)}
-    
-            {/* Tour Gallery Tab */}
-            {activeTab === 'gallery' && (
-              <div className="fade-in">
-                <h4 className="fw-bold text-success mb-3">Tour Gallery</h4>
-                <div className="row g-3">
-                  {['https://media.cnn.com/api/v1/images/stellar/prod/220407230731-india-kashmir-tourism-boost.jpg?c=original', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/a8/bb/eb/kashmir.jpg?w=400&h=400&s=1', 'https://lp-cms-production.imgix.net/2019-06/384e10f39ebc6fab9b991467541ce8ed-dal-lake.jpg?auto=format,compress&q=72&w=1095&fit=crop&crop=faces,edges', 'https://world.time.com/wp-content/uploads/sites/17/2012/07/600_int_kashmir_0711.jpg?w=600'].map((img, i) => (
-                    <div className="col-6 col-md-3" key={i}>
-                      <div className="gallery-card shadow-sm rounded overflow-hidden">
-                        <img
-                          src={`${img}`}
-                          alt="Kashmir Tour"
-                          className="img-fluid gallery-img"
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-    
-            {/* Location Tab */}
-            {activeTab === 'location' && (
-              <div className="fade-in">
-                <h4 className="fw-bold text-success mb-3">Location</h4>
-                <div className="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d507951.255566565!2d74.6337!3d34.0837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e18f2cb27c8b41%3A0x6d7f3c13e8ce64b3!2sSrinagar!5e0!3m2!1sen!2sin!4v1707843459312!5m2!1sen!2sin"
-                    allowFullScreen
-                    loading="lazy"
-                  ></iframe>
-                </div>
-              </div>
-            )}
-          </div>
-    
-          <div style={{paddingTop:'150px'}}></div>
-    
-    
-</div>   
-   <Footer />
-    </>
-  )
-}
+      </div>
 
-export default Page
+      {/* Offcanvas */}
+      <div className="offcanvas offcanvas-start" id="sidebarOffcanvas">
+        <div className="offcanvas-header">
+          <h5>Filters</h5>
+          <button className="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div className="offcanvas-body">
+          <div className="sidebar-box">
+            <div className="sidebar-title">
+              Budget Range <span>-</span>
+            </div>
+            <div className="range-label">₹ 1 Lakh - 50 Crore</div>
+            <input type="range" className="form-range" />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}

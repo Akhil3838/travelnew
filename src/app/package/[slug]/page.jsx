@@ -486,6 +486,46 @@ const PackageDetails = () => {
   <div className="fade-in">
     <h4 className="fw-bold text-success mb-3">Location</h4>
 
+    {/* Pickup & Drop Details */}
+<div className="mb-3 p-3 rounded   bg-white d-flex align-items-center gap-4">
+
+  {/* Pickup */}
+  <div className="d-flex align-items-center">
+    <input
+      className="form-check-input me-2"
+      type="radio"
+      name="locationOption"
+      id="pickupRadio"
+      checked
+      readOnly
+      style={{ width: "18px", height: "18px" }}
+    />
+    <label className="form-check-label" htmlFor="pickupRadio" style={{ fontSize: "15px" }}>
+      <strong>Pickup:</strong> {details?.pickup_location || "Not Available"}
+    </label>
+  </div>
+
+  {/* Divider Line */}
+  <div style={{ height: "25px", width: "1.2px", background: "#ccc" }} />
+
+  {/* Drop */}
+  <div className="d-flex align-items-center">
+    <input
+      className="form-check-input me-2"
+      type="radio"
+      name="locationOption"
+      id="dropRadio"
+      readOnly
+      style={{ width: "18px", height: "18px" }}
+    />
+    <label className="form-check-label" htmlFor="dropRadio" style={{ fontSize: "15px" }}>
+      <strong>Drop:</strong> {details?.dropout_location || "Not Available"}
+    </label>
+  </div>
+
+</div>
+
+    {/* Google Map */}
     <div className="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
       <iframe
         src={`https://www.google.com/maps?q=${encodeURIComponent(details?.destination)}&output=embed`}

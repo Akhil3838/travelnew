@@ -122,4 +122,9 @@ export const allOneWayRootsApi=async()=>{
 }
 
 
+export const ContactUsApi=async(reqBody)=>{
+  console.log(reqBody);
+  
+    return await commonApi('POST',`${serverUrl}/save-contact_us`,reqBody,"")
+}
 

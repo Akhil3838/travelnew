@@ -1,10 +1,21 @@
 'use client';
-import React from "react";
+import React, { useState } from "react";
 import StickyHeader from "../components/StickyHeader";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import { ContactUsApi } from "../services/allApi";
 
 function ContactUs() {
+
+  const [saveContactUs, setSaveContactUs] = useState({});
+
+  const contactUs = async () => {
+    const res = await ContactUsApi()
+    console.log(res);
+    
+    setSaveContactUs(res?.data.data || [])
+  }
+
   return (
     <>
     <StickyHeader/>
