@@ -128,3 +128,9 @@ export const ContactUsApi=async(reqBody)=>{
     return await commonApi('POST',`${serverUrl}/save-contact_us`,reqBody,"")
 }
 
+// get all blogs
+
+export const getAllBlogs=async()=>{
+    return await commonApi('GET',`${serverUrl}/get-all_blogs`,"","")
+}
+

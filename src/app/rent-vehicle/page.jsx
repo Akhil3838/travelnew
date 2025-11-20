@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import StickyHeader from "../components/StickyHeader";
 import { useState, useEffect } from "react";
 import { rentACar } from "../services/allApi";
+import Header from "../components/Header";
 
 export default function RentVehiclePage() {
   const [vehicles, setVehicles] = useState([]);
@@ -26,33 +27,7 @@ export default function RentVehiclePage() {
   return (
     <>
       <StickyHeader />
-
-      {/* Header */}
-      <header className="main-header bg-light shadow-sm">
-        <div className="container d-flex justify-content-between align-items-center py-3">
-          <Link href={'/'} style={{ textDecoration: 'none' }}>
-            <div className="logo-container d-flex align-items-center">
-              <span className="logo-icon fs-3">✈️</span>
-              <span className="logo-text text-dark fw-bold ms-2 fs-5"> Travelogue Pedia</span>
-            </div>
-          </Link>
-
-          <nav className="main-nav d-none d-md-flex gap-4">
-            <a href="/about" className="nav-link">About Us</a>
-            <a href="/contactus" className="nav-link">Contact Us</a>
-            <a href="/blogs" className="nav-link">Blog</a>
-          </nav>
-
-          <button
-            className="mobile-menu-btn btn d-md-none"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#mobileMenu"
-          >
-            ☰
-          </button>
-        </div>
-      </header>
+   <Header />
 
       {/* Intro Ribbon */}
 
