@@ -34,12 +34,15 @@ function StickyHeader() {
           }}
         >
           <div className="container d-flex justify-content-between align-items-center py-3">
-            <Link href="/" style={{ textDecoration: 'none' }}>
-              <div className="logo-container d-flex align-items-center">
-                <span className="logo-icon">✈️</span>
-                <span className="logo-text ms-2 fw-bold text-dark"> Travelogue Pedia</span>
-              </div>
-            </Link>
+           <Link href="/" style={{ textDecoration: "none" }}>
+  <div className="d-flex align-items-center">
+    <img
+      src="/log.png"
+      alt="Logo"
+      style={{ width: "250px", height: "55px", objectFit: "contain" }}
+    />
+  </div>
+</Link>
 
             <nav className="main-nav d-none d-md-flex gap-4">
               <a href="/about" className="nav-link text-dark">About Us</a>

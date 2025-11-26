@@ -6,12 +6,16 @@ function Header() {
     <>
                         <header className="main-header">
           <div className="container d-flex justify-content-between align-items-center py-3">
-            <Link href={'/'} style={{textDecoration:'none'}}>
-                <div className="logo-container d-flex align-items-center">
-                  <span className="logo-icon">✈️</span>
-                  <span className="logo-text text-dark"> Travelogue Pedia</span>
-                </div>
-            </Link>
+           <Link href="/" style={{ textDecoration: "none" }}>
+  <div className="d-flex align-items-center">
+    <img
+      src="/log.png"
+      alt="Logo"
+      style={{ width: "250px", height: "55px", objectFit: "contain" }}
+    />
+  </div>
+</Link>
+
   
             <nav className="main-nav d-none d-md-flex gap-4">
               <a href="/about" className="nav-link">About Us</a>
@@ -40,12 +44,16 @@ function Header() {
 >
   {/* <!-- Header --> */}
   <div className="offcanvas-header border-bottom border-secondary">
-    <Link href={'/'} style={{textDecoration:'none'}}>
-      <div className="d-flex align-items-center">
-        <span className="fs-4 me-2">✈️</span>
-        <span className="fw-bold fs-5 text-dark">Travelogue Pedia</span>
-      </div>
-    </Link>
+    <Link href="/" style={{ textDecoration: "none" }}>
+  <div className="d-flex align-items-center">
+    <img
+      src="/log.png"
+      alt="Logo"
+      style={{ width: "250px", height: "55px", objectFit: "contain" }}
+    />
+  </div>
+</Link>
+
     <button
       type="button"
       className="btn-close"

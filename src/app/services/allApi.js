@@ -134,3 +134,30 @@ export const getAllBlogs=async()=>{
     return await commonApi('GET',`${serverUrl}/get-all_blogs`,"","")
 }
 
+// blog details
+
+export const getBlogDetails=async(slug)=>{
+    return await commonApi('GET',`${serverUrl}/get-blog_details?slug=${slug}`,"","")
+}
+
+// blog related posts
+
+export const getBlogRelatedPosts=async()=>{
+    return await commonApi('GET',`${serverUrl}/get-related_blogs`,"","")
+}
+
+// get rent a carfilters
+
+export const getRentACarFiltersApi=async()=>{
+    return await commonApi('GET',`${serverUrl}/get-rentcar_filters`,"","")
+}
+
+// all rent a car
+
+export const allRentACarApi=async(reqBody)=>{
+  console.log(reqBody);
+  
+    return await commonApi('POST',`${serverUrl}/get-rent_cars`,reqBody,"")
+}
+
+

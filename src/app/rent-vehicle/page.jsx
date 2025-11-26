@@ -14,6 +14,8 @@ export default function RentVehiclePage() {
   const rentCar = async () => {
     try {
       const result = await rentACar();
+      console.log(result);
+      
       setVehicles(result?.data?.rentcars || []);
     } catch (error) {
       console.error("Error fetching cars:", error);
@@ -58,27 +60,29 @@ export default function RentVehiclePage() {
                   className="card h-100 shadow-sm service-card border-0"
                   style={{ borderRadius: '15px', overflow: 'hidden' }}
                 >
-                  <div className="position-relative" style={{ height: '200px', overflow: 'hidden' }}>
-                    <img
-                      src={vehicle.image}
-                      alt={vehicle.title}
-                      className="img-fluid w-100 h-100"
-                      style={{ objectFit: 'cover', transition: 'transform 0.5s ease' }}
-                      onMouseEnter={(e) => (e.target.style.transform = 'scale(1.1)')}
-                      onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
-                    />
-                    <div
-                      className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
-                      style={{ background: 'rgba(0,0,0,0.3)' }}
-                    >
-                      <i
-                        className="fas fa-car text-white"
-                        style={{ fontSize: '3rem' }}
-                      ></i>
+<Link href={'/packageDetails'}>
+                    <div className="position-relative" style={{ height: '200px', overflow: 'hidden' }}>
+                      <img
+                        src={vehicle.image}
+                        alt={vehicle.title}
+                        className="img-fluid w-100 h-100"
+                        style={{ objectFit: 'cover', transition: 'transform 0.5s ease' }}
+                        onMouseEnter={(e) => (e.target.style.transform = 'scale(1.1)')}
+                        onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
+                      />
+                      <div
+                        className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                        style={{ background: 'rgba(0,0,0,0.3)' }}
+                      >
+                        {/* <i
+                          className="fas fa-car text-white"
+                          style={{ fontSize: '3rem' }}
+                        ></i> */}
+                      </div>
                     </div>
-                  </div>
-                  <div className="card-body p-4 text-center">
-                    <h3 className="card-title fw-bold">{vehicle.title}</h3>
+  
+</Link>                  <div className="card-body p-4 text-center">
+                    <h3 className="card-title fw-bold">{vehicle.vehicle_type}</h3>
                     <p className="card-text text-muted">{vehicle.description}</p>
                   </div>
                 </div>
@@ -90,7 +94,7 @@ export default function RentVehiclePage() {
       </section>
 
       {/* Popular Rental Routes */}
-      <section className="services-section py-5 bg-light">
+      {/* <section className="services-section py-5 bg-light">
         <div className="container">
           <h2 className="text-center fw-bold mb-5 section-title">Popular Rental Routes</h2>
 
@@ -120,7 +124,7 @@ export default function RentVehiclePage() {
           </div>
 
         </div>
-      </section>
+      </section> */}
             <div style={{paddingTop:'150px'}}></div>
 
 

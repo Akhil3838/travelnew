@@ -4,6 +4,7 @@ import { allOneWayRootsApi } from '../services/allApi';
 import Link from 'next/link';
 import StickyHeader from '../components/StickyHeader';
 import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 function Onewaytaxi() {
   const [data, setData] = useState([]);
@@ -30,32 +31,7 @@ function Onewaytaxi() {
           <StickyHeader />
 
       {/* Header */}
-      <header className="main-header bg-light shadow-sm">
-        <div className="container d-flex justify-content-between align-items-center py-3">
-          <Link href={'/'} style={{ textDecoration: 'none' }}>
-            <div className="logo-container d-flex align-items-center">
-              <span className="logo-icon fs-3">✈️</span>
-              <span className="logo-text text-dark fw-bold ms-2 fs-5"> Travelogue Pedia</span>
-            </div>
-          </Link>
-
-          <nav className="main-nav d-none d-md-flex gap-4">
-            <a href="/about" className="nav-link">About Us</a>
-            <a href="/contactus" className="nav-link">Contact Us</a>
-            <a href="/blogs" className="nav-link">Blog</a>
-          </nav>
-
-          <button
-            className="mobile-menu-btn btn d-md-none"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#mobileMenu"
-          >
-            ☰
-          </button>
-        </div>
-      </header>
-
+      <Header/>
       {/* Intro Ribbon */}
 
             <section className="gradient-ribbon text-white" style={{ background: 'linear-gradient(135deg,rgb(32, 11, 86) 0%,rgb(28, 3, 67) 100%)' }}>
@@ -77,36 +53,35 @@ function Onewaytaxi() {
             data.map((route, index) => (
               <div key={route.id} className="col-12 col-md-6 d-flex justify-content-center">
                 <div
-                  className={`card border-0 overflow-hidden shadow-sm d-flex align-items-center flex-md-row ${
+                  className={`card border-0 overflow-hidden shadow-sm w-100 d-flex flex-column flex-md-row ${
                     index % 2 !== 0 ? "flex-md-row-reverse" : ""
                   }`}
                   style={{
-                    width: "100%",
                     maxWidth: "650px",
                     borderRadius: "15px",
                     backgroundColor: "#f8f9fa",
                     color: "#001f3f",
-                    minHeight: "220px",
                   }}
                 >
-                  {/* Image Section */}
-                  <img
-                    src={route.image}
-                    alt={route.title}
-                    style={{
-                      width: "50%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
 
-                  {/* Description Section */}
-                  <div className="card-body text-start p-4">
-                    <h4 className="fw-bold mb-2">{route.title}</h4>
-                    <p className="text-muted mb-0" style={{ fontSize: "1rem" }}>
+                  {/* Image Section (Reduced Height) */}
+                  <div className="col-12 col-md-6 p-0">
+                    <img
+                      src={route.image}
+                      alt={route.title}
+                      className="img-fluid w-100 object-fit-cover"
+                      style={{ height: "260px" }}   // ⬅ Reduced image height
+                    />
+                  </div>
+
+                  {/* Description */}
+                  <div className="col-12 col-md-6 p-3 text-start"> {/* ⬅ reduced padding */}
+                    <h5 className="fw-bold mb-2">{route.title}</h5>
+                    <p className="text-muted mb-0" style={{ fontSize: "0.95rem" }}>
                       {route.description}
                     </p>
                   </div>
+
                 </div>
               </div>
             ))

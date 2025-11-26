@@ -2,9 +2,33 @@
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 import StickyHeader from "@/app/components/StickyHeader";
-import React from "react";
+import { getBlogDetails } from "@/app/services/allApi";
+import { useParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 export default function BlogDetails() {
+
+    const params = useParams();
+    const { slug } = params;
+  
+   const [blogDetails, setBlogDetails] = useState(null);
+   const [ relatedBlogs, setRelatedBlogs] = useState([]);
+  const BlogDetails =async(slug)=>{
+    const res= await getBlogDetails(slug)
+    setBlogDetails(res?.data?.blog || null);
+    setRelatedBlogs(res?.data?.related_blog || []);
+    console.log(res);
+    
+  }
+
+  
+console.log(relatedBlogs);
+
+
+ useEffect(() => {
+    BlogDetails(slug);
+  }, [slug]);
+
   return (
 <>
 <StickyHeader/>
@@ -18,24 +42,28 @@ export default function BlogDetails() {
             {/* Hero Image */}
             <div className="rounded overflow-hidden shadow-sm">
               <img
-                src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60"
+                src={ blogDetails?.thumbnail}
                 className="w-100"
                 style={{ height: "380px", objectFit: "cover" }}
               />
             </div>
   
             {/* Date & Read time */}
-            <div className="mt-3 text-muted small">
-              November 18, 2025 • 6 min read
+             <div className="mt-3 text-muted small">
+              {new Date(blogDetails?.blog_date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })} 
             </div>
   
             {/* Title */}
             <h1 className="fw-bold mt-3" style={{ fontSize: "2.2rem" }}>
-              How to Travel Kumaon on a Budget
+              {blogDetails?.title}
             </h1>
   
             <p className="text-secondary mb-4">
-              A practical, beautifully simple guide for backpackers and weekenders
+             {blogDetails?.small_description}
             </p>
   
             {/* Author */}
@@ -46,13 +74,13 @@ export default function BlogDetails() {
                 style={{ width: "55px", height: "55px", objectFit: "cover" }}
               />
               <div>
-                <div className="fw-semibold">Akhil Tv</div>
+                <div className="fw-semibold">{blogDetails?.author}</div>
                 <div className="text-muted small">Author</div>
               </div>
             </div>
   
             {/* Blog Content */}
-            <div className="mt-4" style={{ lineHeight: "1.8", fontSize: "1.05rem" }}>
+            {/* <div className="mt-4" style={{ lineHeight: "1.8", fontSize: "1.05rem" }}>
               <h4 className="fw-bold mt-4">Introduction</h4>
               <p>
                 Kumaon is a beautiful and affordable region to explore if you know
@@ -94,7 +122,15 @@ export default function BlogDetails() {
                 Negotiate shared rides, eat where locals eat, and always carry small
                 change for local transport.
               </p>
-            </div>
+            </div> */}
+             {/* Blog Content (HTML) */}
+             <hr />
+            <div
+              className="mt-4"
+              style={{ lineHeight: "1.8", fontSize: "1.05rem" }}
+              dangerouslySetInnerHTML={{ __html: blogDetails?.content }}
+            />
+
   
             {/* Tags */}
             <div className="mt-4 d-flex flex-wrap gap-2">
@@ -158,27 +194,14 @@ export default function BlogDetails() {
             <div className="p-3 border rounded shadow-sm mb-4 bg-white">
               <h5 className="fw-semibold mb-3">Related Posts</h5>
   
-              {[ 
-                {
-                  title: "Top 7 Treks near Nainital",
-                  img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=60"
-                },
-                {
-                  title: "Budget Packing Hacks",
-                  img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&q=60"
-                },
-                {
-                  title: "Hidden Cafes of Kumaon",
-                  img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=60"
-                }
-              ].map((item) => (
+              {relatedBlogs.map((item) => (
                 <a
                   key={item.title}
-                  href="#"
+                  href={`/blog/${item.slug}`}
                   className="d-flex align-items-center mb-3 text-decoration-none text-dark"
                 >
                   <img
-                    src={item.img}
+                    src={item.thumbnail}
                     className="rounded"
                     style={{ width: "80px", height: "55px", objectFit: "cover" }}
                   />

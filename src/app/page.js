@@ -326,12 +326,15 @@ export default function Home() {
 >
   {/* <!-- Header --> */}
   <div className="offcanvas-header border-bottom border-secondary">
-    <Link href={'/'} style={{textDecoration:'none'}}>
-      <div className="d-flex align-items-center">
-        <span className="fs-4 me-2">✈️</span>
-        <span className="fw-bold fs-5 text-dark">Travelogue Pedia</span>
-      </div>
-    </Link>
+    <Link href="/" style={{ textDecoration: "none" }}>
+  <div className="d-flex align-items-center">
+    <img
+      src="/log.png"
+      alt="Logo"
+      style={{ width: "250px", height: "55px", objectFit: "contain" }}
+    />
+  </div>
+</Link>
     <button
       type="button"
       className="btn-close"

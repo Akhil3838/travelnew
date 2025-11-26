@@ -2517,3 +2517,162 @@ select.form-select:focus {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
+/* rent a car  */
+
+.car-info .divider {
+  font-weight: 600;
+  color: #888;
+  margin: 0 6px;
+}
+
+@media (max-width: 576px) {
+  .car-info {
+    gap: 6px;
+  }
+
+  .car-info .divider {
+    display: none; /* hide divider on tiny screens if needed */
+  }
+}
+
+.rentacar-sidebar-box { border: 1px solid #e5e5e5; border-radius: 12px; padding: 20px; background: #fff; } 
+        .rentacar-sidebar-title { font-size: 20px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; } 
+        .rentacar-sidebar-title span { font-size: 24px; cursor: pointer; color: #555; } 
+        .rentacar-range-label { font-size: 15px; font-weight: 600; margin-bottom: 10px; } 
+        .rentacar-range-wrapper { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; } 
+        .rentacar-range-circle { width: 20px; height: 20px; border: 2px solid #ff5722; border-radius: 50%; } 
+        .rentacar-filter-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 15px; } 
+        .rentacar-filter-row input { transform: scale(1.2); margin-right: 8px; } 
+        .rentacar-filter-count { color: #777; font-size: 14px; } 
+        .rentacar-section-divider { border-top: 1px solid #ddd; margin: 25px 0; } 
+        .rentacar-brand-search { border-radius: 8px; font-size: 15px; } 
+        .rentacar-capacity-icon { width: 40px; height: auto; object-fit: contain; } 
+        .rentacar-card-box { border: 1px solid #e5e5e5; border-radius: 12px; padding: 20px; margin-bottom: 25px; background: #fff; position: relative; transition: 0.3s; } 
+        .rentacar-card-box:hover { box-shadow: 0 4px 12px rgb(0 0 0 / 10%); } 
+        .rentacar-more-icon { position: absolute; top: 18px; right: 18px; font-size: 20px; cursor: pointer; color: #777; } 
+        .rentacar-image { width: 100%; height: 100%; border-radius: 10px; object-fit: cover; } 
+        .rentacar-name { font-size: 24px; font-weight: 600; } 
+        .rentacar-rating-text { font-size: 16px; font-weight: 500; margin-top: 5px; } 
+        .rentacar-price-text { font-size: 20px; font-weight: 600; margin-top: 8px; } 
+        .rentacar-offer-btn { background: #ff5a1f; color: white; padding: 10px 22px; border-radius: 8px; border: none; margin-top: 15px; font-size: 16px; } 
+        .rentacar-mobile-filter-btn { display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1050; background: #ff5a1f; color: white; border: none; padding: 12px 24px; border-radius: 30px; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.2); } 
+        .rentacar-info { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 16px; }
+        .rentacar-info small { white-space: nowrap; }
+        .rentacar-divider { color: #ddd; }
+        
+        @media (max-width: 1024px) { 
+          .rentacar-mobile-filter-btn { display: block; } 
+          .rentacar-desktop-sidebar { display: none!important; } 
+          .rentacar-cards-container { width: 100%; } 
+        } 
+        
+        @media (min-width: 1025px) { 
+          .rentacar-mobile-filter-btn { display: none!important; } 
+          .rentacar-desktop-sidebar { display: block!important; } 
+        }
+
+
+.dual-slider {
+  position: relative;
+  height: 50px;
+}
+
+/* Both range inputs */
+.dual-slider input[type="range"] {
+  position: absolute;
+  width: 100%;
+  top: 20px; /* IMPORTANT: fixes vertical line alignment */
+  -webkit-appearance: none;
+  background: transparent;
+  pointer-events: none;
+}
+
+/* Webkit track */
+.dual-slider input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;             /* increase track height */
+  background: #dcdcdc;
+  border-radius: 10px;
+}
+
+/* Webkit thumb */
+.dual-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 22px;
+  width: 22px;
+  background: #28a745;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  cursor: pointer;
+  pointer-events: auto;
+
+  margin-top: -7px;   /* Corrects thumb vertical alignment */
+  position: relative;
+  z-index: 5;         /* ensures thumb stays ABOVE track */
+}
+
+/* Firefox track */
+.dual-slider input[type="range"]::-moz-range-track {
+  height: 8px;
+  background: #dcdcdc;
+}
+
+/* Firefox thumb */
+.dual-slider input[type="range"]::-moz-range-thumb {
+  height: 22px;
+  width: 22px;
+  background: #28a745;
+  border-radius: 50%;
+  border: 2px solid white;
+  pointer-events: auto;
+  position: relative;
+  z-index: 5;
+}
+/* Firefox */
+.dual-slider input[type="range"]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #28a745;
+  border: 2px solid #fff;
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+
+.dual-slider input[type="range"]::-moz-range-track {
+  height: 6px;
+  background: #dcdcdc;
+}
+
+
+
+/* spinner */
+
+/* Loading states */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+.rentacar-mobile-filter-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Skeleton loading for filters */
+.skeleton-loader {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
