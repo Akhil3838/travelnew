@@ -160,4 +160,19 @@ export const allRentACarApi=async(reqBody)=>{
     return await commonApi('POST',`${serverUrl}/get-rent_cars`,reqBody,"")
 }
 
+// get rent a carfilters
+
+export const getWeddingCarFiltersApi=async()=>{
+    return await commonApi('GET',`${serverUrl}/get-weddingcar_filters`,"","")
+}
+
+// all rent a car
+
+export const allWeddingACarApi=async(reqBody)=>{
+  console.log(reqBody);
+  
+    return await commonApi('POST',`${serverUrl}/get-wedding_cars`,reqBody,"")
+}
+
+
 

@@ -60,7 +60,7 @@ export default function RentVehiclePage() {
                   className="card h-100 shadow-sm service-card border-0"
                   style={{ borderRadius: '15px', overflow: 'hidden' }}
                 >
-<Link href={'/packageDetails'}>
+<Link href={'/all-rent-cars'}>
                     <div className="position-relative" style={{ height: '200px', overflow: 'hidden' }}>
                       <img
                         src={vehicle.image}

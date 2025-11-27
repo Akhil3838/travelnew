@@ -69,50 +69,49 @@ export default function WeddingCarPage() {
                       border: '2px solid #f0f0f0',
                     }}
                   >
-                    <div
-                      className="position-relative"
-                      style={{ height: '250px', overflow: 'hidden' }}
-                    >
-                      <img
-                        src={car.image}
-                        alt={car.title}
-                        className="img-fluid w-100 h-100"
-                        style={{
-                          objectFit: 'cover',
-                          transition: 'transform 0.5s ease',
-                        }}
-                        onMouseEnter={(e) => (e.target.style.transform = 'scale(1.1)')}
-                        onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
-                      />
-
+<Link href={'/all-wedding-cars'}>
                       <div
-                        className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
-                        style={{
-                          background:
-                            'linear-gradient(135deg, rgba(15, 65, 142, 0.7) 0%, rgba(242, 125, 1, 0.7) 100%)',
-                        }}
+                        className="position-relative"
+                        style={{ height: '250px', overflow: 'hidden' }}
                       >
-                        <i
-                          className={`fas fa-car text-white`}
-                          style={{ fontSize: '3.5rem' }}
-                        ></i>
-                      </div>
-
-                      <div className="position-absolute bottom-0 end-0 m-3">
-                        <span
-                          className="badge px-3 py-2"
+                        <img
+                          src={car.image}
+                          alt={car.title}
+                          className="img-fluid w-100 h-100"
                           style={{
-                            background: 'rgba(255, 255, 255, 0.95)',
-                            color: '#f27d01',
-                            fontSize: '0.9rem',
-                            fontWeight: '600',
+                            objectFit: 'cover',
+                            transition: 'transform 0.5s ease',
+                          }}
+                          onMouseEnter={(e) => (e.target.style.transform = 'scale(1.1)')}
+                          onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
+                        />
+  
+                        <div
+                          className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                          style={{
+                            background:
+                              'linear-gradient(135deg, rgba(15, 65, 142, 0.7) 0%, rgba(242, 125, 1, 0.7) 100%)',
                           }}
                         >
-                          Starting from ₹{car.price}
-                        </span>
+                         
+                        </div>
+  
+                        <div className="position-absolute bottom-0 end-0 m-3">
+                          <span
+                            className="badge px-3 py-2"
+                            style={{
+                              background: 'rgba(255, 255, 255, 0.95)',
+                              color: '#f27d01',
+                              fontSize: '0.9rem',
+                              fontWeight: '600',
+                            }}
+                          >
+                            Starting from ₹{car.price}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-
+  
+</Link>
                     <div className="card-body p-4 text-center">
                       <h3
                         className="card-title fw-bold mb-3"
