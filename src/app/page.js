@@ -75,39 +75,16 @@ export default function Home() {
 <header className="main-header position-absolute w-100 top-0 start-0" style={{ background: 'transparent' }}>
     <div className="container d-flex justify-content-between align-items-center py-3">
         {/* Logo with elevation and smooth transition */}
-        <div 
-            className="logo-container d-flex align-items-center" 
-            style={{
-                padding: '8px 16px',
-                borderRadius: '16px',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                cursor: 'pointer',
-
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 2px 10px rgba(255, 255, 255, 0.2)'}
-            onMouseLeave={(e) => e.currentTarget.style.boxShadow = 'none'}
-        >
-            <span 
-                className="logo-icon me-2" 
-                style={{
-                    fontSize: '24px',
-                    filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))'
-                }}
-            >
-                ✈️
-            </span>
-            <span 
-                className="logo-text text-white" 
-                style={{
-                    fontWeight: '700',
-                    fontSize: '1.5rem',
-                    letterSpacing: '0.5px'
-                }}
-            >
-                Travelogue Pedia
-            </span>
-        </div>
-
+ <Link href="/" style={{ textDecoration: "none" }}>
+  <div className="d-flex align-items-center bg-white  rounded-4">
+    <img
+      src="/log.png"
+      alt="Logo"
+      className="border  rounded-4"
+      style={{ width: "100%", height: "55px", objectFit: "contain" }}
+    />
+  </div>
+</Link>
         {/* Navigation with material ripple effect */}
         <nav className="main-nav d-none d-md-flex gap-1">
             <a 

@@ -88,10 +88,7 @@ export default function WeddingCarPage() {
   
                         <div
                           className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
-                          style={{
-                            background:
-                              'linear-gradient(135deg, rgba(15, 65, 142, 0.7) 0%, rgba(242, 125, 1, 0.7) 100%)',
-                          }}
+                          
                         >
                          
                         </div>
@@ -121,19 +118,21 @@ export default function WeddingCarPage() {
                       </h3>
                       <p className="card-text text-muted mb-3">{car.description}</p>
 
-                      <button
-                        className="btn w-100"
-                        style={{
-                          background: 'linear-gradient(135deg,#f27d01 0%, #f27d01 100%)',
-                          color: '#fff',
-                          fontWeight: '600',
-                          borderRadius: '10px',
-                          border: 'none',
-                        }}
-                      >
-                        <i className="fas fa-calendar-check me-2"></i>
-                        Book Now
-                      </button>
+<Link href={'/all-wedding-cars'}>
+                        <div
+                          className="btn w-100"
+                          style={{
+                            background: 'linear-gradient(135deg,#f27d01 0%, #f27d01 100%)',
+                            color: '#fff',
+                            fontWeight: '600',
+                            borderRadius: '10px',
+                            border: 'none',
+                          }}
+                        >
+                          <i className="fas fa-calendar-check me-2"></i>
+                          View more
+                        </div>
+                     </Link>
                     </div>
                   </div>
                 </div>
