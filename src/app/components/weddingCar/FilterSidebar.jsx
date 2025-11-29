@@ -1,47 +1,88 @@
 'use client';
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-export default function FiltersSidebar({ filters, selectedFilters, handleFilterChange, setSelectedFilters }) {
+export default function FiltersSidebar({
+  filters,
+  selectedFilters,
+  handleFilterChange,
+  setSelectedFilters,
+}) {
+  // Temporary states for price range (only for UI)
+  const [tempMin, setTempMin] = useState(selectedFilters.min_price);
+  const [tempMax, setTempMax] = useState(selectedFilters.max_price);
+
+  // Sync temp values if filters get updated externally
+  useEffect(() => {
+    setTempMin(selectedFilters.min_price);
+    setTempMax(selectedFilters.max_price);
+  }, [selectedFilters]);
+
   return (
     <div className="col-lg-3 col-md-4 rentacar-desktop-sidebar">
       <div className="rentacar-sidebar-box">
-
         {/* TITLE */}
         <div className="rentacar-sidebar-title">
           Budget Range <span>-</span>
         </div>
 
-        {/* DYNAMIC LABEL */}
-        <div className="rentacar-range-label">
-          ₹ {selectedFilters.min_price.toLocaleString("en-IN")} - ₹ {selectedFilters.max_price.toLocaleString("en-IN")}
+        {/* LABEL + GO BUTTON */}
+        <div
+          className="rentacar-range-top"
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <div className="rentacar-range-label">
+            ₹ {tempMin.toLocaleString("en-IN")} - ₹{" "}
+            {tempMax.toLocaleString("en-IN")}
+          </div>
+
+          <button
+            className="go-btn"
+            onClick={() => {
+              // APPLY temporary slider values to original filter state
+              setSelectedFilters((prev) => ({
+                ...prev,
+                min_price: tempMin,
+                max_price: tempMax,
+              }));
+
+              // Tell parent that price has been updated
+              handleFilterChange("price", { min: tempMin, max: tempMax });
+            }}
+          >
+            Go
+          </button>
         </div>
 
-        {/* DUAL HANDLE SLIDER */}
+        {/* DUAL SLIDER */}
         <div className="dual-slider">
-          {/* Min slider */}
+          {/* Min Slider */}
           <input
             type="range"
             min="10000"
             max="1000000"
-            value={selectedFilters.min_price}
+            value={tempMin}
             onChange={(e) => {
               const value = Number(e.target.value);
-              if (value < selectedFilters.max_price) {
-                setSelectedFilters(prev => ({ ...prev, min_price: value }));
+              if (value < tempMax) {
+                setTempMin(value); // only update temp
               }
             }}
           />
 
-          {/* Max slider */}
+          {/* Max Slider */}
           <input
             type="range"
             min="10000"
             max="1000000"
-            value={selectedFilters.max_price}
+            value={tempMax}
             onChange={(e) => {
               const value = Number(e.target.value);
-              if (value > selectedFilters.min_price) {
-                setSelectedFilters(prev => ({ ...prev, max_price: value }));
+              if (value > tempMin) {
+                setTempMax(value); // only update temp
               }
             }}
           />
@@ -51,7 +92,9 @@ export default function FiltersSidebar({ filters, selectedFilters, handleFilterC
 
         {/* BRAND */}
         <div>
-          <div className="rentacar-sidebar-title">Brand <span>-</span></div>
+          <div className="rentacar-sidebar-title">
+            Brand <span>-</span>
+          </div>
 
           {filters.brands?.length > 0 ? (
             filters.brands.map((item, i) => (
@@ -76,7 +119,9 @@ export default function FiltersSidebar({ filters, selectedFilters, handleFilterC
 
         {/* VEHICLE TYPE */}
         <div>
-          <div className="rentacar-sidebar-title">Vehicle Type <span>-</span></div>
+          <div className="rentacar-sidebar-title">
+            Vehicle Type <span>-</span>
+          </div>
 
           {filters.vehicle_types.map((item, i) => (
             <div className="rentacar-filter-row" key={i}>
@@ -84,7 +129,9 @@ export default function FiltersSidebar({ filters, selectedFilters, handleFilterC
                 <input
                   type="checkbox"
                   checked={selectedFilters.vehicle_type === item.vehicle_type}
-                  onChange={() => handleFilterChange("vehicle_type", item.vehicle_type)}
+                  onChange={() =>
+                    handleFilterChange("vehicle_type", item.vehicle_type)
+                  }
                 />{" "}
                 {item.vehicle_type}
               </div>
@@ -97,7 +144,9 @@ export default function FiltersSidebar({ filters, selectedFilters, handleFilterC
 
         {/* FUEL TYPE */}
         <div>
-          <div className="rentacar-sidebar-title">Fuel Type <span>-</span></div>
+          <div className="rentacar-sidebar-title">
+            Fuel Type <span>-</span>
+          </div>
 
           {filters.fuel_types.map((item, i) => (
             <div className="rentacar-filter-row" key={i}>
@@ -105,7 +154,9 @@ export default function FiltersSidebar({ filters, selectedFilters, handleFilterC
                 <input
                   type="checkbox"
                   checked={selectedFilters.fuel_type === item.fuel_type}
-                  onChange={() => handleFilterChange("fuel_type", item.fuel_type)}
+                  onChange={() =>
+                    handleFilterChange("fuel_type", item.fuel_type)
+                  }
                 />{" "}
                 {item.fuel_type}
               </div>
@@ -115,7 +166,6 @@ export default function FiltersSidebar({ filters, selectedFilters, handleFilterC
 
           <div className="rentacar-section-divider"></div>
         </div>
-
       </div>
     </div>
   );
