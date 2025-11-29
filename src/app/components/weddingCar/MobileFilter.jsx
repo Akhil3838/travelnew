@@ -1,10 +1,23 @@
 'use client';
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function MobileFilters({ filters, selectedFilters, handleFilterChange, setSelectedFilters }) {
-  
+
+  // ----------------------------
+  // TEMP PRICE STATES
+  // ----------------------------
+  const [tempMin, setTempMin] = useState(selectedFilters.min_price);
+  const [tempMax, setTempMax] = useState(selectedFilters.max_price);
+
+  useEffect(() => {
+    setTempMin(selectedFilters.min_price);
+    setTempMax(selectedFilters.max_price);
+  }, [selectedFilters]);
+
+  // ----------------------------
+  // CLOSE OFFCANVAS
+  // ----------------------------
   const closeOffcanvas = () => {
-    // Get the offcanvas element and hide it
     const offcanvasElement = document.getElementById('rentacarSidebarOffcanvas');
     if (offcanvasElement) {
       const offcanvas = window.bootstrap.Offcanvas.getInstance(offcanvasElement);
@@ -14,10 +27,11 @@ export default function MobileFilters({ filters, selectedFilters, handleFilterCh
     }
   };
 
+  // ----------------------------
+  // HANDLE CHECKBOX CLICK
+  // ----------------------------
   const handleCheckboxChange = (filterType, value) => {
-    // First update the filter
     handleFilterChange(filterType, value);
-    // Then close the offcanvas
     closeOffcanvas();
   };
 
@@ -31,46 +45,69 @@ export default function MobileFilters({ filters, selectedFilters, handleFilterCh
       <div className="offcanvas-body">
         <div className="rentacar-sidebar-box">
 
+          {/* TITLE */}
           <div className="rentacar-sidebar-title">
             Budget Range <span>-</span>
           </div>
 
-          {/* DYNAMIC LABEL */}
-          <div className="rentacar-range-label">
-            ₹ {selectedFilters.min_price.toLocaleString("en-IN")} - ₹ {selectedFilters.max_price.toLocaleString("en-IN")}
+          {/* LABEL + GO BUTTON */}
+          <div 
+            className="rentacar-range-top" 
+            style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}
+          >
+            <div className="rentacar-range-label">
+              ₹ {tempMin.toLocaleString("en-IN")} - ₹ {tempMax.toLocaleString("en-IN")}
+            </div>
+
+            <button
+              className="go-btn"
+              onClick={() => {
+                // APPLY to actual filter state
+                setSelectedFilters(prev => ({
+                  ...prev,
+                  min_price: tempMin,
+                  max_price: tempMax
+                }));
+
+                // Trigger filter function
+                handleFilterChange("price", { min: tempMin, max: tempMax });
+
+                // Close the offcanvas
+                closeOffcanvas();
+              }}
+            >
+              Go
+            </button>
           </div>
 
-          {/* DUAL HANDLE SLIDER */}
+          {/* SLIDERS */}
           <div className="dual-slider">
-            {/* Min slider */}
             <input
               type="range"
               min="10000"
               max="1000000"
-              value={selectedFilters.min_price}
+              value={tempMin}
               onChange={(e) => {
-                const value = Number(e.target.value);
-                if (value < selectedFilters.max_price) {
-                  setSelectedFilters(prev => ({ ...prev, min_price: value }));
-                }
+                const v = Number(e.target.value);
+                if (v < tempMax) setTempMin(v);
               }}
             />
 
-            {/* Max slider */}
             <input
               type="range"
               min="10000"
               max="1000000"
-              value={selectedFilters.max_price}
+              value={tempMax}
               onChange={(e) => {
-                const value = Number(e.target.value);
-                if (value > selectedFilters.min_price) {
-                  setSelectedFilters(prev => ({ ...prev, max_price: value }));
-                }
+                const v = Number(e.target.value);
+                if (v > tempMin) setTempMax(v);
               }}
             />
           </div>
 
+          <div className="rentacar-section-divider"></div>
+
+          {/* BRAND */}
           <div className="rentacar-sidebar-title">Brand <span>-</span></div>
           {filters.brands.map((item, i) => (
             <div className="rentacar-filter-row" key={i}>
@@ -87,6 +124,7 @@ export default function MobileFilters({ filters, selectedFilters, handleFilterCh
 
           <div className="rentacar-section-divider"></div>
 
+          {/* VEHICLE TYPE */}
           <div className="rentacar-sidebar-title">Vehicle Type <span>-</span></div>
           {filters.vehicle_types.map((item, i) => (
             <div className="rentacar-filter-row" key={i}>
@@ -103,6 +141,7 @@ export default function MobileFilters({ filters, selectedFilters, handleFilterCh
 
           <div className="rentacar-section-divider"></div>
 
+          {/* FUEL TYPE */}
           <div className="rentacar-sidebar-title">Fuel Type <span>-</span></div>
           {filters.fuel_types.map((item, i) => (
             <div className="rentacar-filter-row" key={i}>
