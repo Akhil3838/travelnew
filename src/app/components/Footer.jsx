@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { socialLinksApi } from '../services/allApi'
 import Link from 'next/link'
+import RecentPosts from './footer/RecentPosts'
 
 function Footer() {
   const [Links, setLinks] = useState([])
@@ -32,6 +33,8 @@ function Footer() {
   const facebook = getValue('FACEBOOK_URL') || '#'
   const email = getValue('CONTACT_US_EMAIL') || 'example@email.com'
   const phone = getValue('phone') || '+91 0000000000'
+    const whatsapp = getValue('whatsapp') || '+91 0000000000'
+
   const address = getValue('Address') || 'Your company address'
   const desc = getValue('Footer_Description') || 'Discover the world with GoWonder.'
   const firstColor = getValue('FOOTER_SECTION_FIRST_COLOR') || '#F9F1DE'
@@ -116,29 +119,13 @@ function Footer() {
                 <li className='mb-2'><a href="/" className="text-decoration-none text-white">→ Home</a></li>
                 <li className='mb-2'><a href="/rent-vehicle" className="text-decoration-none text-white">→ Rent a car</a></li>
                 <li className='mb-2'><a href="/wedding-car" className="text-decoration-none text-white">→ Weddding cars</a></li>
-                <li className='mb-2'><a href="#" className="text-decoration-none text-white">→ FAQ</a></li>
-                <li className='mb-2'><a href="#" className="text-decoration-none text-white">→ About Us</a></li>
+                <li className='mb-2'><a href="/faq" className="text-decoration-none text-white">→ FAQ</a></li>
+                <li className='mb-2'><a href="/about" className="text-decoration-none text-white">→ About Us</a></li>
               </ul>
             </div>
 
             {/* Recent Posts */}
-            <div className="col-lg-3 col-md-6">
-              <h5 className="fw-bold mb-3">RECENT POSTS</h5>
-              <div className="d-flex mb-3">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAjPXJa5LD3IhnOKG_rA2HTZzYUUZLmHTSw&s" alt="post" width="60" className="me-3 rounded" />
-                <div>
-                  <small className="text-light">07 Oct, 2023</small>
-                  <p className="mb-0">Exploring The Mystical Temples Of Sringeri</p>
-                </div>
-              </div>
-              <div className="d-flex mb-3">
-                <img src="https://s7ap1.scene7.com/is/image/incredibleindia/1-shivanasamudra-falls-mysuru-karnataka-blog-ntr-hero?qlt=82&ts=1742169746720" alt="post" width="60" className="me-3 rounded" />
-                <div>
-                  <small className="text-light">07 Oct, 2023</small>
-                  <p className="mb-0">Exploring The Mystical Temples Of Sringeri</p>
-                </div>
-              </div>
-            </div>
+            <RecentPosts/>
 
             {/* Request Callback */}
             <div className="col-lg-4 col-md-6">
@@ -162,16 +149,16 @@ function Footer() {
             <div className="col-12 d-flex flex-column flex-md-row justify-content-between align-items-center">
               <p className="mb-0">© 2025 All Rights Reserved.</p>
               <div className="footer-links mt-3 mt-md-0">
-                <a href="#" className="text-white me-3" style={{ textDecoration: 'none' }}>Terms</a>
-                <a href="#" className="text-white me-3" style={{ textDecoration: 'none' }}>Privacy Policy</a>
-                <a href="#" className="text-white" style={{ textDecoration: 'none' }}>Contact</a>
+                <a href="/terms" className="text-white me-3" style={{ textDecoration: 'none' }}>Terms</a>
+                <a href="/privacy" className="text-white me-3" style={{ textDecoration: 'none' }}>Privacy Policy</a>
+                <a href="/contactus" className="text-white" style={{ textDecoration: 'none' }}>Contact</a>
               </div>
             </div>
           </div>
         </div>
 
         {/* WhatsApp Floating Button */}
-        <a href={`https://wa.me/${phone}`} target="_blank"
+        <a href={`https://wa.me/${whatsapp}`} target="_blank"
           className="btn btn-lg  rounded-circle position-fixed"
           style={{ bottom: '20px', right: '20px' , backgroundColor: 'green' }}>
           <i className="fab fa-whatsapp fs-4 text-white"></i>

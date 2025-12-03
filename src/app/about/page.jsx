@@ -3,10 +3,12 @@
 import Link from "next/link";
 import Footer from "../components/Footer";
 import StickyHeader from "../components/StickyHeader";
+import Header from "../components/Header";
 
 export default function AboutPage() {
   return (
     <>
+    <Header/>
     <StickyHeader/>
 
 

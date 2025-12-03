@@ -10,6 +10,7 @@ import Honey from "./components/Honey";
 import Gallery from "./components/Gallery";
 import StickyHeader from "./components/StickyHeader";
 import Onewaytaxi from "./components/Onewaytaxi";
+import Testimonial from "./components/Testimonial";
 
 export default function Home() {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -860,148 +861,8 @@ export default function Home() {
 <div className="reviews-section">
   <div className="container">
     <h2 className="section-title">Guest Reviews</h2>
+    <Testimonial/>
 
-    <div id="reviewsCarousel" className="carousel slide  mt-5" data-bs-ride="carousel">
-      <div className="carousel-inner">
-
-        {/* Slide 1 */}
-        <div className="carousel-item active">
-          <div className="row">
-            <div className="col-lg-4 col-md-6 mb-4">
-              <div className="review-card">
-                <div className="review-text">
-                   &quot;Dear Swan Tours We are indeed grateful to you for having arranged our fantastic tour to Jodhpur and Jasalmer...Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours &quot;
-                </div>
-                <img
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-                  alt="Reviewer"
-                  className="reviewer-avatar"
-                />
-              </div>
-              <div className="reviewer-info">
-                <div className="star-rating">★★★★★</div>
-                <div className="location">Jodhpur Jasalmer Tour</div>
-                <div className="reviewer-name">Mr. Sudhakaran</div>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-md-6 mb-4">
-              <div className="review-card">
-                <div className="review-text">
-                  &quot;It was such a delightful experience! Everything was organized perfectly. Stress-free trip thanks to your team.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours. &quot;
-                </div>
-                <img
-                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face"
-                  alt="Reviewer"
-                  className="reviewer-avatar"
-                />
-              </div>
-              <div className="reviewer-info">
-                <div className="star-rating">★★★★★</div>
-                <div className="location">Rajasthan Tour</div>
-                <div className="reviewer-name">Ms. Priya Sharma</div>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-md-6 mb-4">
-              <div className="review-card">
-                <div className="review-text">
-                  &quot;One of the best travel experiences we have had. The service was excellent and we look forward to booking again!vOur family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours. &quot;
-                </div>
-                <img
-                  src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=150&h=150&fit=crop&crop=face"
-                  alt="Reviewer"
-                  className="reviewer-avatar"
-                />
-              </div>
-              <div className="reviewer-info">
-                <div className="star-rating">★★★★★</div>
-                <div className="location">Kerala Tour</div>
-                <div className="reviewer-name">Mr. Anil Kumar</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Slide 2 */}
-        <div className="carousel-item">
-          <div className="row">
-            <div className="col-lg-4 col-md-6 mb-4">
-              <div className="review-card">
-                <div className="review-text">
-                   &quot;Our honeymoon trip was magical! Swan Tours planned everything seamlessly. Thank you for the beautiful memories.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours. &quot;
-                </div>
-                <img
-                  src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=150&h=150&fit=crop&crop=face"
-                  alt="Reviewer"
-                  className="reviewer-avatar"
-                />
-              </div>
-              <div className="reviewer-info">
-                <div className="star-rating">★★★★★</div>
-                <div className="location">Maldives Tour</div>
-                <div className="reviewer-name">Mr. & Mrs. Ramesh</div>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-md-6 mb-4">
-              <div className="review-card">
-                <div className="review-text">
-                 &quot;Professional team, timely responses, and a wonderful itinerary. Truly satisfied with Swan Tours service.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours. &quot;
-                </div>
-                <img
-                  src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=150&h=150&fit=crop&crop=face"
-                  alt="Reviewer"
-                  className="reviewer-avatar"
-                />
-              </div>
-              <div className="reviewer-info">
-                <div className="star-rating">★★★★★</div>
-                <div className="location">Europe Tour</div>
-                <div className="reviewer-name">Mrs. Kavita Nair</div>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-md-6 mb-4">
-              <div className="review-card">
-                <div className="review-text">
-                   &quot;Our family trip was well managed, kids had fun and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours.Our family trip was well managed, kids had fun, and we could relax. Would highly recommend Swan Tours. &quot;
-                </div>
-                <img
-                  src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=150&h=150&fit=crop&crop=face"
-                  alt="Reviewer"
-                  className="reviewer-avatar"
-                />
-              </div>
-              <div className="reviewer-info">
-                <div className="star-rating">★★★★★</div>
-                <div className="location">Shimla-Manali Tour</div>
-                <div className="reviewer-name">Mr. Sharma Family</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Controls */}
-      <button
-        className="carousel-control-prev "
-        type="button"
-        data-bs-target="#reviewsCarousel"
-        data-bs-slide="prev"
-      >
-        <i className="fa-solid fa-arrow-left fa-xl" style={{color:"black"}}></i>
-      </button>
-      <button
-        className="carousel-control-next  "
-        type="button"
-        data-bs-target="#reviewsCarousel"
-        data-bs-slide="next"
-       >
-        {/* <span className="carousel-control-next-icon"></span> */}
-        <i className="fa-solid fa-arrow-right fa-xl" style={{color:"black"}}></i>
-      </button>
-    </div>
   </div>
 </div>
 

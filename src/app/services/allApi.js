@@ -175,4 +175,18 @@ export const allWeddingACarApi=async(reqBody)=>{
 }
 
 
+// get recent posts
+
+export const getRecentPostsApi=async()=>{
+    return await commonApi('GET',`${serverUrl}/get-recentpackages`,"","")
+}
+
+
+// get Testimonials
+
+export const getTestimonialsApi=async()=>{
+    return await commonApi('GET',`${serverUrl}/get-testimonials`,"","")
+}
+
+
 
