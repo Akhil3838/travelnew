@@ -69,7 +69,7 @@ console.log(relatedBlogs);
             {/* Author */}
             <div className="d-flex align-items-center mb-4">
               <img
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop"
+                src={blogDetails?.author_image}
                 className="rounded-circle me-3"
                 style={{ width: "55px", height: "55px", objectFit: "cover" }}
               />
@@ -224,7 +224,7 @@ console.log(relatedBlogs);
             </div>
   
             {/* About Author */}
-            <div className="p-3 border rounded shadow-sm bg-white">
+            {/* <div className="p-3 border rounded shadow-sm bg-white">
               <h5 className="fw-semibold mb-3">About Author</h5>
               <div className="d-flex align-items-center">
                 <img
@@ -237,7 +237,7 @@ console.log(relatedBlogs);
                   <div className="text-muted small">Traveller & Developer</div>
                 </div>
               </div>
-            </div>
+            </div> */}
   
           </div>
         </div>

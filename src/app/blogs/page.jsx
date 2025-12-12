@@ -125,7 +125,7 @@ useEffect(() => {
                       <div className="blog-meta">
                         <div className="author-info">
                           <img 
-                            src={`https://i.pravatar.cc/30?img=${post.id + 10}`} 
+                            src={post?.author_image} 
                             alt={post.author}
                             className="author-avatar-sm"
                           />
