@@ -188,5 +188,12 @@ export const getTestimonialsApi=async()=>{
     return await commonApi('GET',`${serverUrl}/get-testimonials`,"","")
 }
 
+// search packages
+export const SearchPackagesApi=async(reqBody)=>{
+  console.log(reqBody);
+  
+    return await commonApi('POST',`${serverUrl}/search-banner-package`,reqBody,"")
+}
+
 
 

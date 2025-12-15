@@ -11,6 +11,7 @@ import Gallery from "./components/Gallery";
 import StickyHeader from "./components/StickyHeader";
 import Onewaytaxi from "./components/Onewaytaxi";
 import Testimonial from "./components/Testimonial";
+import HomeForm from "./components/HomeForm";
 
 export default function Home() {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -172,96 +173,7 @@ export default function Home() {
         <h1 className="text-white text-center mt-5 display-4 fw-bold">Where will you wander next?</h1>
 
 <div className="search-card glass-bg shadow-lg px-4 py-3">  
-   <form className="d-flex flex-wrap align-items-center justify-content-between gap-3">
-    
-    {/* Type Selector */}
-    {/* <div className="d-flex flex-column me-3">
-      <small className="text-muted ms-2">Type</small>
-      <div className="dropdown">
-        <button
-          className="btn btn-sm dropdown-toggle border-0 bg-transparent fw-semibold"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          All
-        </button>
-        <ul className="dropdown-menu">
-          <li><a className="dropdown-item" href="#">Trending
-</a></li>
-          <li><a className="dropdown-item" href="#">Top ten Tour 
-</a></li>
-          <li><a className="dropdown-item" href="#">Top ten Trek
-</a></li>
-          <li><a className="dropdown-item" href="#">Pilgrims 
-
-</a></li>
-          <li><a className="dropdown-item" href="#">Honeymoon Package
-</a></li>
-
-        </ul>
-      </div>
-    </div> */}
-
-    {/* Location */}
-    <div className="d-flex flex-column flex-grow-1 me-3">
-      {/* <small className="text-muted ms-5">From</small> */}
-      <div className="input-group">
-        <span className="input-group-text bg-transparent border-0">
-          <i className="fas fa-map-marker-alt text-secondary"></i>
-        </span>
-        <input
-          type="text"
-          className="form-control border-0 bg-transparent"
-          placeholder="From Location"
-        />
-      </div>
-    </div>
-
-    {/* Keyword */}
-    <div className="d-flex flex-column flex-grow-1 me-3">
-      {/* <small className="text-muted ms-5">To</small> */}
-      <div className="input-group">
-        <span className="input-group-text bg-transparent border-0">
-          <i className="fas fa-map-marker-alt text-secondary"></i>
-        </span>
-        <input
-          type="text"
-          className="form-control border-0 bg-transparent"
-          placeholder="To Location"
-        />
-      </div>
-    </div>
-
-    {/* Search Advanced */}
-<div className="d-flex flex-column flex-grow-1 me-3">
-  {/* <small className="text-muted ms-2 mb-1">To Date</small> */}
-  <div className="input-group">
-    <span className="input-group-text border-0 bg-white">
-      <i className="fas fa-calendar-alt text-secondary"></i> {/* Correct icon class */}
-    </span>
-   <input
-  type="text"
-  className="form-control border-0"
-  placeholder="dd-mm-yyyy"
-  onFocus={(e) => (e.target.type = 'date')}
-  onBlur={(e) => e.target.value === '' && (e.target.type = 'text')}
-/>
-
-  </div>
-</div>
-    {/* Search Button */}
-    <div className="search-button">
-      <button
-        type="submit"
-        className="btn  rounded-pill px-4 d-flex align-items-center justify-content-center"
-        style={{ backgroundColor: '#305cde', color: 'white' }}
-
-      >
-        Search <i className="fas fa-search ms-2"></i>
-      </button>
-    </div>
-  </form>
+  <HomeForm/>
 </div>
 
 <div className="d-flex justify-content-center align-items-center">
