@@ -1,5 +1,5 @@
 
 
-export const serverUrl ='https://startup14.com/gowonder/api/v1'
+export const serverUrl ='https://admin.traveloguepedia.com/api/v1'
 
 // admin.traveloguepedia.com
